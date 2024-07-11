@@ -77,110 +77,36 @@ export default function ProjectDetailsForm() {
       </Modal>
 
       <form onSubmit={handleSubmit(sendFormData)}>
-        <div className="border border-slate-400 grid grid-cols-4 gap-3 m-5 p-5 w-auto">
-          <MuiInput {...register("division")} id="division" label="DIVISION" />
-          <MuiInput {...register("zone")} id="zone" label="ZONE" />
-          <MuiInput {...register("ward")} id="ward" label="WARD" />
-          <MuiInput
-            {...register("urban_local_body")}
-            id="urban-local-body"
-            label="URBAN LOCAL BODY"
-          />
-          <MuiInput
-            {...register("colony_name")}
-            id="colony-name"
-            label="COLONY NAME"
-          />
-          <MuiInput
-            {...register("property_id")}
-            id="property-id"
-            label="PROPERTY ID"
-          />
-          <MuiInput
-            {...register("design_type")}
-            id="design-type"
-            label="DESIGN TYPE"
-          />
+        <div className="border border-slate-50 grid grid-cols-4 gap-3 m-5 p-5 w-auto">
+          <MuiInput label="DIVISION" />
+          <MuiInput label="DISTRICT" />
+
+          <MuiInput label="URBAN LOCAL BODY" />
+          <MuiInput label="ZONE" />
+
+          <MuiInput label="WARD" />
+          <MuiInput label="COLONY NAME" />
+          <>
+            <MuiInput label="APPROVAL NAME" />
+            <MuiInput label="LAYOUT" />
+            <MuiInput label="LAYOUT NUMBER" />
+            <MuiInput label="LAYOUT APPROVAL TYPE" />
+            <MuiInput label="LAND USE" />
+            <MuiInput label="LAND SUB USE" />
+            <MuiInput label="BUILDING ACTIVITY" />
+            <MuiInput label="BUILDING USE" />
+            <MuiInput label="TYPE OF BUILDING" />
+            <MuiInput label="TYPE OF CONSTRUCTION" />
+            <MuiInput label="PROPOSED BUILT UP AREA (SQM)" />
+            <MuiInput label="PROPOSED GROUND COVERAGE(%)" />
+            <MuiInput label="PROPOSED NO OF FLOORS (no's)" />
+            <MuiInput label="PROPOSED BUILDING HEIGHT (m)" />
+            <MuiInput label="TOTAL ESTIMATED COST" />
+            <MuiInput label="PROPOSED ROAD WIDTH" />
+            <MuiInput label="DESIGN TYPE" />
+          </>
         </div>
-        <div className="border border-slate-400 grid grid-cols-4 gap-3 m-5 p-5 w-auto">
-          <MuiInput {...register("land_use")} id="land-use" label="LAND USE" />
-          <MuiInput
-            {...register("layout_approval_type")}
-            id="layout-approval-type"
-            label="LAYOUT APPROVAL TYPE"
-          />
-          <MuiInput
-            {...register("proposed_floors")}
-            id="proposed-floors"
-            label="PROPOSED FLOORS (No's)"
-          />
-          <MuiInput
-            {...register("land_sub_use")}
-            id="land-sub-use"
-            label="LAND SUB USE"
-          />
-          <MuiInput
-            {...register("layout_number")}
-            id="layout-number"
-            label="LAYOUT NUMBER"
-          />
-          <MuiInput
-            {...register("estimated_cost")}
-            id="estimated-cost"
-            label="ESTIMATED COST"
-          />
-          <MuiInput
-            {...register("building_use")}
-            id="building-use"
-            label="BUILDING USE"
-          />
-          <MuiInput
-            {...register("layout_approval_date")}
-            id="layout-approval-date"
-            label="LAYOUT APPROVAL DATE"
-          />
-          <MuiInput
-            {...register("drainage_line")}
-            id="drainage-line"
-            label="DRAINAGE LINE"
-          />
-          <MuiInput
-            {...register("building_activity")}
-            id="building-activity"
-            label="BUILDING ACTIVITY"
-          />
-          <MuiInput
-            {...register("type_of_construction")}
-            id="type-of-construction"
-            label="TYPE OF CONSTRUCTION"
-          />
-          <MuiInput
-            {...register("type_of_building")}
-            id="type-of-building"
-            label="TYPE OF BUILDING"
-          />
-          <MuiInput
-            {...register("building_use_for")}
-            id="building-use-for"
-            label="BUILDING USE FOR"
-          />
-          <MuiInput
-            {...register("proposed_built_up_area")}
-            id="proposed-built-up-area"
-            label="PROPOSED BUILT UP AREA (SQM)"
-          />
-          <MuiInput
-            {...register("proposed_building_height")}
-            id="proposed-building-height"
-            label="PROPOSED BUILDING HEIGHT (m)"
-          />
-          <MuiInput
-            {...register("proposed_ground_coverage")}
-            id="proposed-ground-coverage"
-            label="PROPOSED GROUND COVERAGE(%)"
-          />
-        </div>
-        {/* <div className="flex m-5 gap-2">
+        <div className="flex m-5 gap-2">
           <div
             className={`py-2 px-2 rounded-md hover:bg-slate-500 hover:duration-700 bg-blue-500 text-white cursor-pointer`}
             onClick={() => handleOpenModal()}
@@ -199,7 +125,7 @@ export default function ProjectDetailsForm() {
           >
             Existing Details
           </div>
-        </div> */}
+        </div>
         <div className="flex justify-center">
           <Button className="w-1/4" type="submit">
             submit
