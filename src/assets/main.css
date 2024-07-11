@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.bg-cust {
+  background: linear-gradient(45deg, rgb(49 77 171), rgb(0 167 184));
+}
+.bg-body {
+  /* background: linear-gradient(45deg, rgb(49 77 171), rgb(0 167 184));    */
+  background: url("./images/login-bg.jpg");
+  background-size: cover;
+}
+.css-batk84-MuiInputBase-root-MuiFilledInput-root::before,
+.css-1bl45wc-MuiInputBase-root-MuiFilledInput-root::before {
+  border-bottom: 1px solid #f3f3f3 !important;
+}
+.innerbg {
+  background: url("./images/bg-inner.png");
+  background-size: cover;
+}
+.modal {
+  overflow-x: auto;
+  height: 90%;
+}
+.table-resposive {
+  display: block;
+  overflow-x: auto;
+}
