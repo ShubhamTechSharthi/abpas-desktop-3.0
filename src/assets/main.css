@@ -25,3 +25,22 @@
   display: block;
   overflow-x: auto;
 }
+.css-19kzrtu {
+  padding: 10px !important;
+}
+
+.cust {
+  width: 300px;
+  height: auto;
+  min-height: 1.4375em;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  overflow: hidden;
+}
+.block {
+  display: block !important;
+}
+.tab-sty {
+  overflow: auto;
+  height: 478px;
+}
