@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <nav className="bg-gray-800 border-b-2">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-12 items-center justify-between">
           <div className="flex items-center">
             <div className="flex-shrink-0 flex border-r-2 pr-5">
               <img className="h-8 w-8" src={logo} alt="Your Company" />{" "}
