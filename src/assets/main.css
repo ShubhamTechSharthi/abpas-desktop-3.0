@@ -29,12 +29,12 @@
   padding: 10px !important;
 }
 
-.cust {
+.MuiMenuItem-root {
   width: 300px;
   height: auto;
   min-height: 1.4375em;
   text-overflow: ellipsis !important;
-  white-space: nowrap !important;
+  white-space: pre-wrap !important;
   overflow: hidden;
 }
 .block {

@@ -1136,19 +1136,20 @@ export default function LayoutInfo() {
             {...register("division")}
             label="DIVISION"
             size="small"
-            defaultvalue="Select"
+            defaultvalue="Select Division"
             InputLabelProps={{
               style: {
                 fontSize: "8pt",
               },
             }}
           >
-            {layoutApprovalType.map((option) => (
+            {divisions.map((option) => (
               <MenuItem key={option.value} value={option.value}>
                 {option.label}
               </MenuItem>
             ))}
           </TextField>
+
           <TextField
             id="outlined-select-currency"
             select
@@ -1162,7 +1163,7 @@ export default function LayoutInfo() {
               },
             }}
           >
-            {layoutApprovalType.map((option) => (
+            {districts.map((option) => (
               <MenuItem key={option.value} value={option.value}>
                 {option.label}
               </MenuItem>
@@ -1182,7 +1183,7 @@ export default function LayoutInfo() {
               },
             }}
           >
-            {layoutApprovalType.map((option) => (
+            {ulbies.map((option) => (
               <MenuItem key={option.value} value={option.value}>
                 {option.label}
               </MenuItem>
