@@ -1,21 +1,19 @@
-import { useState } from "react";
-import Modal from "../Modal";
 import Button from "../Button";
 import MuiInput from "../MuiInput";
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import TextField from "@mui/material/TextField";
 import MenuItem from "@mui/material/MenuItem";
 import { useDispatch, useSelector } from "react-redux";
-import { addFormData } from "../../store/formSlice";
-import ClientSiteForm from "./ClientSiteForm";
-import PlotAreaForm from "./PlotAreaForm";
-import ExistingBuildingForm from "./ExistingBuildingForm";
-import { useNavigate } from "react-router-dom";
+import { addFormData, nextPage, prevPage } from "../../store/formSlice";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
+import InputLabel from "@mui/material/InputLabel";
+import Select from "@mui/material/Select";
+import Box from "@mui/material/Box";
+
 export default function LayoutInfo() {
   const typeOfConst = [
     {
@@ -1058,116 +1056,79 @@ export default function LayoutInfo() {
     },
   ];
 
-  const [openModal, setOpenModal] = useState(false);
-  const [plotModal, setPlotModal] = useState(false);
-  const [bulidingdetails, setBuildingModal] = useState(false);
-  const finalData = useSelector((state) => state.form.formData);
+  const defaultData = useSelector((state) => state.form.formData);
+
   const dispatch = useDispatch();
-  const handleCloseModal = () => {
-    setOpenModal(false);
-  };
 
-  const handlePlotCloseModal = () => {
-    setPlotModal(false);
-  };
-  const handleBuildingCloseModal = () => {
-    setBuildingModal(false);
-  };
-  const handleOpenModal = () => {
-    setOpenModal(true);
-  };
+  const { register, handleSubmit, getValues, control } = useForm({
+    defaultValues: defaultData,
+  });
 
-  const handlePlotAreaModal = () => {
-    setPlotModal(true);
+  const handlePageChange = () => {
+    const values = getValues();
+    dispatch(addFormData(values));
+    dispatch(prevPage());
   };
-
-  const handleExistingBuildingModal = () => {
-    setBuildingModal(true);
-  };
-
-  const { register, handleSubmit } = useForm();
-  const navigate = useNavigate();
 
   const sendFormData = (data) => {
     console.log(data);
-    // dispatch(addFormData(data));
-    // navigate("/home");
-    // console.log(finalData);
+    dispatch(addFormData(data));
+    dispatch(nextPage());
   };
 
   return (
     <div className="">
-      <Modal
-        open={openModal}
-        onClose={handleCloseModal}
-        className={"mt-44 ml-60 w-2/3 h-2/3"}
-        heading={"Client and Site Details"}
+      <form
+        onSubmit={handleSubmit(sendFormData)}
+        className="m-5 p-2 flex flex-col gap-3"
       >
-        <ClientSiteForm />
-      </Modal>
-
-      <Modal
-        open={plotModal}
-        onClose={handlePlotCloseModal}
-        className={"mt-44 ml-60 w-2/3 h-2/3"}
-        heading={"Plot Area Details"}
-      >
-        <PlotAreaForm />
-      </Modal>
-      <Modal
-        open={bulidingdetails}
-        onClose={handleBuildingCloseModal}
-        className={"mt-44 ml-60 w-2/3 h-2/3"}
-        heading={"Existing Building Details"}
-      >
-        <ExistingBuildingForm />
-      </Modal>
-
-      <form onSubmit={handleSubmit(sendFormData)}>
-        <div className="border border-slate-50 grid grid-cols-4 gap-3 w-auto">
+        <div className="grid grid-cols-4 gap-3 bg-white border border-gray-200 rounded-lg shadow p-3">
           <MuiInput
             {...register("applicationId")}
             label="T&CP Permission No/Application Id"
           />
-          <TextField
-            {...register("typeOfPlot")}
-            id="outlined-select-currency"
-            select
-            label="TYPE OF PLOT/LAYOUT"
-            size="small"
-            defaultvalue="Select"
-            InputLabelProps={{
-              style: {
-                fontSize: "8pt",
-              },
-            }}
-          >
-            {layoutApprovalType.map((option) => (
-              <MenuItem key={option.value} value={option.value}>
-                {option.label}
-              </MenuItem>
-            ))}
-          </TextField>
 
-          <TextField
-            id="outlined-select-currency"
-            select
-            {...register("layoutApproval")}
-            label="LAYOUT APPROVAL TYPE"
-            size="small"
-            defaultvalue="Select"
-            InputLabelProps={{
-              style: {
-                fontSize: "8pt",
-              },
-            }}
-          >
-            {layoutApprovalType.map((option) => (
-              <MenuItem key={option.value} value={option.value}>
-                {option.label}
-              </MenuItem>
-            ))}
-          </TextField>
+          <Controller
+            control={control}
+            name="typeOfPlot"
+            render={({ field }) => (
+              <TextField
+                select
+                label="TYPE OF PLOT/LAYOUT"
+                id="typeofplot-select"
+                {...field}
+                value={field.value || ""}
+                size="small"
+              >
+                {layoutApprovalType.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField>
+            )}
+          />
+
+          <Controller
+            control={control}
+            name="layoutApproval"
+            render={({ field }) => (
+              <TextField
+                select
+                label="LAYOUT APPROVAL TYPE"
+                id="layoutapproval-select"
+                {...field}
+                value={field.value || ""}
+                size="small"
+              >
+                {layoutApprovalType.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField>
+            )}
+          />
 
           <TextField
             id="outlined-select-currency"
@@ -1232,183 +1193,163 @@ export default function LayoutInfo() {
 
           <MuiInput label="WARD" {...register("ward")} />
           <MuiInput label="COLONY NAME" {...register("colonyName")} />
-          <>
-            <TextField
-              id="outlined-select-currency"
-              select
-              {...register("landUse")}
-              label="LAND USE"
-              size="small"
-              defaultvalue="Select"
-              InputLabelProps={{
-                style: {
-                  fontSize: "8pt",
-                },
-              }}
-            >
-              {landUseName.map((option) => (
-                <MenuItem key={option.value} value={option.value}>
-                  {option.label}
-                </MenuItem>
-              ))}
-            </TextField>
-            <TextField
-              id="outlined-select-currency"
-              select
-              {...register("buildingUse")}
-              label="BUILDING USE"
-              size="small"
-              defaultvalue=""
-              InputLabelProps={{
-                style: {
-                  fontSize: "8pt",
-                },
-              }}
-            >
-              {buildingUse.map((option) => (
-                <MenuItem key={option.value} value={option.value}>
-                  {option.label}
-                </MenuItem>
-              ))}
-            </TextField>
-            <TextField
-              id="outlined-select-currency"
-              select
-              {...register("landSubUse")}
-              label="LAND SUB USE"
-              size="small"
-              defaultvalue="Select"
-              InputLabelProps={{
-                style: {
-                  fontSize: "8pt",
-                },
-              }}
-            >
-              {landSubUse.map((option) => (
-                <MenuItem key={option.value} value={option.value}>
-                  {option.label}
-                </MenuItem>
-              ))}
-            </TextField>
+          <Controller
+            control={control}
+            name="landUse"
+            render={({ field }) => (
+              <TextField
+                select
+                label="LAND USE"
+                id="landuse-select"
+                {...field}
+                value={field.value || ""}
+                size="small"
+              >
+                {landUseName.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField>
+            )}
+          />
 
-            {/* <MuiInput label="APPROVAL NAME" />
-            <MuiInput label="LAYOUT" />
-            <MuiInput label="LAYOUT NUMBER" /> */}
-            <TextField
-              id="outlined-select-currency"
-              select
-              {...register("buildingActivity")}
-              label="BUILDING ACTIVITY"
-              size="small"
-              defaultvalue="SELECT BUILDING ACTIVITY"
-              InputLabelProps={{
-                style: {
-                  fontSize: "8pt",
-                },
-              }}
-            >
-              {buildingActivity.map((option) => (
-                <MenuItem
-                  tool
-                  className="cust"
-                  key={option.value}
-                  value={option.value}
+          <Controller
+            control={control}
+            name="buildingUse"
+            render={({ field }) => (
+              <TextField
+                select
+                label="Building Use"
+                id="building-select"
+                {...field}
+                value={field.value || ""}
+                size="small"
+              >
+                {buildingUse.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField>
+            )}
+          />
+
+          <Controller
+            control={control}
+            name="landSubUse"
+            render={({ field }) => (
+              <TextField
+                select
+                label="LAND SUB USE"
+                id="landsubuse-select"
+                {...field}
+                value={field.value || ""}
+                size="small"
+              >
+                {landSubUse.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField>
+            )}
+          />
+
+          <Controller
+            control={control}
+            name="buildingActivity"
+            render={({ field }) => (
+              <TextField
+                select
+                label="BUILDING ACTIVITY"
+                id="buildingactivity-select"
+                {...field}
+                value={field.value || ""}
+                size="small"
+              >
+                {buildingActivity.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField>
+            )}
+          />
+
+          <Controller
+            control={control}
+            name="typeOfBuilding"
+            render={({ field }) => (
+              <TextField
+                select
+                label="TYPE OF BUILDING"
+                id="typeofbuilding-select"
+                {...field}
+                value={field.value || ""}
+                size="small"
+              >
+                {typeOfBuilding.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField>
+            )}
+          />
+
+          <Controller
+            control={control}
+            name="typeOfConstruction"
+            render={({ field }) => (
+              <TextField
+                select
+                label="TYPE OF CONSTRUCTION"
+                id="typeofconstruction-select"
+                {...field}
+                value={field.value || ""}
+                size="small"
+              >
+                {typeOfConst.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField>
+            )}
+          />
+
+          <MuiInput label="PLOT NO" {...register("plotNo")} />
+          <FormControl className="flex">
+            <FormLabel className="text-sm" id="demo-radio-buttons-group-label">
+              Is Plot Irregular
+            </FormLabel>
+            <Controller
+              control={control}
+              name="isPlotIrregular"
+              render={({ field }) => (
+                <RadioGroup
+                  {...field}
+                  className="block"
+                  aria-labelledby="demo-radio-buttons-group-label"
+                  defaultValue={field.value || "Yes"}
                 >
-                  {option.label}
-                </MenuItem>
-              ))}
-            </TextField>
-            <TextField
-              id="outlined-select-currency"
-              select
-              {...register("typeOfBuilding")}
-              label="TYPE OF BUILDING"
-              size="small"
-              defaultvalue="Select"
-              InputLabelProps={{
-                style: {
-                  fontSize: "8pt",
-                },
-              }}
-            >
-              {typeOfBuilding.map((option) => (
-                <MenuItem key={option.value} value={option.value}>
-                  {option.label}
-                </MenuItem>
-              ))}
-            </TextField>
-
-            <TextField
-              id="outlined-select-currency"
-              select
-              {...register("typeOfConstruction")}
-              label="TYPE OF CONSTRUCTION"
-              size="small"
-              defaultvalue=""
-              InputLabelProps={{
-                style: {
-                  fontSize: "8pt",
-                },
-              }}
-            >
-              {typeOfConst.map((option) => (
-                <MenuItem key={option.value} value={option.value}>
-                  {option.label}
-                </MenuItem>
-              ))}
-            </TextField>
-            <MuiInput label="PLOT NO" {...register("plotNo")} />
-            <FormControl className="flex">
-              <FormLabel
-                className="text-sm"
-                id="demo-radio-buttons-group-label"
-              >
-                Is Plot Irregular
-              </FormLabel>
-              <RadioGroup
-                className="block"
-                aria-labelledby="  demo-radio-buttons-group-label"
-                defaultValue="Yes"
-                name="radio-buttons-group"
-              >
-                <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
-                <FormControlLabel value="NO" control={<Radio />} label="No" />
-              </RadioGroup>
-            </FormControl>
-
-            {/* <MuiInput label="PROPOSED BUILT UP AREA (SQM)" />
-            <MuiInput label="PROPOSED GROUND COVERAGE(%)" />
-            <MuiInput label="PROPOSED NO OF FLOORS (no's)" />
-            <MuiInput label="PROPOSED BUILDING HEIGHT (m)" />
-            <MuiInput label="TOTAL ESTIMATED COST" />
-            <MuiInput label="PROPOSED ROAD WIDTH" />
-            <MuiInput label="DESIGN TYPE" /> */}
-          </>
+                  <FormControlLabel
+                    value="Yes"
+                    control={<Radio />}
+                    label="Yes"
+                  />
+                  <FormControlLabel value="No" control={<Radio />} label="No" />
+                </RadioGroup>
+              )}
+            />
+          </FormControl>
         </div>
-        {/* <div className="flex m-5 gap-2">
-          <div
-            className={`py-2 px-2 rounded-md hover:bg-slate-500 hover:duration-700 bg-blue-500 text-white cursor-pointer`}
-            onClick={() => handleOpenModal()}
-          >
-            Client And Site Details
-          </div>
-          <div
-            className={`py-2 px-2 rounded-md hover:bg-slate-500 hover:duration-700 bg-blue-500 text-white cursor-pointer`}
-            onClick={() => handlePlotAreaModal()}
-          >
-            Plot Area Details
-          </div>
-          <div
-            className={`py-2 px-2 rounded-md hover:bg-slate-500 hover:duration-700 bg-blue-500 text-white cursor-pointer`}
-            onClick={() => handleExistingBuildingModal()}
-          >
-            Existing Details
-          </div>
-        </div> */}
-        <div className="flex justify-center">
-          <Button className="w-1/4" type="submit">
-            submit
+        <div className="flex justify-center items-center gap-2">
+          <Button type="button" onClick={() => handlePageChange()}>
+            Back
           </Button>
+          <Button type="submit">Save & Next</Button>
         </div>
       </form>
     </div>

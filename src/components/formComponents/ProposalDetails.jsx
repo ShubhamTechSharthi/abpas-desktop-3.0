@@ -1,18 +1,31 @@
 import MuiInput from "../MuiInput";
 import { useForm } from "react-hook-form";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { addFormData, nextPage, prevPage } from "../../store/formSlice";
+import Button from "../Button";
 
 export default function ProposalDetails() {
-  const { register, handleSubmit } = useForm();
+  const defaultData = useSelector((state) => state.form.formData);
+
+  const { register, handleSubmit, getValues } = useForm({
+    defaultValues: defaultData,
+  });
   const dispatch = useDispatch();
 
+  const handlePageChange = () => {
+    const values = getValues();
+    dispatch(addFormData(values));
+    dispatch(prevPage());
+  };
+
   const sendFormData = (data) => {
-    // console.log(data);
+    console.log(data);
     dispatch(addFormData(data));
+    dispatch(nextPage());
   };
   return (
-    <form onSubmit={handleSubmit(sendFormData)}>
-      <div className="border border-slate-50 grid grid-cols-4 gap-3 m-5 p-2">
+    <form onSubmit={handleSubmit(sendFormData)} className="m-5 p-2">
+      <div className="grid grid-cols-4 gap-3 bg-white border border-gray-200 rounded-lg shadow p-3">
         <MuiInput label="Plot Width(M)" {...register("plotWidth")} />
         <MuiInput
           label="Proposed Built-up Area"
@@ -58,29 +71,12 @@ export default function ProposalDetails() {
           label="Existing No. of Floors"
           {...register("existingNoOfFloor")}
         />
-        {/* <MuiInput label="Side2 M.O.S" />
-        <MuiInput label="Max. Permissible Ground Covraget" />
-        <MuiInput label="Max. Permissible Building Height" />
-        <MuiInput label="Max. Permissible Build Up Area(SQM)" />
-        <MuiInput label="Road Width(M)" />
-        <MuiInput label="Net Plot Area (SQM)" />
-        <MuiInput label=" Plot Frontage (M)" />
-
-        <MuiInput label=" Is EWS/LIG sanctioned on this plot" />
-        <MuiInput label=" Is plot irregular" />
-        <MuiInput label=" Is plot Mortgage" /> */}
-        <div className="flex gap-2">
-          <div
-            className={`p-3 rounded-md hover:bg-slate-500 hover:duration-700 bg-blue-500 text-white cursor-pointer`}
-          >
-            Add New
-          </div>
-          <div
-            className={`p-3 rounded-md hover:bg-slate-500 hover:duration-700 bg-green-500 text-white cursor-pointer`}
-          >
-            Save
-          </div>
-        </div>
+      </div>
+      <div className="mt-5 flex justify-center items-center gap-2">
+        <Button type="button" onClick={() => handlePageChange()}>
+          Back
+        </Button>
+        <Button type="submit">Save & Next</Button>
       </div>
     </form>
   );

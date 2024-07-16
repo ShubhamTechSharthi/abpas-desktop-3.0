@@ -24,7 +24,7 @@ const MuiInput = forwardRef(function MuiInput(
       {...props}
       InputLabelProps={{
         style: {
-          fontSize: "8pt",
+          fontSize: "11pt",
         },
       }}
     />

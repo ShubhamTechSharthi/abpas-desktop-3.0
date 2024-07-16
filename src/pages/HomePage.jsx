@@ -4,8 +4,9 @@ import MuiInput from "../components/MuiInput";
 import Button from "../components/Button";
 import ReactTableComponent from "../components/ReactTableComponent";
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import GeneratePdf from "../components/GeneratePdf";
+import { removeFormData } from "../store/formSlice";
 
 const tabledata = [
   {
@@ -64,7 +65,8 @@ const tablecolumns = [
 export default function HomePage() {
   const [filePath, setFilePath] = useState();
 
-  const finalData = useSelector((state) => state.form.formData.length);
+  const finalData = useSelector((state) => state.form.formData);
+  const dispatch = useDispatch();
 
   if (filePath) console.log(filePath);
 
@@ -109,7 +111,10 @@ export default function HomePage() {
           <div className="flex gap-2">
             <Button
               className="bg-blue-600"
-              onClick={() => navigate("/projectdetails")}
+              onClick={() => {
+                dispatch(removeFormData());
+                navigate("/projectdetails");
+              }}
             >
               new
             </Button>
@@ -118,9 +123,9 @@ export default function HomePage() {
                 save
               </Button>
             )}
-            {/* <Button onClick={() => showFinalData()} className="bg-red-600">
+            <Button onClick={() => showFinalData()} className="bg-red-600">
               Final Data
-            </Button> */}
+            </Button>
             {finalData > 0 && (
               <input
                 type="file"
