@@ -1,2068 +1,2069 @@
 const ulbies = [
     {
-        "id": "Sehore",
-        "divisionId": "Bhopal",
-        "label": "Astha"
+        "id": "Astha",
+        "districtId": "Sehore",
+        "name": "Astha"
     },
     {
-        "id": "Raisen",
-        "divisionId": "Bhopal",
-        "label": "Badi"
+        "id": "Badi",
+        "districtId": "Raisen",
+        "name": "Badi"
     },
     {
-        "id": "Raisen",
-        "divisionId": "Bhopal",
-        "label": "Bareli"
+        "id": "Bareli",
+        "districtId": "Raisen",
+        "name": "Bareli"
     },
     {
-        "id": "Raisen",
-        "divisionId": "Bhopal",
-        "label": "Begumganj"
+        "id": "Begumganj",
+        "districtId": "Raisen",
+        "name": "Begumganj"
+    },
+    {
+        "id": "Berasia",
+        "districtId": "Bhopal",
+        "name": "Berasia"
     },
     {
         "id": "Bhopal",
-        "divisionId": "Bhopal",
-        "label": "Berasia"
+        "districtId": "Bhopal",
+        "name": "Bhopal"
     },
     {
-        "id": "Bhopal",
-        "divisionId": "Bhopal",
-        "label": "Bhopal"
+        "id": "Biaora",
+        "districtId": "Rajgarh",
+        "name": "Biaora"
+    },
+    {
+        "id": "Boda",
+        "districtId": "Rajgarh",
+        "name": "Boda"
+    },
+    {
+        "id": "Budni",
+        "districtId": "Sehore",
+        "name": "Budni"
+    },
+    {
+        "id": "Chhapiheda",
+        "districtId": "Rajgarh",
+        "name": "Chhapiheda"
+    },
+    {
+        "id": "Devari (Raisen)",
+        "districtId": "Raisen",
+        "name": "Devari (Raisen)"
+    },
+    {
+        "id": "Gairatganj",
+        "districtId": "Raisen",
+        "name": "Gairatganj"
+    },
+    {
+        "id": "Ganjbasoda",
+        "districtId": "Vidisha",
+        "name": "Ganjbasoda"
+    },
+    {
+        "id": "Ichhawar",
+        "districtId": "Sehore",
+        "name": "Ichhawar"
+    },
+    {
+        "id": "Jawar",
+        "districtId": "Sehore",
+        "name": "Jawar"
+    },
+    {
+        "id": "Jirapur",
+        "districtId": "Rajgarh",
+        "name": "Jirapur"
+    },
+    {
+        "id": "Khilchipur",
+        "districtId": "Rajgarh",
+        "name": "Khilchipur"
+    },
+    {
+        "id": "Khujner",
+        "districtId": "Rajgarh",
+        "name": "Khujner"
+    },
+    {
+        "id": "Kothri",
+        "districtId": "Sehore",
+        "name": "Kothri"
+    },
+    {
+        "id": "Kurawar",
+        "districtId": "Rajgarh",
+        "name": "Kurawar"
+    },
+    {
+        "id": "Kurwai",
+        "districtId": "Vidisha",
+        "name": "Kurwai"
+    },
+    {
+        "id": "Lateri",
+        "districtId": "Vidisha",
+        "name": "Lateri"
+    },
+    {
+        "id": "Machalpur",
+        "districtId": "Rajgarh",
+        "name": "Machalpur"
+    },
+    {
+        "id": "Mandideep",
+        "districtId": "Raisen",
+        "name": "Mandideep"
+    },
+    {
+        "id": "Narsinghgarh",
+        "districtId": "Rajgarh",
+        "name": "Narsinghgarh"
+    },
+    {
+        "id": "Nasrullaganj",
+        "districtId": "Sehore",
+        "name": "Nasrullaganj"
+    },
+    {
+        "id": "Obedullaganj",
+        "districtId": "Raisen",
+        "name": "Obedullaganj"
+    },
+    {
+        "id": "Pachore",
+        "districtId": "Rajgarh",
+        "name": "Pachore"
+    },
+    {
+        "id": "Raisen",
+        "districtId": "Raisen",
+        "name": "Raisen"
     },
     {
         "id": "Rajgarh",
-        "divisionId": "Bhopal",
-        "label": "Biaora"
+        "districtId": "Rajgarh",
+        "name": "Rajgarh"
     },
     {
-        "id": "Rajgarh",
-        "divisionId": "Bhopal",
-        "label": "Boda"
+        "id": "Rehti",
+        "districtId": "Sehore",
+        "name": "Rehti"
+    },
+    {
+        "id": "Samsabad",
+        "districtId": "Vidisha",
+        "name": "Samsabad"
+    },
+    {
+        "id": "Sanchi",
+        "districtId": "Raisen",
+        "name": "Sanchi"
+    },
+    {
+        "id": "Sarangpur",
+        "districtId": "Rajgarh",
+        "name": "Sarangpur"
     },
     {
         "id": "Sehore",
-        "divisionId": "Bhopal",
-        "label": "Budni"
+        "districtId": "Sehore",
+        "name": "Sehore"
     },
     {
-        "id": "Rajgarh",
-        "divisionId": "Bhopal",
-        "label": "Chhapiheda"
+        "id": "Shahganj",
+        "districtId": "Sehore",
+        "name": "Shahganj"
     },
     {
-        "id": "Raisen",
-        "divisionId": "Bhopal",
-        "label": "Devari (Raisen)"
+        "id": "Silwani",
+        "districtId": "Raisen",
+        "name": "Silwani"
     },
     {
-        "id": "Raisen",
-        "divisionId": "Bhopal",
-        "label": "Gairatganj"
+        "id": "Sironj",
+        "districtId": "Vidisha",
+        "name": "Sironj"
+    },
+    {
+        "id": "Sultanpur",
+        "districtId": "Raisen",
+        "name": "Sultanpur"
+    },
+    {
+        "id": "Suthaliya",
+        "districtId": "Rajgarh",
+        "name": "Suthaliya"
+    },
+    {
+        "id": "Talen",
+        "districtId": "Rajgarh",
+        "name": "Talen"
+    },
+    {
+        "id": "Udaipura",
+        "districtId": "Raisen",
+        "name": "Udaipura"
     },
     {
         "id": "Vidisha",
-        "divisionId": "Bhopal",
-        "label": "Ganjbasoda"
+        "districtId": "Vidisha",
+        "name": "Vidisha"
     },
     {
-        "id": "Sehore",
-        "divisionId": "Bhopal",
-        "label": "Ichhawar"
+        "id": "Akoda",
+        "districtId": "Bhind",
+        "name": "Akoda"
     },
     {
-        "id": "Sehore",
-        "divisionId": "Bhopal",
-        "label": "Jawar"
+        "id": "Alampur",
+        "districtId": "Bhind",
+        "name": "Alampur"
     },
     {
-        "id": "Rajgarh",
-        "divisionId": "Bhopal",
-        "label": "Jirapur"
+        "id": "Ambah",
+        "districtId": "Morena",
+        "name": "Ambah"
     },
     {
-        "id": "Rajgarh",
-        "divisionId": "Bhopal",
-        "label": "Khilchipur"
+        "id": "Banmore",
+        "districtId": "Morena",
+        "name": "Banmore"
     },
     {
-        "id": "Rajgarh",
-        "divisionId": "Bhopal",
-        "label": "Khujner"
-    },
-    {
-        "id": "Sehore",
-        "divisionId": "Bhopal",
-        "label": "Kothri"
-    },
-    {
-        "id": "Rajgarh",
-        "divisionId": "Bhopal",
-        "label": "Kurawar"
-    },
-    {
-        "id": "Vidisha",
-        "divisionId": "Bhopal",
-        "label": "Kurwai"
-    },
-    {
-        "id": "Vidisha",
-        "divisionId": "Bhopal",
-        "label": "Lateri"
-    },
-    {
-        "id": "Rajgarh",
-        "divisionId": "Bhopal",
-        "label": "Machalpur"
-    },
-    {
-        "id": "Raisen",
-        "divisionId": "Bhopal",
-        "label": "Mandideep"
-    },
-    {
-        "id": "Rajgarh",
-        "divisionId": "Bhopal",
-        "label": "Narsinghgarh"
-    },
-    {
-        "id": "Sehore",
-        "divisionId": "Bhopal",
-        "label": "Nasrullaganj"
-    },
-    {
-        "id": "Raisen",
-        "divisionId": "Bhopal",
-        "label": "Obedullaganj"
-    },
-    {
-        "id": "Rajgarh",
-        "divisionId": "Bhopal",
-        "label": "Pachore"
-    },
-    {
-        "id": "Raisen",
-        "divisionId": "Bhopal",
-        "label": "Raisen"
-    },
-    {
-        "id": "Rajgarh",
-        "divisionId": "Bhopal",
-        "label": "Rajgarh"
-    },
-    {
-        "id": "Sehore",
-        "divisionId": "Bhopal",
-        "label": "Rehti"
-    },
-    {
-        "id": "Vidisha",
-        "divisionId": "Bhopal",
-        "label": "Samsabad"
-    },
-    {
-        "id": "Raisen",
-        "divisionId": "Bhopal",
-        "label": "Sanchi"
-    },
-    {
-        "id": "Rajgarh",
-        "divisionId": "Bhopal",
-        "label": "Sarangpur"
-    },
-    {
-        "id": "Sehore",
-        "divisionId": "Bhopal",
-        "label": "Sehore"
-    },
-    {
-        "id": "Sehore",
-        "divisionId": "Bhopal",
-        "label": "Shahganj"
-    },
-    {
-        "id": "Raisen",
-        "divisionId": "Bhopal",
-        "label": "Silwani"
-    },
-    {
-        "id": "Vidisha",
-        "divisionId": "Bhopal",
-        "label": "Sironj"
-    },
-    {
-        "id": "Raisen",
-        "divisionId": "Bhopal",
-        "label": "Sultanpur"
-    },
-    {
-        "id": "Rajgarh",
-        "divisionId": "Bhopal",
-        "label": "Suthaliya"
-    },
-    {
-        "id": "Rajgarh",
-        "divisionId": "Bhopal",
-        "label": "Talen"
-    },
-    {
-        "id": "Raisen",
-        "divisionId": "Bhopal",
-        "label": "Udaipura"
-    },
-    {
-        "id": "Vidisha",
-        "divisionId": "Bhopal",
-        "label": "Vidisha"
+        "id": "Baroda",
+        "districtId": "Sheopur Kalan",
+        "name": "Baroda"
     },
     {
         "id": "Bhind",
-        "divisionId": "Chambal",
-        "label": "Akoda"
+        "districtId": "Bhind",
+        "name": "Bhind"
     },
     {
-        "id": "Bhind",
-        "divisionId": "Chambal",
-        "label": "Alampur"
+        "id": "Daboh",
+        "districtId": "Bhind",
+        "name": "Daboh"
+    },
+    {
+        "id": "Gohad",
+        "districtId": "Bhind",
+        "name": "Gohad"
+    },
+    {
+        "id": "Gormi",
+        "districtId": "Bhind",
+        "name": "Gormi"
+    },
+    {
+        "id": "Jaura",
+        "districtId": "Morena",
+        "name": "Jaura"
+    },
+    {
+        "id": "Jhundpura",
+        "districtId": "Morena",
+        "name": "Jhundpura"
+    },
+    {
+        "id": "Kailaras",
+        "districtId": "Morena",
+        "name": "Kailaras"
+    },
+    {
+        "id": "Lahaar",
+        "districtId": "Bhind",
+        "name": "Lahaar"
+    },
+    {
+        "id": "Malanpur",
+        "districtId": "Bhind",
+        "name": "Malanpur"
+    },
+    {
+        "id": "Mau",
+        "districtId": "Bhind",
+        "name": "Mau"
+    },
+    {
+        "id": "Mehgaon",
+        "districtId": "Bhind",
+        "name": "Mehgaon"
+    },
+    {
+        "id": "Mihona",
+        "districtId": "Bhind",
+        "name": "Mihona"
     },
     {
         "id": "Morena",
-        "divisionId": "Chambal",
-        "label": "Ambah"
+        "districtId": "Morena",
+        "name": "Morena"
     },
     {
-        "id": "Morena",
-        "divisionId": "Chambal",
-        "label": "Banmore"
+        "id": "Phuphkalan",
+        "districtId": "Bhind",
+        "name": "Phuphkalan"
+    },
+    {
+        "id": "Porsa",
+        "districtId": "Morena",
+        "name": "Porsa"
+    },
+    {
+        "id": "Ron",
+        "districtId": "Bhind",
+        "name": "Ron"
+    },
+    {
+        "id": "Sabalgarh",
+        "districtId": "Morena",
+        "name": "Sabalgarh"
     },
     {
         "id": "Sheopur Kalan",
-        "divisionId": "Chambal",
-        "label": "Baroda"
+        "districtId": "Sheopur Kalan",
+        "name": "Sheopur Kalan"
     },
     {
-        "id": "Bhind",
-        "divisionId": "Chambal",
-        "label": "Bhind"
+        "id": "Vijaypur",
+        "districtId": "Sheopur Kalan",
+        "name": "Vijaypur"
     },
     {
-        "id": "Bhind",
-        "divisionId": "Chambal",
-        "label": "Daboh"
+        "id": "Antari",
+        "districtId": "Gwalior",
+        "name": "Antari"
     },
     {
-        "id": "Bhind",
-        "divisionId": "Chambal",
-        "label": "Gohad"
+        "id": "Aron",
+        "districtId": "Guna",
+        "name": "Aron"
     },
     {
-        "id": "Bhind",
-        "divisionId": "Chambal",
-        "label": "Gormi"
+        "id": "Ashoknagar",
+        "districtId": "Ashok Nagar",
+        "name": "Ashoknagar"
     },
     {
-        "id": "Morena",
-        "divisionId": "Chambal",
-        "label": "Jaura"
+        "id": "Badarwas",
+        "districtId": "Shivpuri",
+        "name": "Badarwas"
     },
     {
-        "id": "Morena",
-        "divisionId": "Chambal",
-        "label": "Jhundpura"
+        "id": "Badoni",
+        "districtId": "Datia",
+        "name": "Badoni"
     },
     {
-        "id": "Morena",
-        "divisionId": "Chambal",
-        "label": "Kailaras"
+        "id": "Bairad",
+        "districtId": "Shivpuri",
+        "name": "Bairad"
     },
     {
-        "id": "Bhind",
-        "divisionId": "Chambal",
-        "label": "Lahaar"
+        "id": "Bhander",
+        "districtId": "Datia",
+        "name": "Bhander"
     },
     {
-        "id": "Bhind",
-        "divisionId": "Chambal",
-        "label": "Malanpur"
+        "id": "Bhitarwar",
+        "districtId": "Gwalior",
+        "name": "Bhitarwar"
     },
     {
-        "id": "Bhind",
-        "divisionId": "Chambal",
-        "label": "Mau"
+        "id": "Billowa",
+        "districtId": "Gwalior",
+        "name": "Billowa"
     },
     {
-        "id": "Bhind",
-        "divisionId": "Chambal",
-        "label": "Mehgaon"
+        "id": "Chachaura Binaganj",
+        "districtId": "Guna",
+        "name": "Chachaura Binaganj"
     },
     {
-        "id": "Bhind",
-        "divisionId": "Chambal",
-        "label": "Mihona"
+        "id": "Chanderi",
+        "districtId": "Ashok Nagar",
+        "name": "Chanderi"
     },
     {
-        "id": "Morena",
-        "divisionId": "Chambal",
-        "label": "Morena"
-    },
-    {
-        "id": "Bhind",
-        "divisionId": "Chambal",
-        "label": "Phuphkalan"
-    },
-    {
-        "id": "Morena",
-        "divisionId": "Chambal",
-        "label": "Porsa"
-    },
-    {
-        "id": "Bhind",
-        "divisionId": "Chambal",
-        "label": "Ron"
-    },
-    {
-        "id": "Morena",
-        "divisionId": "Chambal",
-        "label": "Sabalgarh"
-    },
-    {
-        "id": "Sheopur Kalan",
-        "divisionId": "Chambal",
-        "label": "Sheopur Kalan"
-    },
-    {
-        "id": "Sheopur Kalan",
-        "divisionId": "Chambal",
-        "label": "Vijaypur"
-    },
-    {
-        "id": "Gwalior",
-        "divisionId": "Gwalior",
-        "label": "Antari"
-    },
-    {
-        "id": "Guna",
-        "divisionId": "Gwalior",
-        "label": "Aron"
-    },
-    {
-        "id": "Ashok Nagar",
-        "divisionId": "Gwalior",
-        "label": "Ashoknagar"
-    },
-    {
-        "id": "Shivpuri",
-        "divisionId": "Gwalior",
-        "label": "Badarwas"
+        "id": "Dabra",
+        "districtId": "Gwalior",
+        "name": "Dabra"
     },
     {
         "id": "Datia",
-        "divisionId": "Gwalior",
-        "label": "Badoni"
-    },
-    {
-        "id": "Shivpuri",
-        "divisionId": "Gwalior",
-        "label": "Bairad"
-    },
-    {
-        "id": "Datia",
-        "divisionId": "Gwalior",
-        "label": "Bhander"
-    },
-    {
-        "id": "Gwalior",
-        "divisionId": "Gwalior",
-        "label": "Bhitarwar"
-    },
-    {
-        "id": "Gwalior",
-        "divisionId": "Gwalior",
-        "label": "Billowa"
+        "districtId": "Datia",
+        "name": "Datia"
     },
     {
         "id": "Guna",
-        "divisionId": "Gwalior",
-        "label": "Chachaura Binaganj"
-    },
-    {
-        "id": "Ashok Nagar",
-        "divisionId": "Gwalior",
-        "label": "Chanderi"
+        "districtId": "Guna",
+        "name": "Guna"
     },
     {
         "id": "Gwalior",
-        "divisionId": "Gwalior",
-        "label": "Dabra"
+        "districtId": "Gwalior",
+        "name": "Gwalior"
     },
     {
-        "id": "Datia",
-        "divisionId": "Gwalior",
-        "label": "Datia"
+        "id": "Indergarh",
+        "districtId": "Datia",
+        "name": "Indergarh"
     },
     {
-        "id": "Guna",
-        "divisionId": "Gwalior",
-        "label": "Guna"
+        "id": "Isagarh",
+        "districtId": "Ashok Nagar",
+        "name": "Isagarh"
     },
     {
-        "id": "Gwalior",
-        "divisionId": "Gwalior",
-        "label": "Gwalior"
+        "id": "Karera",
+        "districtId": "Shivpuri",
+        "name": "Karera"
     },
     {
-        "id": "Datia",
-        "divisionId": "Gwalior",
-        "label": "Indergarh"
+        "id": "Khaniadhana",
+        "districtId": "Shivpuri",
+        "name": "Khaniadhana"
     },
     {
-        "id": "Ashok Nagar",
-        "divisionId": "Gwalior",
-        "label": "Isagarh"
+        "id": "Kolaras",
+        "districtId": "Shivpuri",
+        "name": "Kolaras"
     },
     {
-        "id": "Shivpuri",
-        "divisionId": "Gwalior",
-        "label": "Karera"
+        "id": "Kumbhraj",
+        "districtId": "Guna",
+        "name": "Kumbhraj"
     },
     {
-        "id": "Shivpuri",
-        "divisionId": "Gwalior",
-        "label": "Khaniadhana"
+        "id": "Madhusudangarh",
+        "districtId": "Guna",
+        "name": "Madhusudangarh"
     },
     {
-        "id": "Shivpuri",
-        "divisionId": "Gwalior",
-        "label": "Kolaras"
+        "id": "Magroni",
+        "districtId": "Shivpuri",
+        "name": "Magroni"
     },
     {
-        "id": "Guna",
-        "divisionId": "Gwalior",
-        "label": "Kumbhraj"
+        "id": "Mohna",
+        "districtId": "Gwalior",
+        "name": "Mohna"
     },
     {
-        "id": "Guna",
-        "divisionId": "Gwalior",
-        "label": "Madhusudangarh"
+        "id": "Mungaoli",
+        "districtId": "Ashok Nagar",
+        "name": "Mungaoli"
     },
     {
-        "id": "Shivpuri",
-        "divisionId": "Gwalior",
-        "label": "Magroni"
+        "id": "Narwar",
+        "districtId": "Shivpuri",
+        "name": "Narwar"
     },
     {
-        "id": "Gwalior",
-        "divisionId": "Gwalior",
-        "label": "Mohna"
+        "id": "Pichhore",
+        "districtId": "Gwalior",
+        "name": "Pichhore"
     },
     {
-        "id": "Ashok Nagar",
-        "divisionId": "Gwalior",
-        "label": "Mungaoli"
+        "id": "Pichor (Shivpuri)",
+        "districtId": "Shivpuri",
+        "name": "Pichor (Shivpuri)"
     },
     {
-        "id": "Shivpuri",
-        "divisionId": "Gwalior",
-        "label": "Narwar"
+        "id": "Piprai",
+        "districtId": "Ashok Nagar",
+        "name": "Piprai"
     },
     {
-        "id": "Gwalior",
-        "divisionId": "Gwalior",
-        "label": "Pichhore"
+        "id": "Pohri",
+        "districtId": "Shivpuri",
+        "name": "Pohri"
     },
     {
-        "id": "Shivpuri",
-        "divisionId": "Gwalior",
-        "label": "Pichor (Shivpuri)"
+        "id": "Raghogarh",
+        "districtId": "Guna",
+        "name": "Raghogarh"
     },
     {
-        "id": "Ashok Nagar",
-        "divisionId": "Gwalior",
-        "label": "Piprai"
+        "id": "Rannod",
+        "districtId": "Shivpuri",
+        "name": "Rannod"
     },
     {
-        "id": "Shivpuri",
-        "divisionId": "Gwalior",
-        "label": "Pohri"
+        "id": "Sewda",
+        "districtId": "Datia",
+        "name": "Sewda"
     },
     {
-        "id": "Guna",
-        "divisionId": "Gwalior",
-        "label": "Raghogarh"
-    },
-    {
-        "id": "Shivpuri",
-        "divisionId": "Gwalior",
-        "label": "Rannod"
-    },
-    {
-        "id": "Datia",
-        "divisionId": "Gwalior",
-        "label": "Sewda"
-    },
-    {
-        "id": "Ashok Nagar",
-        "divisionId": "Gwalior",
-        "label": "Shadora"
+        "id": "Shadora",
+        "districtId": "Ashok Nagar",
+        "name": "Shadora"
     },
     {
         "id": "Shivpuri",
-        "divisionId": "Gwalior",
-        "label": "Shivpuri"
+        "districtId": "Shivpuri",
+        "name": "Shivpuri"
     },
     {
         "id": "Alirajpur",
-        "divisionId": "Indore",
-        "label": "Alirajpur"
+        "districtId": "Alirajpur",
+        "name": "Alirajpur"
+    },
+    {
+        "id": "Anjad",
+        "districtId": "Barwani",
+        "name": "Anjad"
+    },
+    {
+        "id": "Badnavar",
+        "districtId": "Dhar",
+        "name": "Badnavar"
+    },
+    {
+        "id": "Badwah",
+        "districtId": "Khargone",
+        "name": "Badwah"
     },
     {
         "id": "Barwani",
-        "divisionId": "Indore",
-        "label": "Anjad"
+        "districtId": "Barwani",
+        "name": "Barwani"
     },
     {
-        "id": "Dhar",
-        "divisionId": "Indore",
-        "label": "Badnavar"
+        "id": "Betma",
+        "districtId": "Indore",
+        "name": "Betma"
     },
     {
-        "id": "Khargone",
-        "divisionId": "Indore",
-        "label": "Badwah"
+        "id": "Bhikangaon",
+        "districtId": "Khargone",
+        "name": "Bhikangaon"
     },
     {
-        "id": "Barwani",
-        "divisionId": "Indore",
-        "label": "Barwani"
-    },
-    {
-        "id": "Indore",
-        "divisionId": "Indore",
-        "label": "Betma"
-    },
-    {
-        "id": "Khargone",
-        "divisionId": "Indore",
-        "label": "Bhikangaon"
-    },
-    {
-        "id": "Khargone",
-        "divisionId": "Indore",
-        "label": "Biston"
+        "id": "Biston",
+        "districtId": "Khargone",
+        "name": "Biston"
     },
     {
         "id": "Burhanpur",
-        "divisionId": "Indore",
-        "label": "Burhanpur"
+        "districtId": "Burhanpur",
+        "name": "Burhanpur"
     },
     {
-        "id": "Alirajpur",
-        "divisionId": "Indore",
-        "label": "Chandra Shekhar Azad Nagar"
+        "id": "Chandra Shekhar Azad Nagar",
+        "districtId": "Alirajpur",
+        "name": "Chandra Shekhar Azad Nagar"
     },
     {
-        "id": "Dhar",
-        "divisionId": "Indore",
-        "label": "Dahi"
+        "id": "Dahi",
+        "districtId": "Dhar",
+        "name": "Dahi"
     },
     {
-        "id": "Indore",
-        "divisionId": "Indore",
-        "label": "Depalpur"
+        "id": "Depalpur",
+        "districtId": "Indore",
+        "name": "Depalpur"
     },
     {
-        "id": "Dhar",
-        "divisionId": "Indore",
-        "label": "Dhamnod (Dhar)"
-    },
-    {
-        "id": "Dhar",
-        "divisionId": "Indore",
-        "label": "Dhar"
+        "id": "Dhamnod (Dhar)",
+        "districtId": "Dhar",
+        "name": "Dhamnod (Dhar)"
     },
     {
         "id": "Dhar",
-        "divisionId": "Indore",
-        "label": "Dharampuri"
+        "districtId": "Dhar",
+        "name": "Dhar"
+    },
+    {
+        "id": "Dharampuri",
+        "districtId": "Dhar",
+        "name": "Dharampuri"
+    },
+    {
+        "id": "Gautampura",
+        "districtId": "Indore",
+        "name": "Gautampura"
+    },
+    {
+        "id": "Hatod",
+        "districtId": "Indore",
+        "name": "Hatod"
     },
     {
         "id": "Indore",
-        "divisionId": "Indore",
-        "label": "Gautampura"
-    },
-    {
-        "id": "Indore",
-        "divisionId": "Indore",
-        "label": "Hatod"
-    },
-    {
-        "id": "Indore",
-        "divisionId": "Indore",
-        "label": "Indore"
+        "districtId": "Indore",
+        "name": "Indore"
     },
     {
         "id": "Jhabua",
-        "divisionId": "Indore",
-        "label": "Jhabua"
+        "districtId": "Jhabua",
+        "name": "Jhabua"
     },
     {
-        "id": "Alirajpur",
-        "divisionId": "Indore",
-        "label": "Jobat"
+        "id": "Jobat",
+        "districtId": "Alirajpur",
+        "name": "Jobat"
     },
     {
-        "id": "Khargone",
-        "divisionId": "Indore",
-        "label": "Karhi Padlya Khurd"
+        "id": "Karhi Padlya Khurd",
+        "districtId": "Khargone",
+        "name": "Karhi Padlya Khurd"
     },
     {
-        "id": "Khargone",
-        "divisionId": "Indore",
-        "label": "Kasrawad"
-    },
-    {
-        "id": "Khandwa",
-        "divisionId": "Indore",
-        "label": "Khandwa"
-    },
-    {
-        "id": "Khargone",
-        "divisionId": "Indore",
-        "label": "Khargone"
-    },
-    {
-        "id": "Barwani",
-        "divisionId": "Indore",
-        "label": "Khetiya"
-    },
-    {
-        "id": "Dhar",
-        "divisionId": "Indore",
-        "label": "Kukshi"
-    },
-    {
-        "id": "Khargone",
-        "divisionId": "Indore",
-        "label": "Maheshwar"
-    },
-    {
-        "id": "Indore",
-        "divisionId": "Indore",
-        "label": "Mahugaon"
-    },
-    {
-        "id": "Dhar",
-        "divisionId": "Indore",
-        "label": "Manawar"
-    },
-    {
-        "id": "Dhar",
-        "divisionId": "Indore",
-        "label": "Mandav"
-    },
-    {
-        "id": "Khargone",
-        "divisionId": "Indore",
-        "label": "Mandleshwar"
-    },
-    {
-        "id": "Indore",
-        "divisionId": "Indore",
-        "label": "Manpur"
-    },
-    {
-        "id": "Jhabua",
-        "divisionId": "Indore",
-        "label": "Meghnagar"
+        "id": "Kasrawad",
+        "districtId": "Khargone",
+        "name": "Kasrawad"
     },
     {
         "id": "Khandwa",
-        "divisionId": "Indore",
-        "label": "Mundi"
-    },
-    {
-        "id": "Burhanpur",
-        "divisionId": "Indore",
-        "label": "Nepnagar"
-    },
-    {
-        "id": "Khandwa",
-        "divisionId": "Indore",
-        "label": "New Harsud (Chanera)"
-    },
-    {
-        "id": "Barwani",
-        "divisionId": "Indore",
-        "label": "Niwali Bujurg"
-    },
-    {
-        "id": "Khandwa",
-        "divisionId": "Indore",
-        "label": "Omkareshwar"
-    },
-    {
-        "id": "Barwani",
-        "divisionId": "Indore",
-        "label": "Palsud"
-    },
-    {
-        "id": "Khandwa",
-        "divisionId": "Indore",
-        "label": "Pandhana"
-    },
-    {
-        "id": "Barwani",
-        "divisionId": "Indore",
-        "label": "Pansemal"
-    },
-    {
-        "id": "Jhabua",
-        "divisionId": "Indore",
-        "label": "Petlawad"
-    },
-    {
-        "id": "Dhar",
-        "divisionId": "Indore",
-        "label": "Pithampur"
-    },
-    {
-        "id": "Khandwa",
-        "divisionId": "Indore",
-        "label": "Punasa"
-    },
-    {
-        "id": "Dhar",
-        "divisionId": "Indore",
-        "label": "Rajgarh (Dhar)"
-    },
-    {
-        "id": "Barwani",
-        "divisionId": "Indore",
-        "label": "Rajpur"
-    },
-    {
-        "id": "Jhabua",
-        "divisionId": "Indore",
-        "label": "Ranapur"
-    },
-    {
-        "id": "Indore",
-        "divisionId": "Indore",
-        "label": "Rau"
+        "districtId": "Khandwa",
+        "name": "Khandwa"
     },
     {
         "id": "Khargone",
-        "divisionId": "Indore",
-        "label": "Sanavad"
+        "districtId": "Khargone",
+        "name": "Khargone"
     },
     {
-        "id": "Indore",
-        "divisionId": "Indore",
-        "label": "Sanwer"
+        "id": "Khetiya",
+        "districtId": "Barwani",
+        "name": "Khetiya"
     },
     {
-        "id": "Dhar",
-        "divisionId": "Indore",
-        "label": "Sardarpur"
+        "id": "Kukshi",
+        "districtId": "Dhar",
+        "name": "Kukshi"
     },
     {
-        "id": "Barwani",
-        "divisionId": "Indore",
-        "label": "Sendhwa"
+        "id": "Maheshwar",
+        "districtId": "Khargone",
+        "name": "Maheshwar"
     },
     {
-        "id": "Burhanpur",
-        "divisionId": "Indore",
-        "label": "Shahpur (Burhanpur)"
+        "id": "Mahugaon",
+        "districtId": "Indore",
+        "name": "Mahugaon"
     },
     {
-        "id": "Jhabua",
-        "divisionId": "Indore",
-        "label": "Thandla"
+        "id": "Manawar",
+        "districtId": "Dhar",
+        "name": "Manawar"
     },
     {
-        "id": "Barwani",
-        "divisionId": "Indore",
-        "label": "Thikari"
+        "id": "Mandav",
+        "districtId": "Dhar",
+        "name": "Mandav"
     },
     {
-        "id": "Chhindwara",
-        "divisionId": "Jabalpur",
-        "label": "Amarwara"
+        "id": "Mandleshwar",
+        "districtId": "Khargone",
+        "name": "Mandleshwar"
+    },
+    {
+        "id": "Manpur",
+        "districtId": "Indore",
+        "name": "Manpur"
+    },
+    {
+        "id": "Meghnagar",
+        "districtId": "Jhabua",
+        "name": "Meghnagar"
+    },
+    {
+        "id": "Mundi",
+        "districtId": "Khandwa",
+        "name": "Mundi"
+    },
+    {
+        "id": "Nepnagar",
+        "districtId": "Burhanpur",
+        "name": "Nepnagar"
+    },
+    {
+        "id": "New Harsud (Chanera)",
+        "districtId": "Khandwa",
+        "name": "New Harsud (Chanera)"
+    },
+    {
+        "id": "Niwali Bujurg",
+        "districtId": "Barwani",
+        "name": "Niwali Bujurg"
+    },
+    {
+        "id": "Omkareshwar",
+        "districtId": "Khandwa",
+        "name": "Omkareshwar"
+    },
+    {
+        "id": "Palsud",
+        "districtId": "Barwani",
+        "name": "Palsud"
+    },
+    {
+        "id": "Pandhana",
+        "districtId": "Khandwa",
+        "name": "Pandhana"
+    },
+    {
+        "id": "Pansemal",
+        "districtId": "Barwani",
+        "name": "Pansemal"
+    },
+    {
+        "id": "Petlawad",
+        "districtId": "Jhabua",
+        "name": "Petlawad"
+    },
+    {
+        "id": "Pithampur",
+        "districtId": "Dhar",
+        "name": "Pithampur"
+    },
+    {
+        "id": "Punasa",
+        "districtId": "Khandwa",
+        "name": "Punasa"
+    },
+    {
+        "id": "Rajgarh (Dhar)",
+        "districtId": "Dhar",
+        "name": "Rajgarh (Dhar)"
+    },
+    {
+        "id": "Rajpur",
+        "districtId": "Barwani",
+        "name": "Rajpur"
+    },
+    {
+        "id": "Ranapur",
+        "districtId": "Jhabua",
+        "name": "Ranapur"
+    },
+    {
+        "id": "Rau",
+        "districtId": "Indore",
+        "name": "Rau"
+    },
+    {
+        "id": "Sanavad",
+        "districtId": "Khargone",
+        "name": "Sanavad"
+    },
+    {
+        "id": "Sanwer",
+        "districtId": "Indore",
+        "name": "Sanwer"
+    },
+    {
+        "id": "Sardarpur",
+        "districtId": "Dhar",
+        "name": "Sardarpur"
+    },
+    {
+        "id": "Sendhwa",
+        "districtId": "Barwani",
+        "name": "Sendhwa"
+    },
+    {
+        "id": "Shahpur (Burhanpur)",
+        "districtId": "Burhanpur",
+        "name": "Shahpur (Burhanpur)"
+    },
+    {
+        "id": "Thandla",
+        "districtId": "Jhabua",
+        "name": "Thandla"
+    },
+    {
+        "id": "Thikari",
+        "districtId": "Barwani",
+        "name": "Thikari"
+    },
+    {
+        "id": "Amarwara",
+        "districtId": "Chhindwara",
+        "name": "Amarwara"
+    },
+    {
+        "id": "Baiher",
+        "districtId": "Balaghat",
+        "name": "Baiher"
     },
     {
         "id": "Balaghat",
-        "divisionId": "Jabalpur",
-        "label": "Baiher"
+        "districtId": "Balaghat",
+        "name": "Balaghat"
     },
     {
-        "id": "Balaghat",
-        "divisionId": "Jabalpur",
-        "label": "Balaghat"
+        "id": "Bamhani Banjar",
+        "districtId": "Mandla",
+        "name": "Bamhani Banjar"
     },
     {
-        "id": "Mandla",
-        "divisionId": "Jabalpur",
-        "label": "Bamhani Banjar"
+        "id": "Barela",
+        "districtId": "Jabalpur",
+        "name": "Barela"
     },
     {
-        "id": "Jabalpur",
-        "divisionId": "Jabalpur",
-        "label": "Barela"
+        "id": "Barghat",
+        "districtId": "Seoni",
+        "name": "Barghat"
     },
     {
-        "id": "Seoni",
-        "divisionId": "Jabalpur",
-        "label": "Barghat"
+        "id": "Barhi",
+        "districtId": "Katni",
+        "name": "Barhi"
     },
     {
-        "id": "Katni",
-        "divisionId": "Jabalpur",
-        "label": "Barhi"
+        "id": "Barkuhi",
+        "districtId": "Chhindwara",
+        "name": "Barkuhi"
     },
     {
-        "id": "Chhindwara",
-        "divisionId": "Jabalpur",
-        "label": "Barkuhi"
+        "id": "Bhedaghat",
+        "districtId": "Jabalpur",
+        "name": "Bhedaghat"
     },
     {
-        "id": "Jabalpur",
-        "divisionId": "Jabalpur",
-        "label": "Bhedaghat"
+        "id": "Bichhiya",
+        "districtId": "Mandla",
+        "name": "Bichhiya"
     },
     {
-        "id": "Mandla",
-        "divisionId": "Jabalpur",
-        "label": "Bichhiya"
+        "id": "Bichhua",
+        "districtId": "Chhindwara",
+        "name": "Bichhua"
     },
     {
-        "id": "Chhindwara",
-        "divisionId": "Jabalpur",
-        "label": "Bichhua"
+        "id": "Chand",
+        "districtId": "Chhindwara",
+        "name": "Chand"
     },
     {
-        "id": "Chhindwara",
-        "divisionId": "Jabalpur",
-        "label": "Chand"
+        "id": "Chandameta-Butaria",
+        "districtId": "Chhindwara",
+        "name": "Chandameta-Butaria"
     },
     {
-        "id": "Chhindwara",
-        "divisionId": "Jabalpur",
-        "label": "Chandameta-Butaria"
-    },
-    {
-        "id": "Seoni",
-        "divisionId": "Jabalpur",
-        "label": "Chhapara"
+        "id": "Chhapara",
+        "districtId": "Seoni",
+        "name": "Chhapara"
     },
     {
         "id": "Chhindwara",
-        "divisionId": "Jabalpur",
-        "label": "Chhindwara"
+        "districtId": "Chhindwara",
+        "name": "Chhindwara"
     },
     {
-        "id": "Narsinghpur",
-        "divisionId": "Jabalpur",
-        "label": "Chichli"
+        "id": "Chichli",
+        "districtId": "Narsinghpur",
+        "name": "Chichli"
     },
     {
-        "id": "Chhindwara",
-        "divisionId": "Jabalpur",
-        "label": "Chourai"
+        "id": "Chourai",
+        "districtId": "Chhindwara",
+        "name": "Chourai"
     },
     {
-        "id": "Chhindwara",
-        "divisionId": "Jabalpur",
-        "label": "Damua"
+        "id": "Damua",
+        "districtId": "Chhindwara",
+        "name": "Damua"
     },
     {
         "id": "Dindori",
-        "divisionId": "Jabalpur",
-        "label": "Dindori"
+        "districtId": "Dindori",
+        "name": "Dindori"
     },
     {
-        "id": "Chhindwara",
-        "divisionId": "Jabalpur",
-        "label": "Dongar Parasia"
+        "id": "Dongar Parasia",
+        "districtId": "Chhindwara",
+        "name": "Dongar Parasia"
     },
     {
-        "id": "Narsinghpur",
-        "divisionId": "Jabalpur",
-        "label": "Gadarwada"
+        "id": "Gadarwada",
+        "districtId": "Narsinghpur",
+        "name": "Gadarwada"
     },
     {
-        "id": "Narsinghpur",
-        "divisionId": "Jabalpur",
-        "label": "Gotegaon"
+        "id": "Gotegaon",
+        "districtId": "Narsinghpur",
+        "name": "Gotegaon"
     },
     {
-        "id": "Chhindwara",
-        "divisionId": "Jabalpur",
-        "label": "Harrai"
-    },
-    {
-        "id": "Jabalpur",
-        "divisionId": "Jabalpur",
-        "label": "Jabalpur"
-    },
-    {
-        "id": "Chhindwara",
-        "divisionId": "Jabalpur",
-        "label": "Junnardeo Jamai"
-    },
-    {
-        "id": "Narsinghpur",
-        "divisionId": "Jabalpur",
-        "label": "Kareli"
-    },
-    {
-        "id": "Balaghat",
-        "divisionId": "Jabalpur",
-        "label": "Katangi (Balaghat)"
+        "id": "Harrai",
+        "districtId": "Chhindwara",
+        "name": "Harrai"
     },
     {
         "id": "Jabalpur",
-        "divisionId": "Jabalpur",
-        "label": "Katangi (Jabalpur)"
+        "districtId": "Jabalpur",
+        "name": "Jabalpur"
+    },
+    {
+        "id": "Junnardeo Jamai",
+        "districtId": "Chhindwara",
+        "name": "Junnardeo Jamai"
+    },
+    {
+        "id": "Kareli",
+        "districtId": "Narsinghpur",
+        "name": "Kareli"
+    },
+    {
+        "id": "Katangi (Balaghat)",
+        "districtId": "Balaghat",
+        "name": "Katangi (Balaghat)"
+    },
+    {
+        "id": "Katangi (Jabalpur)",
+        "districtId": "Jabalpur",
+        "name": "Katangi (Jabalpur)"
     },
     {
         "id": "Katni",
-        "divisionId": "Jabalpur",
-        "label": "Katni"
+        "districtId": "Katni",
+        "name": "Katni"
     },
     {
-        "id": "Seoni",
-        "divisionId": "Jabalpur",
-        "label": "Keolari"
+        "id": "Keolari",
+        "districtId": "Seoni",
+        "name": "Keolari"
     },
     {
-        "id": "Katni",
-        "divisionId": "Jabalpur",
-        "label": "Kymore"
+        "id": "Kymore",
+        "districtId": "Katni",
+        "name": "Kymore"
     },
     {
-        "id": "Seoni",
-        "divisionId": "Jabalpur",
-        "label": "Lakhnadon"
+        "id": "Lakhnadon",
+        "districtId": "Seoni",
+        "name": "Lakhnadon"
     },
     {
-        "id": "Balaghat",
-        "divisionId": "Jabalpur",
-        "label": "Lanji"
+        "id": "Lanji",
+        "districtId": "Balaghat",
+        "name": "Lanji"
     },
     {
-        "id": "Chhindwara",
-        "divisionId": "Jabalpur",
-        "label": "Lodhikheda"
+        "id": "Lodhikheda",
+        "districtId": "Chhindwara",
+        "name": "Lodhikheda"
     },
     {
-        "id": "Balaghat",
-        "divisionId": "Jabalpur",
-        "label": "Malajkhand"
-    },
-    {
-        "id": "Mandla",
-        "divisionId": "Jabalpur",
-        "label": "Mandla"
-    },
-    {
-        "id": "Jabalpur",
-        "divisionId": "Jabalpur",
-        "label": "Manjholi-Jabalpur"
-    },
-    {
-        "id": "Chhindwara",
-        "divisionId": "Jabalpur",
-        "label": "Mohgaon"
+        "id": "Malajkhand",
+        "districtId": "Balaghat",
+        "name": "Malajkhand"
     },
     {
         "id": "Mandla",
-        "divisionId": "Jabalpur",
-        "label": "Nainpur"
+        "districtId": "Mandla",
+        "name": "Mandla"
+    },
+    {
+        "id": "Manjholi-Jabalpur",
+        "districtId": "Jabalpur",
+        "name": "Manjholi-Jabalpur"
+    },
+    {
+        "id": "Mohgaon",
+        "districtId": "Chhindwara",
+        "name": "Mohgaon"
+    },
+    {
+        "id": "Nainpur",
+        "districtId": "Mandla",
+        "name": "Nainpur"
     },
     {
         "id": "Narsinghpur",
-        "divisionId": "Jabalpur",
-        "label": "Narsinghpur"
+        "districtId": "Narsinghpur",
+        "name": "Narsinghpur"
     },
     {
-        "id": "Chhindwara",
-        "divisionId": "Jabalpur",
-        "label": "Newton Chikhli"
+        "id": "Newton Chikhli",
+        "districtId": "Chhindwara",
+        "name": "Newton Chikhli"
     },
     {
-        "id": "Mandla",
-        "divisionId": "Jabalpur",
-        "label": "Niwas"
+        "id": "Niwas",
+        "districtId": "Mandla",
+        "name": "Niwas"
     },
     {
-        "id": "Jabalpur",
-        "divisionId": "Jabalpur",
-        "label": "Panagar"
+        "id": "Panagar",
+        "districtId": "Jabalpur",
+        "name": "Panagar"
     },
     {
-        "id": "Chhindwara",
-        "divisionId": "Jabalpur",
-        "label": "Pandhurna"
+        "id": "Pandhurna",
+        "districtId": "Chhindwara",
+        "name": "Pandhurna"
     },
     {
-        "id": "Jabalpur",
-        "divisionId": "Jabalpur",
-        "label": "Patan"
+        "id": "Patan",
+        "districtId": "Jabalpur",
+        "name": "Patan"
     },
     {
-        "id": "Chhindwara",
-        "divisionId": "Jabalpur",
-        "label": "Piplanarayanwar"
+        "id": "Piplanarayanwar",
+        "districtId": "Chhindwara",
+        "name": "Piplanarayanwar"
     },
     {
-        "id": "Narsinghpur",
-        "divisionId": "Jabalpur",
-        "label": "Saikheda"
+        "id": "Saikheda",
+        "districtId": "Narsinghpur",
+        "name": "Saikheda"
     },
     {
-        "id": "Narsinghpur",
-        "divisionId": "Jabalpur",
-        "label": "Salichouka"
+        "id": "Salichouka",
+        "districtId": "Narsinghpur",
+        "name": "Salichouka"
     },
     {
-        "id": "Chhindwara",
-        "divisionId": "Jabalpur",
-        "label": "Sausar"
+        "id": "Sausar",
+        "districtId": "Chhindwara",
+        "name": "Sausar"
     },
     {
         "id": "Seoni",
-        "divisionId": "Jabalpur",
-        "label": "Seoni"
+        "districtId": "Seoni",
+        "name": "Seoni"
     },
     {
-        "id": "Dindori",
-        "divisionId": "Jabalpur",
-        "label": "Shahpura (Dindori)"
+        "id": "Shahpura (Dindori)",
+        "districtId": "Dindori",
+        "name": "Shahpura (Dindori)"
     },
     {
-        "id": "Jabalpur",
-        "divisionId": "Jabalpur",
-        "label": "Shahpura (Jabalpur)"
+        "id": "Shahpura (Jabalpur)",
+        "districtId": "Jabalpur",
+        "name": "Shahpura (Jabalpur)"
     },
     {
-        "id": "Jabalpur",
-        "divisionId": "Jabalpur",
-        "label": "Sihora"
+        "id": "Sihora",
+        "districtId": "Jabalpur",
+        "name": "Sihora"
     },
     {
-        "id": "Narsinghpur",
-        "divisionId": "Jabalpur",
-        "label": "Tendukheda (Narsinghpur)"
+        "id": "Tendukheda (Narsinghpur)",
+        "districtId": "Narsinghpur",
+        "name": "Tendukheda (Narsinghpur)"
     },
     {
-        "id": "Katni",
-        "divisionId": "Jabalpur",
-        "label": "Vijayraghavgarh"
+        "id": "Vijayraghavgarh",
+        "districtId": "Katni",
+        "name": "Vijayraghavgarh"
     },
     {
-        "id": "Balaghat",
-        "divisionId": "Jabalpur",
-        "label": "Waraseoni"
+        "id": "Waraseoni",
+        "districtId": "Balaghat",
+        "name": "Waraseoni"
     },
     {
-        "id": "Betul",
-        "divisionId": "Narmadapuram",
-        "label": "Amla"
+        "id": "Amla",
+        "districtId": "Betul",
+        "name": "Amla"
     },
     {
-        "id": "Betul",
-        "divisionId": "Narmadapuram",
-        "label": "Athner"
+        "id": "Athner",
+        "districtId": "Betul",
+        "name": "Athner"
     },
     {
-        "id": "Narmadapuram",
-        "divisionId": "Narmadapuram",
-        "label": "Babai"
+        "id": "Babai",
+        "districtId": "Narmadapuram",
+        "name": "Babai"
     },
     {
-        "id": "Narmadapuram",
-        "divisionId": "Narmadapuram",
-        "label": "Bankhedi"
-    },
-    {
-        "id": "Betul",
-        "divisionId": "Narmadapuram",
-        "label": "Betul"
+        "id": "Bankhedi",
+        "districtId": "Narmadapuram",
+        "name": "Bankhedi"
     },
     {
         "id": "Betul",
-        "divisionId": "Narmadapuram",
-        "label": "Betul Bazar"
+        "districtId": "Betul",
+        "name": "Betul"
     },
     {
-        "id": "Betul",
-        "divisionId": "Narmadapuram",
-        "label": "Bhensdehi"
+        "id": "Betul Bazar",
+        "districtId": "Betul",
+        "name": "Betul Bazar"
     },
     {
-        "id": "Betul",
-        "divisionId": "Narmadapuram",
-        "label": "Chicholi"
+        "id": "Bhensdehi",
+        "districtId": "Betul",
+        "name": "Bhensdehi"
     },
     {
-        "id": "Betul",
-        "divisionId": "Narmadapuram",
-        "label": "Ghodadongri"
+        "id": "Chicholi",
+        "districtId": "Betul",
+        "name": "Chicholi"
+    },
+    {
+        "id": "Ghodadongri",
+        "districtId": "Betul",
+        "name": "Ghodadongri"
     },
     {
         "id": "Harda",
-        "divisionId": "Narmadapuram",
-        "label": "Harda"
+        "districtId": "Harda",
+        "name": "Harda"
+    },
+    {
+        "id": "Itarsi",
+        "districtId": "Narmadapuram",
+        "name": "Itarsi"
+    },
+    {
+        "id": "Khirkiya",
+        "districtId": "Harda",
+        "name": "Khirkiya"
+    },
+    {
+        "id": "Multai",
+        "districtId": "Betul",
+        "name": "Multai"
     },
     {
         "id": "Narmadapuram",
-        "divisionId": "Narmadapuram",
-        "label": "Itarsi"
+        "districtId": "Narmadapuram",
+        "name": "Narmadapuram"
     },
     {
-        "id": "Harda",
-        "divisionId": "Narmadapuram",
-        "label": "Khirkiya"
+        "id": "Pipariya",
+        "districtId": "Narmadapuram",
+        "name": "Pipariya"
     },
     {
-        "id": "Betul",
-        "divisionId": "Narmadapuram",
-        "label": "Multai"
+        "id": "Sarni",
+        "districtId": "Betul",
+        "name": "Sarni"
     },
     {
-        "id": "Narmadapuram",
-        "divisionId": "Narmadapuram",
-        "label": "Narmadapuram"
+        "id": "Seoni Malwa",
+        "districtId": "Narmadapuram",
+        "name": "Seoni Malwa"
     },
     {
-        "id": "Narmadapuram",
-        "divisionId": "Narmadapuram",
-        "label": "Pipariya"
+        "id": "Shahpur",
+        "districtId": "Betul",
+        "name": "Shahpur"
     },
     {
-        "id": "Betul",
-        "divisionId": "Narmadapuram",
-        "label": "Sarni"
+        "id": "Sirali",
+        "districtId": "Harda",
+        "name": "Sirali"
     },
     {
-        "id": "Narmadapuram",
-        "divisionId": "Narmadapuram",
-        "label": "Seoni Malwa"
+        "id": "Sohagpur",
+        "districtId": "Narmadapuram",
+        "name": "Sohagpur"
     },
     {
-        "id": "Betul",
-        "divisionId": "Narmadapuram",
-        "label": "Shahpur"
+        "id": "Timarni",
+        "districtId": "Harda",
+        "name": "Timarni"
     },
     {
-        "id": "Harda",
-        "divisionId": "Narmadapuram",
-        "label": "Sirali"
+        "id": "Amarpatan",
+        "districtId": "Satna",
+        "name": "Amarpatan"
     },
     {
-        "id": "Narmadapuram",
-        "divisionId": "Narmadapuram",
-        "label": "Sohagpur"
+        "id": "Baikunthpur",
+        "districtId": "Rewa",
+        "name": "Baikunthpur"
     },
     {
-        "id": "Harda",
-        "divisionId": "Narmadapuram",
-        "label": "Timarni"
+        "id": "Bargawan (Singrauli)",
+        "districtId": "Singrauli",
+        "name": "Bargawan (Singrauli)"
     },
     {
-        "id": "Satna",
-        "divisionId": "Rewa",
-        "label": "Amarpatan"
+        "id": "Birsinghpur",
+        "districtId": "Satna",
+        "name": "Birsinghpur"
     },
     {
-        "id": "Rewa",
-        "divisionId": "Rewa",
-        "label": "Baikunthpur"
+        "id": "Chakghat",
+        "districtId": "Rewa",
+        "name": "Chakghat"
     },
     {
-        "id": "Singrauli",
-        "divisionId": "Rewa",
-        "label": "Bargawan (Singrauli)"
+        "id": "Chitrakoot",
+        "districtId": "Satna",
+        "name": "Chitrakoot"
     },
     {
-        "id": "Satna",
-        "divisionId": "Rewa",
-        "label": "Birsinghpur"
+        "id": "Churhat",
+        "districtId": "Sidhi",
+        "name": "Churhat"
     },
     {
-        "id": "Rewa",
-        "divisionId": "Rewa",
-        "label": "Chakghat"
+        "id": "Dabhaura",
+        "districtId": "Rewa",
+        "name": "Dabhaura"
     },
     {
-        "id": "Satna",
-        "divisionId": "Rewa",
-        "label": "Chitrakoot"
+        "id": "Govindgarh",
+        "districtId": "Rewa",
+        "name": "Govindgarh"
     },
     {
-        "id": "Sidhi",
-        "divisionId": "Rewa",
-        "label": "Churhat"
+        "id": "Gurh",
+        "districtId": "Rewa",
+        "name": "Gurh"
     },
     {
-        "id": "Rewa",
-        "divisionId": "Rewa",
-        "label": "Dabhaura"
+        "id": "Hanumana",
+        "districtId": "Mauganj",
+        "name": "Hanumana"
     },
     {
-        "id": "Rewa",
-        "divisionId": "Rewa",
-        "label": "Govindgarh"
+        "id": "Jatwara",
+        "districtId": "Satna",
+        "name": "Jatwara"
     },
     {
-        "id": "Rewa",
-        "divisionId": "Rewa",
-        "label": "Gurh"
+        "id": "Kotar",
+        "districtId": "Satna",
+        "name": "Kotar"
+    },
+    {
+        "id": "Kothi",
+        "districtId": "Satna",
+        "name": "Kothi"
+    },
+    {
+        "id": "Maihar",
+        "districtId": "Satna",
+        "name": "Maihar"
+    },
+    {
+        "id": "Majhauli (Sidhi)",
+        "districtId": "Sidhi",
+        "name": "Majhauli (Sidhi)"
+    },
+    {
+        "id": "Mangawan",
+        "districtId": "Rewa",
+        "name": "Mangawan"
     },
     {
         "id": "Mauganj",
-        "divisionId": "Rewa",
-        "label": "Hanumana"
+        "districtId": "Mauganj",
+        "name": "Mauganj"
     },
     {
-        "id": "Satna",
-        "divisionId": "Rewa",
-        "label": "Jatwara"
+        "id": "Nagaud",
+        "districtId": "Satna",
+        "name": "Nagaud"
     },
     {
-        "id": "Satna",
-        "divisionId": "Rewa",
-        "label": "Kotar"
+        "id": "Naigarhi",
+        "districtId": "Mauganj",
+        "name": "Naigarhi"
     },
     {
-        "id": "Satna",
-        "divisionId": "Rewa",
-        "label": "Kothi"
+        "id": "New Ramnagar",
+        "districtId": "Satna",
+        "name": "New Ramnagar"
     },
     {
-        "id": "Satna",
-        "divisionId": "Rewa",
-        "label": "Maihar"
+        "id": "Rampur Baghelan",
+        "districtId": "Satna",
+        "name": "Rampur Baghelan"
     },
     {
-        "id": "Sidhi",
-        "divisionId": "Rewa",
-        "label": "Majhauli (Sidhi)"
-    },
-    {
-        "id": "Rewa",
-        "divisionId": "Rewa",
-        "label": "Mangawan"
-    },
-    {
-        "id": "Mauganj",
-        "divisionId": "Rewa",
-        "label": "Mauganj"
-    },
-    {
-        "id": "Satna",
-        "divisionId": "Rewa",
-        "label": "Nagaud"
-    },
-    {
-        "id": "Mauganj",
-        "divisionId": "Rewa",
-        "label": "Naigarhi"
-    },
-    {
-        "id": "Satna",
-        "divisionId": "Rewa",
-        "label": "New Ramnagar"
-    },
-    {
-        "id": "Satna",
-        "divisionId": "Rewa",
-        "label": "Rampur Baghelan"
-    },
-    {
-        "id": "Sidhi",
-        "divisionId": "Rewa",
-        "label": "Rampur Naikin"
+        "id": "Rampur Naikin",
+        "districtId": "Sidhi",
+        "name": "Rampur Naikin"
     },
     {
         "id": "Rewa",
-        "divisionId": "Rewa",
-        "label": "Rewa"
+        "districtId": "Rewa",
+        "name": "Rewa"
+    },
+    {
+        "id": "Sarai",
+        "districtId": "Singrauli",
+        "name": "Sarai"
+    },
+    {
+        "id": "Satna",
+        "districtId": "Satna",
+        "name": "Satna"
+    },
+    {
+        "id": "Semariya",
+        "districtId": "Rewa",
+        "name": "Semariya"
+    },
+    {
+        "id": "Sidhi",
+        "districtId": "Sidhi",
+        "name": "Sidhi"
     },
     {
         "id": "Singrauli",
-        "divisionId": "Rewa",
-        "label": "Sarai"
+        "districtId": "Singrauli",
+        "name": "Singrauli"
     },
     {
-        "id": "Satna",
-        "divisionId": "Rewa",
-        "label": "Satna"
+        "id": "Sirmour",
+        "districtId": "Rewa",
+        "name": "Sirmour"
     },
     {
-        "id": "Rewa",
-        "divisionId": "Rewa",
-        "label": "Semariya"
+        "id": "Teonthar",
+        "districtId": "Rewa",
+        "name": "Teonthar"
     },
     {
-        "id": "Sidhi",
-        "divisionId": "Rewa",
-        "label": "Sidhi"
+        "id": "Uchehra",
+        "districtId": "Satna",
+        "name": "Uchehra"
     },
     {
-        "id": "Singrauli",
-        "divisionId": "Rewa",
-        "label": "Singrauli"
+        "id": "Ajaygarh",
+        "districtId": "Panna",
+        "name": "Ajaygarh"
     },
     {
-        "id": "Rewa",
-        "divisionId": "Rewa",
-        "label": "Sirmour"
+        "id": "Amanganj",
+        "districtId": "Panna",
+        "name": "Amanganj"
     },
     {
-        "id": "Rewa",
-        "divisionId": "Rewa",
-        "label": "Teonthar"
+        "id": "Bada Malhera",
+        "districtId": "Chatarpur",
+        "name": "Bada Malhera"
     },
     {
-        "id": "Satna",
-        "divisionId": "Rewa",
-        "label": "Uchehra"
+        "id": "Badagaon (Tikamgarh)",
+        "districtId": "Tikamgarh",
+        "name": "Badagaon (Tikamgarh)"
     },
     {
-        "id": "Panna",
-        "divisionId": "Sagar",
-        "label": "Ajaygarh"
+        "id": "Baldeogarh",
+        "districtId": "Tikamgarh",
+        "name": "Baldeogarh"
     },
     {
-        "id": "Panna",
-        "divisionId": "Sagar",
-        "label": "Amanganj"
+        "id": "Banda",
+        "districtId": "Sagar",
+        "name": "Banda"
     },
     {
-        "id": "Chatarpur",
-        "divisionId": "Sagar",
-        "label": "Bada Malhera"
+        "id": "Bandri",
+        "districtId": "Sagar",
+        "name": "Bandri"
     },
     {
-        "id": "Tikamgarh",
-        "divisionId": "Sagar",
-        "label": "Badagaon (Tikamgarh)"
+        "id": "Barigarh",
+        "districtId": "Chatarpur",
+        "name": "Barigarh"
     },
     {
-        "id": "Tikamgarh",
-        "divisionId": "Sagar",
-        "label": "Baldeogarh"
+        "id": "Barodiyakalan",
+        "districtId": "Sagar",
+        "name": "Barodiyakalan"
     },
     {
-        "id": "Sagar",
-        "divisionId": "Sagar",
-        "label": "Banda"
+        "id": "Bijawar",
+        "districtId": "Chatarpur",
+        "name": "Bijawar"
     },
     {
-        "id": "Sagar",
-        "divisionId": "Sagar",
-        "label": "Bandri"
+        "id": "Bilhara",
+        "districtId": "Sagar",
+        "name": "Bilhara"
     },
     {
-        "id": "Chatarpur",
-        "divisionId": "Sagar",
-        "label": "Barigarh"
+        "id": "Bina Etawa",
+        "districtId": "Sagar",
+        "name": "Bina Etawa"
     },
     {
-        "id": "Sagar",
-        "divisionId": "Sagar",
-        "label": "Barodiyakalan"
+        "id": "Buxwaha",
+        "districtId": "Chatarpur",
+        "name": "Buxwaha"
     },
     {
-        "id": "Chatarpur",
-        "divisionId": "Sagar",
-        "label": "Bijawar"
+        "id": "Chandla",
+        "districtId": "Chatarpur",
+        "name": "Chandla"
     },
     {
-        "id": "Sagar",
-        "divisionId": "Sagar",
-        "label": "Bilhara"
-    },
-    {
-        "id": "Sagar",
-        "divisionId": "Sagar",
-        "label": "Bina Etawa"
-    },
-    {
-        "id": "Chatarpur",
-        "divisionId": "Sagar",
-        "label": "Buxwaha"
-    },
-    {
-        "id": "Chatarpur",
-        "divisionId": "Sagar",
-        "label": "Chandla"
-    },
-    {
-        "id": "Chatarpur",
-        "divisionId": "Sagar",
-        "label": "Chhatarpur"
+        "id": "Chhatarpur",
+        "districtId": "Chatarpur",
+        "name": "Chhatarpur"
     },
     {
         "id": "Damoh",
-        "divisionId": "Sagar",
-        "label": "Damoh"
+        "districtId": "Damoh",
+        "name": "Damoh"
     },
     {
-        "id": "Sagar",
-        "divisionId": "Sagar",
-        "label": "Deori"
+        "id": "Deori",
+        "districtId": "Sagar",
+        "name": "Deori"
     },
     {
-        "id": "Panna",
-        "divisionId": "Sagar",
-        "label": "Devendranagar"
+        "id": "Devendranagar",
+        "districtId": "Panna",
+        "name": "Devendranagar"
     },
     {
-        "id": "Sagar",
-        "divisionId": "Sagar",
-        "label": "Garhakota"
+        "id": "Garhakota",
+        "districtId": "Sagar",
+        "name": "Garhakota"
     },
     {
-        "id": "Chatarpur",
-        "divisionId": "Sagar",
-        "label": "Garhi-Malhara"
+        "id": "Garhi-Malhara",
+        "districtId": "Chatarpur",
+        "name": "Garhi-Malhara"
     },
     {
-        "id": "Chatarpur",
-        "divisionId": "Sagar",
-        "label": "Ghuwara"
+        "id": "Ghuwara",
+        "districtId": "Chatarpur",
+        "name": "Ghuwara"
     },
     {
-        "id": "Panna",
-        "divisionId": "Sagar",
-        "label": "Gunnor"
+        "id": "Gunnor",
+        "districtId": "Panna",
+        "name": "Gunnor"
     },
     {
-        "id": "Chatarpur",
-        "divisionId": "Sagar",
-        "label": "Harpalpur"
+        "id": "Harpalpur",
+        "districtId": "Chatarpur",
+        "name": "Harpalpur"
     },
     {
-        "id": "Damoh",
-        "divisionId": "Sagar",
-        "label": "Hatta"
+        "id": "Hatta",
+        "districtId": "Damoh",
+        "name": "Hatta"
     },
     {
-        "id": "Damoh",
-        "divisionId": "Sagar",
-        "label": "Hindoriya"
+        "id": "Hindoriya",
+        "districtId": "Damoh",
+        "name": "Hindoriya"
     },
     {
-        "id": "Tikamgarh",
-        "divisionId": "Sagar",
-        "label": "Jatara"
+        "id": "Jatara",
+        "districtId": "Tikamgarh",
+        "name": "Jatara"
+    },
+    {
+        "id": "Jeron Khalsa",
+        "districtId": "Niwari",
+        "name": "Jeron Khalsa"
+    },
+    {
+        "id": "Kakrehti",
+        "districtId": "Panna",
+        "name": "Kakrehti"
+    },
+    {
+        "id": "Kari",
+        "districtId": "Tikamgarh",
+        "name": "Kari"
+    },
+    {
+        "id": "Karrapur",
+        "districtId": "Sagar",
+        "name": "Karrapur"
+    },
+    {
+        "id": "Khajuraho",
+        "districtId": "Chatarpur",
+        "name": "Khajuraho"
+    },
+    {
+        "id": "Khargapur",
+        "districtId": "Tikamgarh",
+        "name": "Khargapur"
+    },
+    {
+        "id": "Khurai",
+        "districtId": "Sagar",
+        "name": "Khurai"
+    },
+    {
+        "id": "Laundi (Lavkush Nagar) ",
+        "districtId": "Chatarpur",
+        "name": "Laundi (Lavkush Nagar) "
+    },
+    {
+        "id": "Lidhorakhas",
+        "districtId": "Tikamgarh",
+        "name": "Lidhorakhas"
+    },
+    {
+        "id": "Maharajpur",
+        "districtId": "Chatarpur",
+        "name": "Maharajpur"
+    },
+    {
+        "id": "Makronia Buzurg",
+        "districtId": "Sagar",
+        "name": "Makronia Buzurg"
+    },
+    {
+        "id": "Malthone",
+        "districtId": "Sagar",
+        "name": "Malthone"
     },
     {
         "id": "Niwari",
-        "divisionId": "Sagar",
-        "label": "Jeron Khalsa"
+        "districtId": "Niwari",
+        "name": "Niwari"
+    },
+    {
+        "id": "Nowgaon",
+        "districtId": "Chatarpur",
+        "name": "Nowgaon"
+    },
+    {
+        "id": "Orchha",
+        "districtId": "Niwari",
+        "name": "Orchha"
+    },
+    {
+        "id": "Palera",
+        "districtId": "Tikamgarh",
+        "name": "Palera"
     },
     {
         "id": "Panna",
-        "divisionId": "Sagar",
-        "label": "Kakrehti"
+        "districtId": "Panna",
+        "name": "Panna"
+    },
+    {
+        "id": "Patera",
+        "districtId": "Damoh",
+        "name": "Patera"
+    },
+    {
+        "id": "Patharia",
+        "districtId": "Damoh",
+        "name": "Patharia"
+    },
+    {
+        "id": "Pawai",
+        "districtId": "Panna",
+        "name": "Pawai"
+    },
+    {
+        "id": "Prithvipur",
+        "districtId": "Niwari",
+        "name": "Prithvipur"
+    },
+    {
+        "id": "Rahatgarh",
+        "districtId": "Sagar",
+        "name": "Rahatgarh"
+    },
+    {
+        "id": "Rajnagar",
+        "districtId": "Chatarpur",
+        "name": "Rajnagar"
+    },
+    {
+        "id": "Rehli",
+        "districtId": "Sagar",
+        "name": "Rehli"
+    },
+    {
+        "id": "Sagar",
+        "districtId": "Sagar",
+        "name": "Sagar"
+    },
+    {
+        "id": "Satai",
+        "districtId": "Chatarpur",
+        "name": "Satai"
+    },
+    {
+        "id": "Shahgarh",
+        "districtId": "Sagar",
+        "name": "Shahgarh"
+    },
+    {
+        "id": "Shahpur (Sagar)",
+        "districtId": "Sagar",
+        "name": "Shahpur (Sagar)"
+    },
+    {
+        "id": "Surkhi",
+        "districtId": "Sagar",
+        "name": "Surkhi"
+    },
+    {
+        "id": "Tarichar Kalan",
+        "districtId": "Niwari",
+        "name": "Tarichar Kalan"
+    },
+    {
+        "id": "Tendukheda (Damoh)",
+        "districtId": "Damoh",
+        "name": "Tendukheda (Damoh)"
     },
     {
         "id": "Tikamgarh",
-        "divisionId": "Sagar",
-        "label": "Kari"
+        "districtId": "Tikamgarh",
+        "name": "Tikamgarh"
     },
     {
-        "id": "Sagar",
-        "divisionId": "Sagar",
-        "label": "Karrapur"
-    },
-    {
-        "id": "Chatarpur",
-        "divisionId": "Sagar",
-        "label": "Khajuraho"
-    },
-    {
-        "id": "Tikamgarh",
-        "divisionId": "Sagar",
-        "label": "Khargapur"
-    },
-    {
-        "id": "Sagar",
-        "divisionId": "Sagar",
-        "label": "Khurai"
-    },
-    {
-        "id": "Chatarpur",
-        "divisionId": "Sagar",
-        "label": "Laundi (Lavkush Nagar) "
-    },
-    {
-        "id": "Tikamgarh",
-        "divisionId": "Sagar",
-        "label": "Lidhorakhas"
-    },
-    {
-        "id": "Chatarpur",
-        "divisionId": "Sagar",
-        "label": "Maharajpur"
-    },
-    {
-        "id": "Sagar",
-        "divisionId": "Sagar",
-        "label": "Makronia Buzurg"
-    },
-    {
-        "id": "Sagar",
-        "divisionId": "Sagar",
-        "label": "Malthone"
-    },
-    {
-        "id": "Niwari",
-        "divisionId": "Sagar",
-        "label": "Niwari"
-    },
-    {
-        "id": "Chatarpur",
-        "divisionId": "Sagar",
-        "label": "Nowgaon"
-    },
-    {
-        "id": "Niwari",
-        "divisionId": "Sagar",
-        "label": "Orchha"
-    },
-    {
-        "id": "Tikamgarh",
-        "divisionId": "Sagar",
-        "label": "Palera"
-    },
-    {
-        "id": "Panna",
-        "divisionId": "Sagar",
-        "label": "Panna"
-    },
-    {
-        "id": "Damoh",
-        "divisionId": "Sagar",
-        "label": "Patera"
-    },
-    {
-        "id": "Damoh",
-        "divisionId": "Sagar",
-        "label": "Patharia"
-    },
-    {
-        "id": "Panna",
-        "divisionId": "Sagar",
-        "label": "Pawai"
-    },
-    {
-        "id": "Niwari",
-        "divisionId": "Sagar",
-        "label": "Prithvipur"
-    },
-    {
-        "id": "Sagar",
-        "divisionId": "Sagar",
-        "label": "Rahatgarh"
-    },
-    {
-        "id": "Chatarpur",
-        "divisionId": "Sagar",
-        "label": "Rajnagar"
-    },
-    {
-        "id": "Sagar",
-        "divisionId": "Sagar",
-        "label": "Rehli"
-    },
-    {
-        "id": "Sagar",
-        "divisionId": "Sagar",
-        "label": "Sagar"
-    },
-    {
-        "id": "Chatarpur",
-        "divisionId": "Sagar",
-        "label": "Satai"
-    },
-    {
-        "id": "Sagar",
-        "divisionId": "Sagar",
-        "label": "Shahgarh"
-    },
-    {
-        "id": "Sagar",
-        "divisionId": "Sagar",
-        "label": "Shahpur (Sagar)"
-    },
-    {
-        "id": "Sagar",
-        "divisionId": "Sagar",
-        "label": "Surkhi"
-    },
-    {
-        "id": "Niwari",
-        "divisionId": "Sagar",
-        "label": "Tarichar Kalan"
-    },
-    {
-        "id": "Damoh",
-        "divisionId": "Sagar",
-        "label": "Tendukheda (Damoh)"
-    },
-    {
-        "id": "Tikamgarh",
-        "divisionId": "Sagar",
-        "label": "Tikamgarh"
+        "id": "Amarkantak",
+        "districtId": "Anuppur",
+        "name": "Amarkantak"
     },
     {
         "id": "Anuppur",
-        "divisionId": "Shahdol",
-        "label": "Amarkantak"
+        "districtId": "Anuppur",
+        "name": "Anuppur"
     },
     {
-        "id": "Anuppur",
-        "divisionId": "Shahdol",
-        "label": "Anuppur"
+        "id": "Bakho",
+        "districtId": "Shahdol",
+        "name": "Bakho"
+    },
+    {
+        "id": "Bangavan (Rajnagar)",
+        "districtId": "Anuppur",
+        "name": "Bangavan (Rajnagar)"
+    },
+    {
+        "id": "Bargawan (Amlai)",
+        "districtId": "Anuppur",
+        "name": "Bargawan (Amlai)"
+    },
+    {
+        "id": "Beohari",
+        "districtId": "Shahdol",
+        "name": "Beohari"
+    },
+    {
+        "id": "Bijuri",
+        "districtId": "Anuppur",
+        "name": "Bijuri"
+    },
+    {
+        "id": "Burhar",
+        "districtId": "Shahdol",
+        "name": "Burhar"
+    },
+    {
+        "id": "Chandia",
+        "districtId": "Umaria",
+        "name": "Chandia"
+    },
+    {
+        "id": "Dhanpuri",
+        "districtId": "Shahdol",
+        "name": "Dhanpuri"
+    },
+    {
+        "id": "Dola",
+        "districtId": "Anuppur",
+        "name": "Dola"
+    },
+    {
+        "id": "Doomarkachhar",
+        "districtId": "Anuppur",
+        "name": "Doomarkachhar"
+    },
+    {
+        "id": "Jaisinghnagar",
+        "districtId": "Shahdol",
+        "name": "Jaisinghnagar"
+    },
+    {
+        "id": "Jaithari",
+        "districtId": "Anuppur",
+        "name": "Jaithari"
+    },
+    {
+        "id": "Khand",
+        "districtId": "Shahdol",
+        "name": "Khand"
+    },
+    {
+        "id": "Kotma",
+        "districtId": "Anuppur",
+        "name": "Kotma"
+    },
+    {
+        "id": "Manpur (Umaria)",
+        "districtId": "Umaria",
+        "name": "Manpur (Umaria)"
+    },
+    {
+        "id": "Nourozabad",
+        "districtId": "Umaria",
+        "name": "Nourozabad"
+    },
+    {
+        "id": "Pali",
+        "districtId": "Umaria",
+        "name": "Pali"
+    },
+    {
+        "id": "Pasan",
+        "districtId": "Anuppur",
+        "name": "Pasan"
     },
     {
         "id": "Shahdol",
-        "divisionId": "Shahdol",
-        "label": "Bakho"
-    },
-    {
-        "id": "Anuppur",
-        "divisionId": "Shahdol",
-        "label": "Bangavan (Rajnagar)"
-    },
-    {
-        "id": "Anuppur",
-        "divisionId": "Shahdol",
-        "label": "Bargawan (Amlai)"
-    },
-    {
-        "id": "Shahdol",
-        "divisionId": "Shahdol",
-        "label": "Beohari"
-    },
-    {
-        "id": "Anuppur",
-        "divisionId": "Shahdol",
-        "label": "Bijuri"
-    },
-    {
-        "id": "Shahdol",
-        "divisionId": "Shahdol",
-        "label": "Burhar"
+        "districtId": "Shahdol",
+        "name": "Shahdol"
     },
     {
         "id": "Umaria",
-        "divisionId": "Shahdol",
-        "label": "Chandia"
-    },
-    {
-        "id": "Shahdol",
-        "divisionId": "Shahdol",
-        "label": "Dhanpuri"
-    },
-    {
-        "id": "Anuppur",
-        "divisionId": "Shahdol",
-        "label": "Dola"
-    },
-    {
-        "id": "Anuppur",
-        "divisionId": "Shahdol",
-        "label": "Doomarkachhar"
-    },
-    {
-        "id": "Shahdol",
-        "divisionId": "Shahdol",
-        "label": "Jaisinghnagar"
-    },
-    {
-        "id": "Anuppur",
-        "divisionId": "Shahdol",
-        "label": "Jaithari"
-    },
-    {
-        "id": "Shahdol",
-        "divisionId": "Shahdol",
-        "label": "Khand"
-    },
-    {
-        "id": "Anuppur",
-        "divisionId": "Shahdol",
-        "label": "Kotma"
-    },
-    {
-        "id": "Umaria",
-        "divisionId": "Shahdol",
-        "label": "Manpur (Umaria)"
-    },
-    {
-        "id": "Umaria",
-        "divisionId": "Shahdol",
-        "label": "Nourozabad"
-    },
-    {
-        "id": "Umaria",
-        "divisionId": "Shahdol",
-        "label": "Pali"
-    },
-    {
-        "id": "Anuppur",
-        "divisionId": "Shahdol",
-        "label": "Pasan"
-    },
-    {
-        "id": "Shahdol",
-        "divisionId": "Shahdol",
-        "label": "Shahdol"
-    },
-    {
-        "id": "Umaria",
-        "divisionId": "Shahdol",
-        "label": "Umaria"
+        "districtId": "Umaria",
+        "name": "Umaria"
     },
     {
         "id": "Agar",
-        "divisionId": "Ujjain",
-        "label": "Agar"
+        "districtId": "Agar",
+        "name": "Agar"
+    },
+    {
+        "id": "Akodiya",
+        "districtId": "Shajapur",
+        "name": "Akodiya"
+    },
+    {
+        "id": "Alot",
+        "districtId": "Ratlam",
+        "name": "Alot"
+    },
+    {
+        "id": "Athana",
+        "districtId": "Neemach",
+        "name": "Athana"
+    },
+    {
+        "id": "BadaGaav (Agar)",
+        "districtId": "Agar",
+        "name": "BadaGaav (Agar)"
+    },
+    {
+        "id": "Badawda",
+        "districtId": "Ratlam",
+        "name": "Badawda"
+    },
+    {
+        "id": "Badnagar",
+        "districtId": "Ujjain",
+        "name": "Badnagar"
+    },
+    {
+        "id": "Badod",
+        "districtId": "Agar",
+        "name": "Badod"
+    },
+    {
+        "id": "Bagli",
+        "districtId": "Dewas",
+        "name": "Bagli"
+    },
+    {
+        "id": "Bhainsoda Mandi",
+        "districtId": "Mandsaur",
+        "name": "Bhainsoda Mandi"
+    },
+    {
+        "id": "Bhanpura",
+        "districtId": "Mandsaur",
+        "name": "Bhanpura"
+    },
+    {
+        "id": "Bhorsa",
+        "districtId": "Dewas",
+        "name": "Bhorsa"
+    },
+    {
+        "id": "Dewas",
+        "districtId": "Dewas",
+        "name": "Dewas"
+    },
+    {
+        "id": "Dhamnod (Ratlam)",
+        "districtId": "Ratlam",
+        "name": "Dhamnod (Ratlam)"
+    },
+    {
+        "id": "Diken",
+        "districtId": "Neemach",
+        "name": "Diken"
+    },
+    {
+        "id": "Garoth",
+        "districtId": "Mandsaur",
+        "name": "Garoth"
+    },
+    {
+        "id": "Haatpeepalya",
+        "districtId": "Dewas",
+        "name": "Haatpeepalya"
+    },
+    {
+        "id": "Jaora",
+        "districtId": "Ratlam",
+        "name": "Jaora"
+    },
+    {
+        "id": "Jawad",
+        "districtId": "Neemach",
+        "name": "Jawad"
+    },
+    {
+        "id": "Jeeran",
+        "districtId": "Neemach",
+        "name": "Jeeran"
+    },
+    {
+        "id": "Kaanad",
+        "districtId": "Agar",
+        "name": "Kaanad"
+    },
+    {
+        "id": "Kannod",
+        "districtId": "Dewas",
+        "name": "Kannod"
+    },
+    {
+        "id": "Kantaphod",
+        "districtId": "Dewas",
+        "name": "Kantaphod"
+    },
+    {
+        "id": "Karnawad",
+        "districtId": "Dewas",
+        "name": "Karnawad"
+    },
+    {
+        "id": "Khachrod",
+        "districtId": "Ujjain",
+        "name": "Khachrod"
+    },
+    {
+        "id": "Khategaon",
+        "districtId": "Dewas",
+        "name": "Khategaon"
+    },
+    {
+        "id": "Kookdeshwar",
+        "districtId": "Neemach",
+        "name": "Kookdeshwar"
+    },
+    {
+        "id": "Loharda",
+        "districtId": "Dewas",
+        "name": "Loharda"
+    },
+    {
+        "id": "Mahidpur",
+        "districtId": "Ujjain",
+        "name": "Mahidpur"
+    },
+    {
+        "id": "Makdone",
+        "districtId": "Ujjain",
+        "name": "Makdone"
+    },
+    {
+        "id": "Maksi",
+        "districtId": "Shajapur",
+        "name": "Maksi"
+    },
+    {
+        "id": "Mallahargarh",
+        "districtId": "Mandsaur",
+        "name": "Mallahargarh"
+    },
+    {
+        "id": "Manasa",
+        "districtId": "Neemach",
+        "name": "Manasa"
+    },
+    {
+        "id": "Mandsaur",
+        "districtId": "Mandsaur",
+        "name": "Mandsaur"
+    },
+    {
+        "id": "Nagari",
+        "districtId": "Mandsaur",
+        "name": "Nagari"
+    },
+    {
+        "id": "Nagda",
+        "districtId": "Ujjain",
+        "name": "Nagda"
+    },
+    {
+        "id": "Nalkheda",
+        "districtId": "Agar",
+        "name": "Nalkheda"
+    },
+    {
+        "id": "Namli",
+        "districtId": "Ratlam",
+        "name": "Namli"
+    },
+    {
+        "id": "Narayangarh",
+        "districtId": "Mandsaur",
+        "name": "Narayangarh"
+    },
+    {
+        "id": "Nayagaon",
+        "districtId": "Neemach",
+        "name": "Nayagaon"
+    },
+    {
+        "id": "Neemuch",
+        "districtId": "Neemach",
+        "name": "Neemuch"
+    },
+    {
+        "id": "Nemawar",
+        "districtId": "Dewas",
+        "name": "Nemawar"
+    },
+    {
+        "id": "Paankhedi",
+        "districtId": "Shajapur",
+        "name": "Paankhedi"
+    },
+    {
+        "id": "Pipalrawa",
+        "districtId": "Dewas",
+        "name": "Pipalrawa"
+    },
+    {
+        "id": "Pipalyamandi",
+        "districtId": "Mandsaur",
+        "name": "Pipalyamandi"
+    },
+    {
+        "id": "Pipolda",
+        "districtId": "Ratlam",
+        "name": "Pipolda"
+    },
+    {
+        "id": "Polaykalan",
+        "districtId": "Shajapur",
+        "name": "Polaykalan"
+    },
+    {
+        "id": "Rampura",
+        "districtId": "Neemach",
+        "name": "Rampura"
+    },
+    {
+        "id": "Ratangarh",
+        "districtId": "Neemach",
+        "name": "Ratangarh"
+    },
+    {
+        "id": "Ratlam",
+        "districtId": "Ratlam",
+        "name": "Ratlam"
+    },
+    {
+        "id": "Sailana",
+        "districtId": "Ratlam",
+        "name": "Sailana"
+    },
+    {
+        "id": "Sarwaniya Maharaj",
+        "districtId": "Neemach",
+        "name": "Sarwaniya Maharaj"
+    },
+    {
+        "id": "Satwas",
+        "districtId": "Dewas",
+        "name": "Satwas"
+    },
+    {
+        "id": "Shaamgarh",
+        "districtId": "Mandsaur",
+        "name": "Shaamgarh"
     },
     {
         "id": "Shajapur",
-        "divisionId": "Ujjain",
-        "label": "Akodiya"
+        "districtId": "Shajapur",
+        "name": "Shajapur"
     },
     {
-        "id": "Ratlam",
-        "divisionId": "Ujjain",
-        "label": "Alot"
+        "id": "Shujalpur",
+        "districtId": "Shajapur",
+        "name": "Shujalpur"
     },
     {
-        "id": "Neemach",
-        "divisionId": "Ujjain",
-        "label": "Athana"
+        "id": "Singoli",
+        "districtId": "Neemach",
+        "name": "Singoli"
     },
     {
-        "id": "Agar",
-        "divisionId": "Ujjain",
-        "label": "BadaGaav (Agar)"
+        "id": "Sitamau",
+        "districtId": "Mandsaur",
+        "name": "Sitamau"
     },
     {
-        "id": "Ratlam",
-        "divisionId": "Ujjain",
-        "label": "Badawda"
+        "id": "Sonkachh",
+        "districtId": "Dewas",
+        "name": "Sonkachh"
     },
     {
-        "id": "Ujjain",
-        "divisionId": "Ujjain",
-        "label": "Badnagar"
+        "id": "Soyatkala",
+        "districtId": "Agar",
+        "name": "Soyatkala"
     },
     {
-        "id": "Agar",
-        "divisionId": "Ujjain",
-        "label": "Badod"
+        "id": "Susner",
+        "districtId": "Agar",
+        "name": "Susner"
     },
     {
-        "id": "Dewas",
-        "divisionId": "Ujjain",
-        "label": "Bagli"
+        "id": "Suwasara",
+        "districtId": "Mandsaur",
+        "name": "Suwasara"
     },
     {
-        "id": "Mandsaur",
-        "divisionId": "Ujjain",
-        "label": "Bhainsoda Mandi"
+        "id": "Tal",
+        "districtId": "Ratlam",
+        "name": "Tal"
     },
     {
-        "id": "Mandsaur",
-        "divisionId": "Ujjain",
-        "label": "Bhanpura"
+        "id": "Tarana",
+        "districtId": "Ujjain",
+        "name": "Tarana"
     },
     {
-        "id": "Dewas",
-        "divisionId": "Ujjain",
-        "label": "Bhorsa"
-    },
-    {
-        "id": "Dewas",
-        "divisionId": "Ujjain",
-        "label": "Dewas"
-    },
-    {
-        "id": "Ratlam",
-        "divisionId": "Ujjain",
-        "label": "Dhamnod (Ratlam)"
-    },
-    {
-        "id": "Neemach",
-        "divisionId": "Ujjain",
-        "label": "Diken"
-    },
-    {
-        "id": "Mandsaur",
-        "divisionId": "Ujjain",
-        "label": "Garoth"
-    },
-    {
-        "id": "Dewas",
-        "divisionId": "Ujjain",
-        "label": "Haatpeepalya"
-    },
-    {
-        "id": "Ratlam",
-        "divisionId": "Ujjain",
-        "label": "Jaora"
-    },
-    {
-        "id": "Neemach",
-        "divisionId": "Ujjain",
-        "label": "Jawad"
-    },
-    {
-        "id": "Neemach",
-        "divisionId": "Ujjain",
-        "label": "Jeeran"
-    },
-    {
-        "id": "Agar",
-        "divisionId": "Ujjain",
-        "label": "Kaanad"
-    },
-    {
-        "id": "Dewas",
-        "divisionId": "Ujjain",
-        "label": "Kannod"
-    },
-    {
-        "id": "Dewas",
-        "divisionId": "Ujjain",
-        "label": "Kantaphod"
-    },
-    {
-        "id": "Dewas",
-        "divisionId": "Ujjain",
-        "label": "Karnawad"
+        "id": "Tonkhurd",
+        "districtId": "Dewas",
+        "name": "Tonkhurd"
     },
     {
         "id": "Ujjain",
-        "divisionId": "Ujjain",
-        "label": "Khachrod"
+        "districtId": "Ujjain",
+        "name": "Ujjain"
     },
     {
-        "id": "Dewas",
-        "divisionId": "Ujjain",
-        "label": "Khategaon"
-    },
-    {
-        "id": "Neemach",
-        "divisionId": "Ujjain",
-        "label": "Kookdeshwar"
-    },
-    {
-        "id": "Dewas",
-        "divisionId": "Ujjain",
-        "label": "Loharda"
-    },
-    {
-        "id": "Ujjain",
-        "divisionId": "Ujjain",
-        "label": "Mahidpur"
-    },
-    {
-        "id": "Ujjain",
-        "divisionId": "Ujjain",
-        "label": "Makdone"
-    },
-    {
-        "id": "Shajapur",
-        "divisionId": "Ujjain",
-        "label": "Maksi"
-    },
-    {
-        "id": "Mandsaur",
-        "divisionId": "Ujjain",
-        "label": "Mallahargarh"
-    },
-    {
-        "id": "Neemach",
-        "divisionId": "Ujjain",
-        "label": "Manasa"
-    },
-    {
-        "id": "Mandsaur",
-        "divisionId": "Ujjain",
-        "label": "Mandsaur"
-    },
-    {
-        "id": "Mandsaur",
-        "divisionId": "Ujjain",
-        "label": "Nagari"
-    },
-    {
-        "id": "Ujjain",
-        "divisionId": "Ujjain",
-        "label": "Nagda"
-    },
-    {
-        "id": "Agar",
-        "divisionId": "Ujjain",
-        "label": "Nalkheda"
-    },
-    {
-        "id": "Ratlam",
-        "divisionId": "Ujjain",
-        "label": "Namli"
-    },
-    {
-        "id": "Mandsaur",
-        "divisionId": "Ujjain",
-        "label": "Narayangarh"
-    },
-    {
-        "id": "Neemach",
-        "divisionId": "Ujjain",
-        "label": "Nayagaon"
-    },
-    {
-        "id": "Neemach",
-        "divisionId": "Ujjain",
-        "label": "Neemuch"
-    },
-    {
-        "id": "Dewas",
-        "divisionId": "Ujjain",
-        "label": "Nemawar"
-    },
-    {
-        "id": "Shajapur",
-        "divisionId": "Ujjain",
-        "label": "Paankhedi"
-    },
-    {
-        "id": "Dewas",
-        "divisionId": "Ujjain",
-        "label": "Pipalrawa"
-    },
-    {
-        "id": "Mandsaur",
-        "divisionId": "Ujjain",
-        "label": "Pipalyamandi"
-    },
-    {
-        "id": "Ratlam",
-        "divisionId": "Ujjain",
-        "label": "Pipolda"
-    },
-    {
-        "id": "Shajapur",
-        "divisionId": "Ujjain",
-        "label": "Polaykalan"
-    },
-    {
-        "id": "Neemach",
-        "divisionId": "Ujjain",
-        "label": "Rampura"
-    },
-    {
-        "id": "Neemach",
-        "divisionId": "Ujjain",
-        "label": "Ratangarh"
-    },
-    {
-        "id": "Ratlam",
-        "divisionId": "Ujjain",
-        "label": "Ratlam"
-    },
-    {
-        "id": "Ratlam",
-        "divisionId": "Ujjain",
-        "label": "Sailana"
-    },
-    {
-        "id": "Neemach",
-        "divisionId": "Ujjain",
-        "label": "Sarwaniya Maharaj"
-    },
-    {
-        "id": "Dewas",
-        "divisionId": "Ujjain",
-        "label": "Satwas"
-    },
-    {
-        "id": "Mandsaur",
-        "divisionId": "Ujjain",
-        "label": "Shaamgarh"
-    },
-    {
-        "id": "Shajapur",
-        "divisionId": "Ujjain",
-        "label": "Shajapur"
-    },
-    {
-        "id": "Shajapur",
-        "divisionId": "Ujjain",
-        "label": "Shujalpur"
-    },
-    {
-        "id": "Neemach",
-        "divisionId": "Ujjain",
-        "label": "Singoli"
-    },
-    {
-        "id": "Mandsaur",
-        "divisionId": "Ujjain",
-        "label": "Sitamau"
-    },
-    {
-        "id": "Dewas",
-        "divisionId": "Ujjain",
-        "label": "Sonkachh"
-    },
-    {
-        "id": "Agar",
-        "divisionId": "Ujjain",
-        "label": "Soyatkala"
-    },
-    {
-        "id": "Agar",
-        "divisionId": "Ujjain",
-        "label": "Susner"
-    },
-    {
-        "id": "Mandsaur",
-        "divisionId": "Ujjain",
-        "label": "Suwasara"
-    },
-    {
-        "id": "Ratlam",
-        "divisionId": "Ujjain",
-        "label": "Tal"
-    },
-    {
-        "id": "Ujjain",
-        "divisionId": "Ujjain",
-        "label": "Tarana"
-    },
-    {
-        "id": "Dewas",
-        "divisionId": "Ujjain",
-        "label": "Tonkhurd"
-    },
-    {
-        "id": "Ujjain",
-        "divisionId": "Ujjain",
-        "label": "Ujjain"
-    },
-    {
-        "id": "Ujjain",
-        "divisionId": "Ujjain",
-        "label": "Unhel"
+        "id": "Unhel",
+        "districtId": "Ujjain",
+        "name": "Unhel"
     }
 ];
+
 export default ulbies;

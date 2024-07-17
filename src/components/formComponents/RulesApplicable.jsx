@@ -9,13 +9,51 @@ import { useForm, Controller } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { addFormData, prevPage } from "../../store/formSlice";
 import { useNavigate } from "react-router-dom";
+import { z as zod } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+const schema = zod.object({
+  floorAreaRation: zod
+    .string()
+    .regex(/^\d*\.?\d+$/, { message: "Must be a valid number." }),
+  maxGroundCovrage: zod
+    .string()
+    .regex(/^\d*\.?\d+$/, { message: "Must be a valid number." }),
+  maxBuildingHeight: zod
+    .string()
+    .regex(/^\d*\.?\d+$/, { message: "Must be a valid number." }),
+  minFrontage: zod
+    .string()
+    .regex(/^\d*\.?\d+$/, { message: "Must be a valid number." }),
+  minFrontMOS: zod
+    .string()
+    .regex(/^\d*\.?\d+$/, { message: "Must be a valid number." }),
+  minSide1MOS: zod
+    .string()
+    .regex(/^\d*\.?\d+$/, { message: "Must be a valid number." }),
+  minRoadWidth: zod
+    .string()
+    .regex(/^\d*\.?\d+$/, { message: "Must be a valid number." }),
+  minRearMOS: zod
+    .string()
+    .regex(/^\d*\.?\d+$/, { message: "Must be a valid number." }),
+  minSide2MOS: zod
+    .string()
+    .regex(/^\d*\.?\d+$/, { message: "Must be a valid number." }),
+});
 
 export default function RulesApplicable() {
   const defaultData = useSelector((state) => state.form.formData);
-  const { register, handleSubmit, getValues, control } = useForm({
+  const {
+    register,
+    handleSubmit,
+    getValues,
+    control,
+    formState: { errors },
+  } = useForm({
     defaultValues: defaultData,
+    resolver: zodResolver(schema),
   });
-
   const page = useSelector((state) => state.form.page);
   const dispatch = useDispatch();
 
@@ -35,69 +73,93 @@ export default function RulesApplicable() {
 
   return (
     <form onSubmit={handleSubmit(sendFormData)} className="m-5 p-2">
-      <div class="bg-white border border-gray-200 rounded-lg shadow">
-        <h3 class=" text-sm font-medium text-left p-2 text-gray-500 border-b border-gray-200 rounded-t-lg bg-gray-50">
-          Max. Permissible Parameters
+      <div className="bg-white border border-gray-200 rounded-lg shadow">
+        <h3 className=" text-lg font-medium text-left p-2 text-black border-b border-gray-200 rounded-t-lg bg-gray-50">
+          MAX. PERMISSIBLE PARAMETERS
         </h3>
         <div>
-          <div class="bg-white rounded-b-lg p-3 grid grid-cols-3 gap-3">
+          <div className="bg-white rounded-b-lg p-3 grid grid-cols-3 gap-3">
             <MuiInput
               label=" Max. Permissible Floor Area Ration"
               {...register("floorAreaRation")}
+              error={errors.floorAreaRation ? true : false}
+              helperText={
+                errors.floorAreaRation && errors.floorAreaRation.message
+              }
             />
             <MuiInput
               {...register("maxGroundCovrage")}
               label="Max. Permissible Ground Coverage(%)"
+              error={errors.maxGroundCovrage ? true : false}
+              helperText={
+                errors.maxGroundCovrage && errors.maxGroundCovrage.message
+              }
             />
 
             <MuiInput
               {...register("maxBuildingHeight")}
               label="Max. Permissible Building Height"
+              error={errors.maxBuildingHeight ? true : false}
+              helperText={
+                errors.maxBuildingHeight && errors.maxBuildingHeight.message
+              }
             />
           </div>
         </div>
       </div>
       <br />
-      <div class="bg-white border border-gray-200 rounded-lg shadow">
-        <h3 class=" text-sm font-medium text-left p-2 text-gray-500 border-b border-gray-200 rounded-t-lg bg-gray-50">
-          Min. Required Parameters
+      <div className="bg-white border border-gray-200 rounded-lg shadow">
+        <h3 className=" text-lg font-medium text-left p-2 text-black border-b border-gray-200 rounded-t-lg bg-gray-50">
+          MIN. REQUIRED PARAMETERS
         </h3>
         <div>
-          <div class="bg-white rounded-b-lg p-3 grid grid-cols-3 gap-3">
+          <div className="bg-white rounded-b-lg p-3 grid grid-cols-3 gap-3">
             <MuiInput
               {...register("minFrontage")}
               label="  Min. Required Frontage"
+              error={errors.minFrontage ? true : false}
+              helperText={errors.minFrontage && errors.minFrontage.message}
             />
             <MuiInput
               {...register("minFrontMOS")}
               label=" Min. Required Front MOS"
+              error={errors.minFrontMOS ? true : false}
+              helperText={errors.minFrontMOS && errors.minFrontMOS.message}
             />
 
             <MuiInput
               {...register("minSide1MOS")}
               label=" Min. Required Side 1 MOS"
+              error={errors.minSide1MOS ? true : false}
+              helperText={errors.minSide1MOS && errors.minSide1MOS.message}
             />
             <MuiInput
               {...register("minRoadWidth")}
               label="  Min. Required Road Width"
+              error={errors.minRoadWidth ? true : false}
+              helperText={errors.minRoadWidth && errors.minRoadWidth.message}
             />
             <MuiInput
               {...register("minRearMOS")}
               label=" Min. Required Rear MOS"
+              error={errors.minRearMOS ? true : false}
+              helperText={errors.minRearMOS && errors.minRearMOS.message}
             />
 
             <MuiInput
               {...register("minSide2MOS")}
               label=" Min. Required Side 2 MOS"
+              error={errors.minSide2MOS ? true : false}
+              helperText={errors.minSide2MOS && errors.minSide2MOS.message}
             />
           </div>
-          <div class="bg-white rounded-b-lg p-3 grid grid-cols-1 gap-3">
+          <div className="bg-white rounded-b-lg p-3 grid grid-cols-1 gap-3">
             <FormControl className="flex">
               <FormLabel
-                className="text-sm"
+                sx={{ color: "black" }}
                 id="demo-radio-buttons-group-label"
               >
-                Min. Required Parking
+                MIN. REQUIRED PARKING
               </FormLabel>
               <Controller
                 control={control}
@@ -107,17 +169,17 @@ export default function RulesApplicable() {
                     {...field}
                     className="block"
                     aria-labelledby="demo-radio-buttons-group-label"
-                    value={field.value || "No. of Bed"}
+                    value={field.value}
                   >
                     <FormControlLabel
-                      value="No. of Bed"
+                      value="On No. of Bed"
                       control={<Radio />}
-                      label="No. of Bed"
+                      label="On No. of Bed"
                     />
                     <FormControlLabel
-                      value="No of Seat"
+                      value="On No of Seat"
                       control={<Radio />}
-                      label="No of Seat"
+                      label="On No of Seat"
                     />
                     <FormControlLabel
                       value="On Per Build Up Area"

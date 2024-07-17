@@ -1,11 +1,43 @@
   const buildingUse = [
-    { value: 1, label: "Residential" },
-    { value: 2, label: "Educational" },
-    { value: 3, label: "Institutional" },
-    { value: 4, label: "Assembly" },
-    { value: 5, label: "Mercantile" },
-    { value: 6, label: "Industrial" },
-    { value: 7, label: "Storage" },
-    { value: 8, label: "Hazardous" },
-  ];
+    {
+        "id": "1",
+        "value": "Residential ",
+        "label": "Residential "
+    },
+    {
+        "id": "2",
+        "value": "Educational",
+        "label": "Educational"
+    },
+    {
+        "id": "3",
+        "value": "Institutional ",
+        "label": "Institutional "
+    },
+    {
+        "id": "4",
+        "value": "Assembly",
+        "label": "Assembly"
+    },
+    {
+        "id": "5",
+        "value": "Mercantile",
+        "label": "Mercantile"
+    },
+    {
+        "id": "6",
+        "value": "Industrial",
+        "label": "Industrial"
+    },
+    {
+        "id": "7",
+        "value": "Storage",
+        "label": "Storage"
+    },
+    {
+        "id": "8",
+        "value": "Hazardous",
+        "label": "Hazardous"
+    }
+];
 export default buildingUse;

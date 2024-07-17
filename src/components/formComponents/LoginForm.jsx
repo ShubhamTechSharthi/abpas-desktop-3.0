@@ -3,15 +3,27 @@ import IconButton from "@mui/material/IconButton";
 import InputLabel from "@mui/material/InputLabel";
 import InputAdornment from "@mui/material/InputAdornment";
 import OutlinedInput from "@mui/material/OutlinedInput";
+import FormHelperText from "@mui/material/FormHelperText";
 import { FormControl } from "@mui/material";
 import { IoEye } from "react-icons/io5";
 import { IoEyeOff } from "react-icons/io5";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "../../assets/images/mp.png";
+import { z as zod } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+const schema = zod.object({
+  userId: zod.string().min(2, { message: "This is required." }),
+  password: zod.string().min(2, { message: "This is required." }),
+});
 
 export default function LoginForm() {
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({ resolver: zodResolver(schema) });
 
   const [showPassword, setShowPassword] = useState(false);
 
@@ -27,7 +39,9 @@ export default function LoginForm() {
   };
 
   const handleLogin = (data) => {
-    if (data.password) {
+    if (data.userId !== "dheeraj1_bho" && data.password !== "12345") {
+      alert("Username and Password Not Found");
+    } else if (data.userId === "dheeraj1_bho" && data.password === "12345") {
       console.log(data);
 
       navigate("/home");
@@ -63,7 +77,11 @@ export default function LoginForm() {
         }}
       /> */}
 
-      <FormControl className="w-5/6 text-white" variant="outlined">
+      <FormControl
+        className="w-5/6 text-white"
+        variant="outlined"
+        error={errors.userId ? true : false}
+      >
         <InputLabel
           htmlFor="outlined-adornment-password"
           style={{ color: "white", fontSize: "10pt" }}
@@ -74,11 +92,19 @@ export default function LoginForm() {
           id="user-id"
           label="User Id *"
           size="normal"
-          {...register("user_id")}
+          {...register("userId")}
+          sx={{ color: "white" }}
         />
+        <FormHelperText>
+          {errors.userId && errors.userId.message}
+        </FormHelperText>
       </FormControl>
 
-      <FormControl className="w-5/6 text-white" variant="outlined">
+      <FormControl
+        className="w-5/6 text-white"
+        variant="outlined"
+        error={errors.password ? true : false}
+      >
         <InputLabel
           htmlFor="outlined-adornment-password"
           style={{ color: "white", fontSize: "10pt" }}
@@ -89,6 +115,7 @@ export default function LoginForm() {
           {...register("password")}
           id="outlined-adornment-password"
           type={showPassword ? "text" : "password"}
+          sx={{ color: "white" }}
           endAdornment={
             <InputAdornment position="end">
               <IconButton
@@ -107,6 +134,9 @@ export default function LoginForm() {
           }
           label="Password"
         />
+        <FormHelperText>
+          {errors.password && errors.password.message}
+        </FormHelperText>
       </FormControl>
 
       <button

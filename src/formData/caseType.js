@@ -1,37 +1,44 @@
   const caseType = [
     {
-      value: 1,
-      label: "ERECT",
+        "id": "1",
+        "value": "ERECT",
+        "label": "ERECT"
     },
     {
-      value: 2,
-      label: "ADDITION/ALTERATION IN BUILT UP AREA",
+        "id": "2",
+        "value": "ADDITION/ALTERATION IN BUILT UP AREA",
+        "label": "ADDITION/ALTERATION IN BUILT UP AREA"
     },
     {
-      value: 3,
-      label: "ALTERATION & ADDITION IN SANCTIONED or PROPOSED PLAN",
+        "id": "3",
+        "value": "ALTERATION & ADDITION IN SANCTIONED or PROPOSED PLAN",
+        "label": "ALTERATION & ADDITION IN SANCTIONED or PROPOSED PLAN"
     },
     {
-      value: 4,
-      label: "DEMOLITION",
+        "id": "4",
+        "value": "DEMOLITION",
+        "label": "DEMOLITION"
     },
     {
-      value: 5,
-      label: "CONSTRUCTION OF BOUNDARY WALL",
+        "id": "5",
+        "value": "CONSTRUCTION OF BOUNDARY WALL",
+        "label": "CONSTRUCTION OF BOUNDARY WALL"
     },
     {
-      value: 6,
-      label: "REVALIDATION OF THE BUILDINGPERMISSION",
+        "id": "6",
+        "value": "REVALIDATION OF THE BUILDINGPERMISSION",
+        "label": "REVALIDATION OF THE BUILDINGPERMISSION"
     },
     {
-      value: 7,
-      label:
-        "COMPOUND OF CONTRARY/MORE CONSTRUCTION FROM APPROVED BUILDING PERMISSION",
+        "id": "7",
+        "value": "COMPOUND OF CONTRARY/MORE CONSTRUCTION FROM APPROVED BUILDING PERMISSION",
+        "label": "COMPOUND OF CONTRARY/MORE CONSTRUCTION FROM APPROVED BUILDING PERMISSION"
     },
     {
-      value: 8,
-      label: "COMPOUND THE BUILDING IN THE ABSENCE OF A BUILDING PERMISSION",
-    },
-  ];
+        "id": "8",
+        "value": "COMPOUND THE BUILDING IN THE ABSENCE OF A BUILDING PERMISSION",
+        "label": "COMPOUND THE BUILDING IN THE ABSENCE OF A BUILDING PERMISSION"
+    }
+];
 
-  export default caseType;
+export default caseType;

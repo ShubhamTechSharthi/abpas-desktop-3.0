@@ -1,44 +1,54 @@
  const landUseName = [
     {
-      value: 1,
-      label: "Residential",
+        "id": "1",
+        "value": "Residential",
+        "label": "Residential"
     },
     {
-      value: 2,
-      label: "Commercial zone",
+        "id": "2",
+        "value": "Commercial zone",
+        "label": "Commercial zone"
     },
     {
-      value: 3,
-      label: "Industrial Zone",
+        "id": "3",
+        "value": "Industrial Zone",
+        "label": "Industrial Zone"
     },
     {
-      value: 4,
-      label: "Recreation",
+        "id": "4",
+        "value": "Recreation",
+        "label": "Recreation"
     },
     {
-      value: 5,
-      label: "Public & Semi-Public",
+        "id": "5",
+        "value": "Public & Semi-Public",
+        "label": "Public & Semi-Public"
     },
     {
-      value: 6,
-      label: "Special Purpose",
+        "id": "6",
+        "value": "Special Purpose",
+        "label": "Special Purpose"
     },
     {
-      value: 7,
-      label: "Transportation",
+        "id": "7",
+        "value": "Transportation",
+        "label": "Transportation"
     },
     {
-      value: 8,
-      label: "Public Utilities and Facilities",
+        "id": "8",
+        "value": "Public Utilities and Facilities",
+        "label": "Public Utilities and Facilities"
     },
     {
-      value: 9,
-      label: "Water Bodies",
+        "id": "9",
+        "value": "Water Bodies",
+        "label": "Water Bodies"
     },
     {
-      value: 10,
-      label: "Agriculture",
-    },
-  ];
+        "id": "10",
+        "value": "Agriculture",
+        "label": "Agriculture"
+    }
+];
 
   export default landUseName;

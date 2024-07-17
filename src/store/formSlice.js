@@ -1,8 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  formData: {},
-  page : 0
+  formData: {
+    isPlotIrregular: "Yes",
+    buildingIsFor: "Self Use",
+    minRequiredParking: "On No. of Bed",
+  },
+  page: 0,
 };
 
 const formSlice = createSlice({
@@ -13,18 +17,23 @@ const formSlice = createSlice({
       state.formData = { ...state.formData, ...action.payload };
     },
     removeFormData: (state) => {
-      state.formData = {};
+      state.formData = {
+        isPlotIrregular: "Yes",
+        buildingIsFor: "Self Use",
+        minRequiredParking: "On No. of Bed",
+      };
       state.page = 0;
     },
-    nextPage: (state,action) => {
-      state.page = state.page + 1
+    nextPage: (state, action) => {
+      state.page = state.page + 1;
     },
-    prevPage: (state,action) => {
-      state.page = state.page - 1
-    }
+    prevPage: (state, action) => {
+      state.page = state.page - 1;
+    },
   },
 });
 
-export const { addFormData, removeFormData, nextPage, prevPage } = formSlice.actions;
+export const { addFormData, removeFormData, nextPage, prevPage } =
+  formSlice.actions;
 
 export default formSlice.reducer;

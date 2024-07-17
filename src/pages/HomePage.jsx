@@ -2,70 +2,16 @@ import { useNavigate } from "react-router-dom";
 import { RxCross2 } from "react-icons/rx";
 import MuiInput from "../components/MuiInput";
 import Button from "../components/Button";
-import ReactTableComponent from "../components/ReactTableComponent";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import GeneratePdf from "../components/GeneratePdf";
 import { removeFormData } from "../store/formSlice";
 
-const tabledata = [
-  {
-    s_no: "1",
-    project_name: "Demo Project",
-    project_date: "22-6-2024",
-  },
-  {
-    s_no: "",
-    project_name: "",
-    project_date: "",
-  },
-  {
-    s_no: "",
-    project_name: "",
-    project_date: "",
-  },
-  {
-    s_no: "",
-    project_name: "",
-    project_date: "",
-  },
-  {
-    s_no: "",
-    project_name: "",
-    project_date: "",
-  },
-  {
-    s_no: "",
-    project_name: "",
-    project_date: "",
-  },
-  {
-    s_no: "",
-    project_name: "",
-    project_date: "",
-  },
-  {
-    s_no: "",
-    project_name: "",
-    project_date: "",
-  },
-  {
-    s_no: "",
-    project_name: "",
-    project_date: "",
-  },
-];
-
-const tablecolumns = [
-  { Header: "S.No", accessor: "s_no" },
-  { Header: "Project Name", accessor: "project_name" },
-  { Header: "Project Date", accessor: "project_date" },
-];
-
 export default function HomePage() {
   const [filePath, setFilePath] = useState();
 
   const finalData = useSelector((state) => state.form.formData);
+  const finalDataLength = Object.keys(finalData).length;
   const dispatch = useDispatch();
 
   if (filePath) console.log(filePath);
@@ -82,6 +28,7 @@ export default function HomePage() {
     window.Electron.ipcRenderer.on("file-processed", (result) => {
       console.log("Received processed data:", result);
       setProcessedData(result); // Update state with received data
+      console.log("processed data", processedData);
     });
 
     return () => {
@@ -110,23 +57,26 @@ export default function HomePage() {
           </div>
           <div className="flex gap-2">
             <Button
-              className="bg-blue-600"
+              className="bg-blue-600 text-base"
               onClick={() => {
                 dispatch(removeFormData());
                 navigate("/projectdetails");
               }}
             >
-              new
+              NEW
             </Button>
-            {finalData > 0 && (
-              <Button onClick={handleFileSelect} className="bg-green-600">
-                save
+            {finalDataLength > 3 && (
+              <Button
+                onClick={handleFileSelect}
+                className="bg-green-600 text-base"
+              >
+                SCRUTINIZE
               </Button>
             )}
-            <Button onClick={() => showFinalData()} className="bg-red-600">
+            {/* <Button onClick={() => showFinalData()} className="bg-red-600">
               Final Data
-            </Button>
-            {finalData > 0 && (
+            </Button> */}
+            {finalDataLength > 3 && (
               <input
                 type="file"
                 onChange={(e) => {
@@ -134,17 +84,42 @@ export default function HomePage() {
                 }}
               />
             )}
-            {processedData && <GeneratePdf scrutinyData={processedData} />}
+            {/* {processedData && <GeneratePdf scrutinyData={processedData} />} */}
             {/* <GeneratePdf scrutinyData={processedData} /> */}
           </div>
         </div>
-        <div>
+        {/* <div>
           {processedData && <pre>{JSON.stringify(processedData, null, 2)}</pre>}
-        </div>
-        <ReactTableComponent
-          tableData={tabledata}
-          tableColumns={tablecolumns}
-        />
+        </div> */}
+        {processedData && (
+          <div className="w-full p-5">
+            <h1 className="text-2xl mb-5 text-blue-800">Scrutiny Report</h1>
+            <div>
+              <h2 className="text-xl mb-5 text-blue-800">Form Data</h2>
+              <div className="w-full grid grid-cols-4 gap-4 border border-slate-900 p-2">
+                {Object.entries(finalData).map(([key, value], index) => (
+                  <div key={index} className="border border-slate-900 p-2">
+                    <div className="text-base">{key.toUpperCase()}</div>
+                    <div className="text-sm">{value}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div>
+              <h2 className="text-xl my-5 text-blue-800">
+                Drawing Compliant Data
+              </h2>
+              <div className="w-full grid grid-cols-4 gap-4 border border-slate-900 p-2">
+                {Object.entries(processedData).map(([key, value], index) => (
+                  <div key={index} className="border border-slate-900 p-2">
+                    <div className="text-base">{key.toUpperCase()}</div>
+                    <div className="text-sm">{value}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

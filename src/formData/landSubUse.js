@@ -1,306 +1,379 @@
   const landSubUse = [
     {
-      value: 1,
-      label: "Residential",
+        "id": "1",
+        "value": "Residential",
+        "label": "Residential"
     },
     {
-      value: 2,
-      label: "Residential with shop Lines at ground floor",
+        "id": "2",
+        "value": "Residential with shop Lines at ground floor",
+        "label": "Residential with shop Lines at ground floor"
     },
     {
-      value: 3,
-      label: "Medium density",
+        "id": "3",
+        "value": "Medium density",
+        "label": "Medium density"
     },
     {
-      value: 4,
-      label: "Low density",
+        "id": "4",
+        "value": "Low density",
+        "label": "Low density"
     },
     {
-      value: 5,
-      label: "City centre",
+        "id": "5",
+        "value": "City centre",
+        "label": "City centre"
     },
     {
-      value: 6,
-      label: "Sub city centre",
+        "id": "6",
+        "value": "Sub city centre",
+        "label": "Sub city centre"
     },
     {
-      value: 7,
-      label: "Community centre",
+        "id": "7",
+        "value": "Community centre",
+        "label": "Community centre"
     },
     {
-      value: 8,
-      label: "Local shopping centre",
+        "id": "8",
+        "value": "Local shopping centre",
+        "label": "Local shopping centre"
     },
     {
-      value: 9,
-      label: "Convenience shopping centre",
+        "id": "9",
+        "value": "Convenience shopping centre",
+        "label": "Convenience shopping centre"
     },
     {
-      value: 10,
-      label: "Mandi",
+        "id": "10",
+        "value": "Mandi",
+        "label": "Mandi"
     },
     {
-      value: 11,
-      label: "Categorised markets",
+        "id": "11",
+        "value": "Categorised markets",
+        "label": "Categorised markets"
     },
     {
-      value: 12,
-      label: "Service Industries",
+        "id": "12",
+        "value": "Service Industries",
+        "label": "Service Industries"
     },
     {
-      value: 13,
-      label: "General Industries",
+        "id": "13",
+        "value": "General Industries",
+        "label": "General Industries"
     },
     {
-      value: 14,
-      label: "Special Industries",
+        "id": "14",
+        "value": "Special Industries",
+        "label": "Special Industries"
     },
     {
-      value: 15,
-      label: "Parks",
+        "id": "15",
+        "value": "Parks",
+        "label": "Parks"
     },
     {
-      value: 16,
-      label: "Green Belts or Afforested area",
+        "id": "16",
+        "value": "Green Belts or Afforested area",
+        "label": "Green Belts or Afforested area"
     },
     {
-      value: 17,
-      label: "Regional Parks (Zoological or Botanical Parks)",
+        "id": "17",
+        "value": "Regional Parks (Zoological or Botanical Parks)",
+        "label": "Regional Parks (Zoological or Botanical Parks)"
     },
     {
-      value: 18,
-      label: "Preservation of Natural Areas or Landscape Areas",
+        "id": "18",
+        "value": "Preservation of Natural Areas or Landscape Areas",
+        "label": "Preservation of Natural Areas or Landscape Areas"
     },
     {
-      value: 19,
-      label: "Play Grounds",
+        "id": "19",
+        "value": "Play Grounds",
+        "label": "Play Grounds"
     },
     {
-      value: 20,
-      label: "Stadiums",
+        "id": "20",
+        "value": "Stadiums",
+        "label": "Stadiums"
     },
     {
-      value: 21,
-      label: "Lake Front Development",
+        "id": "21",
+        "value": "Lake Front Development",
+        "label": "Lake Front Development"
     },
     {
-      value: 22,
-      label: "Exhibition Grounds",
+        "id": "22",
+        "value": "Exhibition Grounds",
+        "label": "Exhibition Grounds"
     },
     {
-      value: 23,
-      label:
-        "Public Institutions and Administrative Areas/Education and Research/Health Social/Cultural Institutional activities",
+        "id": "23",
+        "value": "Public Institutions and Administrative Areas/Education and Research/Health Social/Cultural Institutional activities",
+        "label": "Public Institutions and Administrative Areas/Education and Research/Health Social/Cultural Institutional activities"
     },
     {
-      value: 24,
-      label: "Tourism Promotion Zone",
+        "id": "24",
+        "value": "Tourism Promotion Zone",
+        "label": "Tourism Promotion Zone"
     },
     {
-      value: 25,
-      label: "Conservation Zone",
+        "id": "25",
+        "value": "Conservation Zone",
+        "label": "Conservation Zone"
     },
     {
-      value: 26,
-      label: "Dry Port or Container Deports",
+        "id": "26",
+        "value": "Dry Port or Container Deports",
+        "label": "Dry Port or Container Deports"
     },
     {
-      value: 27,
-      label: "Oil Depots or Inflammables goods Depots",
+        "id": "27",
+        "value": "Oil Depots or Inflammables goods Depots",
+        "label": "Oil Depots or Inflammables goods Depots"
     },
     {
-      value: 28,
-      label: "Building Material Yards",
+        "id": "28",
+        "value": "Building Material Yards",
+        "label": "Building Material Yards"
     },
     {
-      value: 29,
-      label: "Obnoxious Industries",
+        "id": "29",
+        "value": "Obnoxious Industries",
+        "label": "Obnoxious Industries"
     },
     {
-      value: 30,
-      label: "SEZ",
+        "id": "30",
+        "value": "SEZ",
+        "label": "SEZ"
     },
     {
-      value: 31,
-      label: "Mining Areas",
+        "id": "31",
+        "value": "Mining Areas",
+        "label": "Mining Areas"
     },
     {
-      value: 32,
-      label: "Reserved Forest or National Parks or Wildlife Sanctuaries",
+        "id": "32",
+        "value": "Reserved Forest or National Parks or Wildlife Sanctuaries",
+        "label": "Reserved Forest or National Parks or Wildlife Sanctuaries"
     },
     {
-      value: 33,
-      label: "Others",
+        "id": "33",
+        "value": "Others",
+        "label": "Others"
     },
     {
-      value: 34,
-      label: "Bus-Stands or Terminus",
+        "id": "34",
+        "value": "Bus-Stands or Terminus",
+        "label": "Bus-Stands or Terminus"
     },
     {
-      value: 35,
-      label: "Bus Pick-up Stations",
+        "id": "35",
+        "value": "Bus Pick-up Stations",
+        "label": "Bus Pick-up Stations"
     },
     {
-      value: 36,
-      label: "Roads",
+        "id": "36",
+        "value": "Roads",
+        "label": "Roads"
     },
     {
-      value: 37,
-      label: "Railway Stations",
+        "id": "37",
+        "value": "Railway Stations",
+        "label": "Railway Stations"
     },
     {
-      value: 38,
-      label: "Railway lines",
+        "id": "38",
+        "value": "Railway lines",
+        "label": "Railway lines"
     },
     {
-      value: 39,
-      label: "Bus Depot",
+        "id": "39",
+        "value": "Bus Depot",
+        "label": "Bus Depot"
     },
     {
-      value: 40,
-      label: "Transport Nagar",
+        "id": "40",
+        "value": "Transport Nagar",
+        "label": "Transport Nagar"
     },
     {
-      value: 41,
-      label: "Helipads/Airport",
+        "id": "41",
+        "value": "Helipads/Airport",
+        "label": "Helipads/Airport"
     },
     {
-      value: 42,
-      label: "Metro Rail Stations",
+        "id": "42",
+        "value": "Metro Rail Stations",
+        "label": "Metro Rail Stations"
     },
     {
-      value: 43,
-      label: "Water Treatment Plants",
+        "id": "43",
+        "value": "Water Treatment Plants",
+        "label": "Water Treatment Plants"
     },
     {
-      value: 44,
-      label: "Sewerage Treartment Plant/Oxidation Ponds",
+        "id": "44",
+        "value": "Sewerage Treartment Plant/Oxidation Ponds",
+        "label": "Sewerage Treartment Plant/Oxidation Ponds"
     },
     {
-      value: 45,
-      label: "Electric Sub-Stations",
+        "id": "45",
+        "value": "Electric Sub-Stations",
+        "label": "Electric Sub-Stations"
     },
     {
-      value: 46,
-      label: "Trenching Grounds",
+        "id": "46",
+        "value": "Trenching Grounds",
+        "label": "Trenching Grounds"
     },
     {
-      value: 47,
-      label:
-        "Trunk Line Corridor (Water/Sewer/Extra Voltage Electric Lines/Gas or Oil Pipe Lines and related structures)",
+        "id": "47",
+        "value": "Trunk Line Corridor (Water/Sewer/Extra Voltage Electric Lines/Gas or Oil Pipe Lines and related structures)",
+        "label": "Trunk Line Corridor (Water/Sewer/Extra Voltage Electric Lines/Gas or Oil Pipe Lines and related structures)"
     },
     {
-      value: 48,
-      label: "Radio/TV Stations",
+        "id": "48",
+        "value": "Radio/TV Stations",
+        "label": "Radio/TV Stations"
     },
     {
-      value: 49,
-      label: "Telephone Exchange",
+        "id": "49",
+        "value": "Telephone Exchange",
+        "label": "Telephone Exchange"
     },
     {
-      value: 50,
-      label: "Fire Control Stations",
+        "id": "50",
+        "value": "Fire Control Stations",
+        "label": "Fire Control Stations"
     },
     {
-      value: 51,
-      label: "Solid Waste Disposal Plants/Decomposition plants",
+        "id": "51",
+        "value": "Solid Waste Disposal Plants/Decomposition plants",
+        "label": "Solid Waste Disposal Plants/Decomposition plants"
     },
     {
-      value: 52,
-      label: "River",
+        "id": "52",
+        "value": "River",
+        "label": "River"
     },
     {
-      value: 53,
-      label: "Lakes/Ponds/Reservoirs",
+        "id": "53",
+        "value": "Lakes/Ponds/Reservoirs",
+        "label": "Lakes/Ponds/Reservoirs"
     },
     {
-      value: 54,
-      label: "Nallah/Canal",
+        "id": "54",
+        "value": "Nallah/Canal",
+        "label": "Nallah/Canal"
     },
     {
-      value: 55,
-      label: "Flood Affected areas",
+        "id": "55",
+        "value": "Flood Affected areas",
+        "label": "Flood Affected areas"
     },
     {
-      value: 56,
-      label: "Agricultural lands",
+        "id": "56",
+        "value": "Agricultural lands",
+        "label": "Agricultural lands"
     },
     {
-      value: 57,
-      label: "Village abaadi extension",
+        "id": "57",
+        "value": "Village abaadi extension ",
+        "label": "Village abaadi extension "
     },
     {
-      value: 58,
-      label: "BandaSubUse",
+        "id": "58",
+        "value": "BandaSubUse",
+        "label": "BandaSubUse"
     },
     {
-      value: 59,
-      label: "Guest House",
+        "id": "59",
+        "value": "Guest House",
+        "label": "Guest House"
     },
     {
-      value: 60,
-      label: "Holiday Homes and Restaurants",
+        "id": "60",
+        "value": "Holiday Homes and Restaurants",
+        "label": "Holiday Homes and Restaurants"
     },
     {
-      value: 61,
-      label: "Godown and Storage",
+        "id": "61",
+        "value": "Godown and Storage",
+        "label": "Godown and Storage"
     },
     {
-      value: 62,
-      label: "Wholesale Market",
+        "id": "62",
+        "value": "Wholesale Market",
+        "label": "Wholesale Market"
     },
     {
-      value: 63,
-      label: "Block Level Centre",
+        "id": "63",
+        "value": "Block Level Centre",
+        "label": "Block Level Centre"
     },
     {
-      value: 64,
-      label: "Planning Unit Centre",
+        "id": "64",
+        "value": "Planning Unit Centre",
+        "label": "Planning Unit Centre"
     },
     {
-      value: 65,
-      label: "Investment Unit Centre",
+        "id": "65",
+        "value": "Investment Unit Centre",
+        "label": "Investment Unit Centre"
     },
     {
-      value: 66,
-      label: "Circle Segment Level",
+        "id": "66",
+        "value": "Circle Segment Level",
+        "label": "Circle Segment Level"
     },
     {
-      value: 67,
-      label: "General Centre",
+        "id": "67",
+        "value": "General Centre",
+        "label": "General Centre"
     },
     {
-      value: 68,
-      label: "Wholesale Trade",
+        "id": "68",
+        "value": "Wholesale Trade",
+        "label": "Wholesale Trade"
     },
     {
-      value: 69,
-      label: "Wholesale Commercial",
+        "id": "69",
+        "value": "Wholesale Commercial",
+        "label": "Wholesale Commercial"
     },
     {
-      value: 70,
-      label: "Warehouse",
+        "id": "70",
+        "value": "Warehouse",
+        "label": "Warehouse"
     },
     {
-      value: 71,
-      label: "Suvidhajanak Shop",
+        "id": "71",
+        "value": "Suvidhajanak Shop",
+        "label": "Suvidhajanak Shop"
     },
     {
-      value: 72,
-      label: "Low Hazard",
+        "id": "72",
+        "value": "Low Hazard",
+        "label": "Low Hazard"
     },
     {
-      value: 73,
-      label: "Medium Hazard",
+        "id": "73",
+        "value": "Medium Hazard",
+        "label": "Medium Hazard"
     },
     {
-      value: 74,
-      Label: "High Hazard",
+        "id": "74",
+        "value": "High Hazard",
+        "label": "High Hazard"
     },
     {
-      value: 75,
-      label: "Rural Zone",
-    },
-  ];
+        "id": "75",
+        "value": "Rural Zone",
+        "label": "Rural Zone"
+    }
+];
 
   export default landSubUse;
