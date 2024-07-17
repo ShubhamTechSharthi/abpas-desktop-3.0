@@ -60,7 +60,9 @@ export default function ProjectDetailsPage() {
             <HiOutlineArrowLeftCircle className="bg-red-500 mr-2 p-[3px] rounded-md text-white text-xl" />
           </button>
         </div>
-        <div className="w-full rounded-md bg-white">{renderForms()}</div>
+        <div className="w-full rounded-md bg-white tab-sty">
+          {renderForms()}
+        </div>
       </div>
     </div>
   );
