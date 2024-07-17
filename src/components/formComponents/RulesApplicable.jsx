@@ -19,27 +19,27 @@ const schema = zod.object({
   maxGroundCovrage: zod
     .string()
     .regex(/^\d*\.?\d+$/, { message: "Must be a valid number." }),
-  maxBuildingHeight: zod
-    .string()
-    .regex(/^\d*\.?\d+$/, { message: "Must be a valid number." }),
-  minFrontage: zod
-    .string()
-    .regex(/^\d*\.?\d+$/, { message: "Must be a valid number." }),
-  minFrontMOS: zod
-    .string()
-    .regex(/^\d*\.?\d+$/, { message: "Must be a valid number." }),
-  minSide1MOS: zod
-    .string()
-    .regex(/^\d*\.?\d+$/, { message: "Must be a valid number." }),
-  minRoadWidth: zod
-    .string()
-    .regex(/^\d*\.?\d+$/, { message: "Must be a valid number." }),
-  minRearMOS: zod
-    .string()
-    .regex(/^\d*\.?\d+$/, { message: "Must be a valid number." }),
-  minSide2MOS: zod
-    .string()
-    .regex(/^\d*\.?\d+$/, { message: "Must be a valid number." }),
+  // maxBuildingHeight: zod
+  //   .string()
+  //   .regex(/^\d*\.?\d+$/, { message: "Must be a valid number." }),
+  // minFrontage: zod
+  //   .string()
+  //   .regex(/^\d*\.?\d+$/, { message: "Must be a valid number." }),
+  // minFrontMOS: zod
+  //   .string()
+  //   .regex(/^\d*\.?\d+$/, { message: "Must be a valid number." }),
+  // minSide1MOS: zod
+  //   .string()
+  //   .regex(/^\d*\.?\d+$/, { message: "Must be a valid number." }),
+  // minRoadWidth: zod
+  //   .string()
+  //   .regex(/^\d*\.?\d+$/, { message: "Must be a valid number." }),
+  // minRearMOS: zod
+  //   .string()
+  //   .regex(/^\d*\.?\d+$/, { message: "Must be a valid number." }),
+  // minSide2MOS: zod
+  //   .string()
+  //   .regex(/^\d*\.?\d+$/, { message: "Must be a valid number." }),
 });
 
 export default function RulesApplicable() {
@@ -82,27 +82,36 @@ export default function RulesApplicable() {
             <MuiInput
               label=" Max. Permissible Floor Area Ration"
               {...register("floorAreaRation")}
-              error={errors.floorAreaRation ? true : false}
-              helperText={
-                errors.floorAreaRation && errors.floorAreaRation.message
-              }
+              // error={errors.floorAreaRation ? true : false}
+              // helperText={
+              //   errors.floorAreaRation && errors.floorAreaRation.message
+              // }
+              InputProps={{
+                readOnly: true,
+              }}
             />
             <MuiInput
               {...register("maxGroundCovrage")}
               label="Max. Permissible Ground Coverage(%)"
-              error={errors.maxGroundCovrage ? true : false}
-              helperText={
-                errors.maxGroundCovrage && errors.maxGroundCovrage.message
-              }
+              // error={errors.maxGroundCovrage ? true : false}
+              // helperText={
+              //   errors.maxGroundCovrage && errors.maxGroundCovrage.message
+              // }
+              InputProps={{
+                readOnly: true,
+              }}
             />
 
             <MuiInput
               {...register("maxBuildingHeight")}
               label="Max. Permissible Building Height"
-              error={errors.maxBuildingHeight ? true : false}
-              helperText={
-                errors.maxBuildingHeight && errors.maxBuildingHeight.message
-              }
+              InputProps={{
+                readOnly: true,
+              }}
+              // error={errors.maxBuildingHeight ? true : false}
+              // helperText={
+              //   errors.maxBuildingHeight && errors.maxBuildingHeight.message
+              // }
             />
           </div>
         </div>
@@ -117,40 +126,58 @@ export default function RulesApplicable() {
             <MuiInput
               {...register("minFrontage")}
               label="  Min. Required Frontage"
-              error={errors.minFrontage ? true : false}
-              helperText={errors.minFrontage && errors.minFrontage.message}
+              InputProps={{
+                readOnly: true,
+              }}
+              // error={errors.minFrontage ? true : false}
+              // helperText={errors.minFrontage && errors.minFrontage.message}
             />
             <MuiInput
               {...register("minFrontMOS")}
               label=" Min. Required Front MOS"
-              error={errors.minFrontMOS ? true : false}
-              helperText={errors.minFrontMOS && errors.minFrontMOS.message}
+              InputProps={{
+                readOnly: true,
+              }}
+              // error={errors.minFrontMOS ? true : false}
+              // helperText={errors.minFrontMOS && errors.minFrontMOS.message}
             />
 
             <MuiInput
               {...register("minSide1MOS")}
               label=" Min. Required Side 1 MOS"
-              error={errors.minSide1MOS ? true : false}
-              helperText={errors.minSide1MOS && errors.minSide1MOS.message}
+              InputProps={{
+                readOnly: true,
+              }}
+              // error={errors.minSide1MOS ? true : false}
+              // helperText={errors.minSide1MOS && errors.minSide1MOS.message}
             />
             <MuiInput
               {...register("minRoadWidth")}
               label="  Min. Required Road Width"
-              error={errors.minRoadWidth ? true : false}
-              helperText={errors.minRoadWidth && errors.minRoadWidth.message}
+              InputProps={{
+                readOnly: true,
+              }}
+              // error={errors.minRoadWidth ? true : false}
+              // helperText={errors.minRoadWidth && errors.minRoadWidth.message}
             />
             <MuiInput
               {...register("minRearMOS")}
-              label=" Min. Required Rear MOS"
-              error={errors.minRearMOS ? true : false}
-              helperText={errors.minRearMOS && errors.minRearMOS.message}
+              label="Min. Required Rear MOS"
+              InputProps={{
+                readOnly: true,
+              }}
+              // error={errors.minRearMOS ? true : false}
+              // helperText={errors.minRearMOS && errors.minRearMOS.message}
             />
 
             <MuiInput
               {...register("minSide2MOS")}
-              label=" Min. Required Side 2 MOS"
-              error={errors.minSide2MOS ? true : false}
-              helperText={errors.minSide2MOS && errors.minSide2MOS.message}
+              label="Min. Required Side 2 MOS"
+              InputProps={{
+                readOnly: true,
+              }}
+              // error={errors.minSide2MOS ? true : false}
+              // helperText={errors.minSide2MOS && errors.minSide2MOS.message}
             />
           </div>
           <div className="bg-white rounded-b-lg p-3 grid grid-cols-1 gap-3">

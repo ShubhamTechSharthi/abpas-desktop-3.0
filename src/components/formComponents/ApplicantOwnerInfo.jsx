@@ -18,7 +18,7 @@ const schema = zod.object({
   caseType: zod
     .string()
     .refine((value) => value !== "", { message: "Case type is required." }),
-  prevSectionNo: zod.string().regex(/^\d+$/, { message: "Must be a number." }),
+  prevSanctionNo: zod.string().regex(/^\d+$/, { message: "Must be a number." }),
   typeOfConsultant: zod
     .string()
     .refine((value) => value !== "", { message: "Case type is required." }),
@@ -99,15 +99,17 @@ export default function ApplicantOwnerInfo() {
             />
 
             <MuiInput
-              {...register("prevSectionNo")}
-              label="PREVIOUS SECTION NO."
-              error={errors.prevSectionNo ? true : false}
-              helperText={errors.prevSectionNo && errors.prevSectionNo.message}
+              {...register("prevSanctionNo")}
+              label="PREVIOUS SANCTION NO."
+              error={errors.prevSanctionNo ? true : false}
+              helperText={
+                errors.prevSanctionNo && errors.prevSanctionNo.message
+              }
             />
             <TextField
               id="date"
-              {...register("preSectionDate")}
-              label="PREVIOUS SECTION DATE"
+              {...register("prevSanctionDate")}
+              label="PREVIOUS SANCTION DATE"
               size="small"
               type="date"
               defaultValue="2024-07-16"
