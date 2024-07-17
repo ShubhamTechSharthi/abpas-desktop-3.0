@@ -47,7 +47,7 @@ export default function HomePage() {
 
   return (
     <div className="h-full flex justify-center">
-      <div className="flex flex-col items-start h-auto w-full bg-slate-300 my-auto rounded-md">
+      <div className="flex flex-col P-4 items-start h-auto w-full bg-slate-300 my-auto rounded-md">
         <div className="flex bg-gray-600 justify-between items-center w-full px-2 py-1 rounded-t-md">
           <h1 className="text-white">Open Project</h1>
           <button className="text-white" onClick={() => navigate("/")}>
@@ -96,33 +96,54 @@ export default function HomePage() {
         {/* <div>
           {processedData && <pre>{JSON.stringify(processedData, null, 2)}</pre>}
         </div> */}
+
         {processedData && (
-          <div className="w-full p-5">
-            <h1 className="text-2xl mb-5 text-blue-800">Scrutiny Report</h1>
-            <div>
-              <h2 className="text-xl mb-5 text-blue-800">Form Data</h2>
+          <div>
+            <div className="bg-white border-gray-200 shadow tab-sty-report p-5">
+              <div className="grid grid-cols-1 m-auto mb-3">
+                <h1 className="text-3xl text-cyan-700 text-center">
+                  Scrutiny Report
+                </h1>
+              </div>
+              <h3 className=" text-lg font-medium text-left p-2 bg-gray-400">
+                Proposal Information
+              </h3>
+
+              {/* <h2 className="text-xl mb-5 text-blue-800">Form Data</h2> */}
               <div className="w-full grid grid-cols-4 gap-4 border border-slate-900 p-2">
                 {Object.entries(finalData).map(([key, value], index) => (
-                  <div key={index} className="border border-slate-900 p-2">
-                    <div className="text-base">
-                      {camelCaseToHumanReadable(key)}
-                    </div>
-                    <div className="text-sm">{value}</div>
-                  </div>
+                  <table className="text-left">
+                    <tr className="bg-slate-200">
+                      <th className="p-3"> {camelCaseToHumanReadable(key)}</th>
+                      <td className="text-right p-3 text-red-900">{value}</td>
+                    </tr>
+                  </table>
                 ))}
               </div>
-            </div>
-            <div>
-              <h2 className="text-xl my-5 text-blue-800">
-                Drawing Compliant Data
-              </h2>
-              <div className="w-full grid grid-cols-4 gap-4 border border-slate-900 p-2">
-                {Object.entries(processedData).map(([key, value], index) => (
-                  <div key={index} className="border border-slate-900 p-2">
-                    <div className="text-base">{key.toUpperCase()}</div>
-                    <div className="text-sm">{value}</div>
-                  </div>
-                ))}
+
+              <div className="bg-white border-gray-200 shadow mt-3">
+                <h3 className=" text-lg font-medium text-left p-2 bg-gray-400">
+                  Scrutiny Data
+                </h3>
+                <div className="w-full grid grid-cols-4 gap-4 border border-slate-900 p-2">
+                  {Object.entries(processedData).map(([key, value], index) => (
+                    <table className="text-left">
+                      <tr className="bg-slate-200">
+                        <th className="p-3">{camelCaseToHumanReadable(key)}</th>
+                        <td className="text-right p-3 text-cyan-700">
+                          {value}
+                        </td>
+                      </tr>
+                    </table>
+
+                    // <div key={index} className="p-2">
+                    //   <div className="text-base text-cyan-600">
+
+                    //   </div>
+                    //   <div className="text-sm">{value}</div>
+                    // </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
