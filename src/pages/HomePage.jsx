@@ -28,7 +28,6 @@ export default function HomePage() {
     window.Electron.ipcRenderer.on("file-processed", (result) => {
       console.log("Received processed data:", result);
       setProcessedData(result); // Update state with received data
-      console.log("processed data", processedData);
     });
 
     return () => {
@@ -38,6 +37,12 @@ export default function HomePage() {
 
   const showFinalData = () => {
     console.log(finalData);
+  };
+
+  const camelCaseToHumanReadable = (str) => {
+    return str
+      .replace(/([a-z])([A-Z])/g, "$1 $2") // Insert a space between lowercase and uppercase letters
+      .replace(/^./, (match) => match.toUpperCase()); // Capitalize the first letter
   };
 
   return (
@@ -51,10 +56,10 @@ export default function HomePage() {
         </div>
 
         <div className="w-full flex justify-between items-center px-5 my-3">
-          <div className="flex gap-3">
+          {/* <div className="flex gap-3">
             <MuiInput id="project-code" label="Project Code" className="w-36" />
             <MuiInput id="search-text" label="Search Text" className="w-36" />
-          </div>
+          </div> */}
           <div className="flex gap-2">
             <Button
               className="bg-blue-600 text-base"
@@ -65,7 +70,7 @@ export default function HomePage() {
             >
               NEW
             </Button>
-            {finalDataLength > 3 && (
+            {finalDataLength > 12 && (
               <Button
                 onClick={handleFileSelect}
                 className="bg-green-600 text-base"
@@ -76,7 +81,7 @@ export default function HomePage() {
             {/* <Button onClick={() => showFinalData()} className="bg-red-600">
               Final Data
             </Button> */}
-            {finalDataLength > 3 && (
+            {finalDataLength > 12 && (
               <input
                 type="file"
                 onChange={(e) => {
@@ -99,7 +104,9 @@ export default function HomePage() {
               <div className="w-full grid grid-cols-4 gap-4 border border-slate-900 p-2">
                 {Object.entries(finalData).map(([key, value], index) => (
                   <div key={index} className="border border-slate-900 p-2">
-                    <div className="text-base">{key.toUpperCase()}</div>
+                    <div className="text-base">
+                      {camelCaseToHumanReadable(key)}
+                    </div>
                     <div className="text-sm">{value}</div>
                   </div>
                 ))}
