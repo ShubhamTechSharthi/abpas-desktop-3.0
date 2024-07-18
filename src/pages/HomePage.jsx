@@ -4,7 +4,6 @@ import MuiInput from "../components/MuiInput";
 import Button from "../components/Button";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import GeneratePdf from "../components/GeneratePdf";
 import { removeFormData } from "../store/formSlice";
 
 export default function HomePage() {
@@ -113,10 +112,10 @@ export default function HomePage() {
               <div className="w-full grid grid-cols-4 gap-4 border border-slate-900 p-2">
                 {Object.entries(finalData).map(([key, value], index) => (
                   <table className="text-left">
-                    <tr className="bg-slate-200">
-                      <th className="p-3"> {camelCaseToHumanReadable(key)}</th>
-                      <td className="text-right p-3 text-red-900">{value}</td>
-                    </tr>
+                    <tbody className="bg-slate-200">
+                      <td className="p-3"> {camelCaseToHumanReadable(key)}</td>
+                      <td className="text-right p-3 text-cyan-700">{value}</td>
+                    </tbody>
                   </table>
                 ))}
               </div>
@@ -128,12 +127,12 @@ export default function HomePage() {
                 <div className="w-full grid grid-cols-4 gap-4 border border-slate-900 p-2">
                   {Object.entries(processedData).map(([key, value], index) => (
                     <table className="text-left">
-                      <tr className="bg-slate-200">
-                        <th className="p-3">{camelCaseToHumanReadable(key)}</th>
+                      <tbody className="bg-slate-200">
+                        <td className="p-3">{key}</td>
                         <td className="text-right p-3 text-cyan-700">
                           {value}
                         </td>
-                      </tr>
+                      </tbody>
                     </table>
 
                     // <div key={index} className="p-2">
