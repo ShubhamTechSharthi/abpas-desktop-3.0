@@ -2,6 +2,7 @@ import logo from "../assets/images/mp.png";
 import { GrLogout } from "react-icons/gr";
 import { useNavigate } from "react-router-dom";
 export default function Header() {
+  const navigate = useNavigate();
   return (
     <nav className="bg-gray-800 border-b-2">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -18,7 +19,7 @@ export default function Header() {
             </div>
             <div className="hidden md:block">
               <div className="ml-5 flex items-baseline space-x-4">
-                <a
+                {/* <a
                   href="#"
                   className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
                 >
@@ -29,7 +30,7 @@ export default function Header() {
                   className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
                 >
                   Projects
-                </a>
+                </a> */}
               </div>
             </div>
           </div>
@@ -44,11 +45,15 @@ export default function Header() {
                     aria-expanded="false"
                     aria-haspopup="true"
                   >
-                    <span className="absolute -inset-1.5"></span>
-                    <span className="sr-only">Open user menu</span>
-                    <h4 className="text-white">
-                      <GrLogout />{" "}
-                    </h4>
+                    {/* <span className="absolute -inset-1.5"></span>
+                    <span className="sr-only">Open user menu</span> */}
+
+                    <button
+                      className="text-white"
+                      onClick={() => navigate("/")}
+                    >
+                      <GrLogout />
+                    </button>
                   </button>
                 </div>
               </div>

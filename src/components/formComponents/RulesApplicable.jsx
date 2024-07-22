@@ -75,7 +75,7 @@ export default function RulesApplicable() {
     <form onSubmit={handleSubmit(sendFormData)} className="m-5 p-2">
       <div className="bg-white border border-gray-200 rounded-lg shadow">
         <h3 className=" text-lg font-medium text-left p-2 text-black border-b border-gray-200 rounded-t-lg bg-gray-50">
-          MAX. PERMISSIBLE PARAMETERS
+          Max. Permissible Paramenters
         </h3>
         <div>
           <div className="bg-white rounded-b-lg p-3 grid grid-cols-3 gap-3">
@@ -119,7 +119,7 @@ export default function RulesApplicable() {
       <br />
       <div className="bg-white border border-gray-200 rounded-lg shadow">
         <h3 className=" text-lg font-medium text-left p-2 text-black border-b border-gray-200 rounded-t-lg bg-gray-50">
-          MIN. REQUIRED PARAMETERS
+          Min. Required Parameters
         </h3>
         <div>
           <div className="bg-white rounded-b-lg p-3 grid grid-cols-3 gap-3">
@@ -186,7 +186,7 @@ export default function RulesApplicable() {
                 sx={{ color: "black" }}
                 id="demo-radio-buttons-group-label"
               >
-                MIN. REQUIRED PARKING
+                Min. Required Parking
               </FormLabel>
               <Controller
                 control={control}

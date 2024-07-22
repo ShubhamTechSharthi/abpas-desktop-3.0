@@ -38,22 +38,22 @@ export default function ProjectDetailsPage() {
             <h1
               className={`${page === 0 ? "bg-slate-50 text-black" : ""} rounded-t-md px-2`}
             >
-              APPLICANT & OWNER INFORMATION
+              Applicant & owner Information
             </h1>
             <h1
               className={`${page === 1 ? "bg-slate-50 text-black" : ""} rounded-t-md px-2`}
             >
-              LAYOUT INFORMATION
+              Layout Information
             </h1>
             <h1
               className={`${page === 2 ? "bg-slate-50 text-black" : ""} rounded-t-md px-2`}
             >
-              PROPOSAL DETAILS
+              Proposal Details
             </h1>
             <h1
               className={`${page === 3 ? "bg-slate-50 text-black" : ""} rounded-t-md px-2`}
             >
-              RULES APPLICABLE
+              Rules Applicable
             </h1>
           </div>
           <button onClick={() => navigate("/home")} className="">

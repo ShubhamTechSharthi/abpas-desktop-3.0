@@ -13,6 +13,7 @@ import logo from "../../assets/images/mp.png";
 import { z as zod } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import AlertDialog from "../AlertDialog";
+import Swal from "sweetalert2";
 
 const schema = zod.object({
   userId: zod.string().min(2, { message: "This is required." }),
@@ -46,7 +47,12 @@ export default function LoginForm() {
 
   const handleLogin = (data) => {
     if (data.userId !== "dheeraj1_bho" || data.password !== "12345") {
-      setShowAlert(true);
+      //  setShowAlert(true);
+      Swal.fire({
+        title: "Invalid Credentials",
+        text: "Please check your User ID & Password",
+        icon: "error",
+      });
     } else if (data.userId === "dheeraj1_bho" && data.password === "12345") {
       console.log(data);
 
@@ -56,13 +62,13 @@ export default function LoginForm() {
 
   return (
     <>
-      <AlertDialog
+      {/* <AlertDialog
         open={showAlert}
         onClose={closeAlert}
         className={"m-auto w-1/3 h-1/3"}
       >
         <h1>Invalid Credentials</h1>
-      </AlertDialog>
+      </AlertDialog> */}
 
       <form
         onSubmit={handleSubmit(handleLogin)}
