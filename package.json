@@ -22,7 +22,7 @@
       "main.js",
       "preload.js",
       "package.json",
-      "python-scripts/demo_scrutiny_engine.py"
+      "python-scripts/demo_scrutiny_engine.pyc"
     ],
     "directories": {
       "buildResources": "assets"
