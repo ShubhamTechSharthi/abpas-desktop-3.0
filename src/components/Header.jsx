@@ -47,11 +47,13 @@ export default function Header() {
                   > */}
                   {/* <span className="absolute -inset-1.5"></span>
                     <span className="sr-only">Open user menu</span> */}
-
-                  <button className="text-white" onClick={() => navigate("/")}>
+                  <h3 className="text-white">Dheeraj1_bho</h3>&nbsp;&nbsp;
+                  <button
+                    className="text-white bg-red-600 p-1 rounded"
+                    onClick={() => navigate("/")}
+                  >
                     <GrLogout />
                   </button>
-                  {/* </button> */}
                 </div>
               </div>
             </div>

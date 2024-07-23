@@ -16,6 +16,7 @@ import buildingActivity from "../../formData/buildingActivity";
 import buildingUse from "../../formData/buildingUse";
 import layoutApprovalType from "../../formData/layoutApprovalType";
 import typeOfBuilding from "../../formData/typeOfBuilding";
+import typeOfPlot from "../../formData/typeOfPlot";
 import landUseName from "../../formData/landUseName";
 import landSubUse from "../../formData/landSubUse";
 import districts from "../../formData/districts";
@@ -163,7 +164,7 @@ export default function LayoutInfo() {
                 error={errors.typeOfPlot ? true : false}
                 helperText={errors.typeOfPlot && errors.typeOfPlot.message}
               >
-                {layoutApprovalType.map((option) => (
+                {typeOfPlot.map((option) => (
                   <MenuItem key={option.value} value={option.value}>
                     {option.label}
                   </MenuItem>

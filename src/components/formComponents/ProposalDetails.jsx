@@ -92,37 +92,16 @@ export default function ProposalDetails() {
           helperText={errors.plotWidth && errors.plotWidth.message}
         />
         <MuiInput
-          label="Proposed Built-up Area"
-          {...register("propBuildUpArea")}
-          error={errors.propBuildUpArea ? true : false}
-          helperText={errors.propBuildUpArea && errors.propBuildUpArea.message}
-        />
-        <MuiInput
           label="Plot Depth(M)"
           {...register("plotDepth")}
           error={errors.plotDepth ? true : false}
           helperText={errors.plotDepth && errors.plotDepth.message}
         />
         <MuiInput
-          label="Proposed Ground Covrage Area"
-          {...register("groundCoverageAera")}
-          error={errors.groundCoverageAera ? true : false}
-          helperText={
-            errors.groundCoverageAera && errors.groundCoverageAera.message
-          }
-        />
-
-        <MuiInput
           label="Gross Plot Area"
           {...register("grossPlotArea")}
           error={errors.grossPlotArea ? true : false}
           helperText={errors.grossPlotArea && errors.grossPlotArea.message}
-        />
-        <MuiInput
-          label="Proposed Building Height"
-          {...register("bulidingHeight")}
-          error={errors.bulidingHeight ? true : false}
-          helperText={errors.bulidingHeight && errors.bulidingHeight.message}
         />
         <MuiInput
           label="Area under road Widending"
@@ -131,17 +110,58 @@ export default function ProposalDetails() {
           helperText={errors.roadWidending && errors.roadWidending.message}
         />
         <MuiInput
-          label="Proposed No. of Floors"
-          {...register("noOfFloor")}
-          error={errors.noOfFloor ? true : false}
-          helperText={errors.noOfFloor && errors.noOfFloor.message}
-        />
-
-        <MuiInput
           label="Other Deduction in Plot"
           {...register("deductionInPlot")}
           error={errors.deductionInPlot ? true : false}
           helperText={errors.deductionInPlot && errors.deductionInPlot.message}
+        />
+        <MuiInput
+          label="Net Plot Area(SQM)"
+          {...register("netPlotArea")}
+          error={errors.netPlotArea ? true : false}
+          helperText={errors.netPlotArea && errors.netPlotArea.message}
+        />
+        <MuiInput
+          label="Proposed Built-up Area"
+          {...register("propBuildUpArea")}
+          error={errors.propBuildUpArea ? true : false}
+          helperText={errors.propBuildUpArea && errors.propBuildUpArea.message}
+        />
+
+        <MuiInput
+          label="Proposed Ground Covrage (In%)"
+          {...register("groundCoverageAera")}
+          error={errors.groundCoverageAera ? true : false}
+          helperText={
+            errors.groundCoverageAera && errors.groundCoverageAera.message
+          }
+        />
+
+        <MuiInput
+          label="Proposed Building Height"
+          {...register("bulidingHeight")}
+          error={errors.bulidingHeight ? true : false}
+          helperText={errors.bulidingHeight && errors.bulidingHeight.message}
+        />
+
+        <MuiInput
+          label="No. of Floors"
+          {...register("noOfFloor")}
+          error={errors.noOfFloor ? true : false}
+          helperText={errors.noOfFloor && errors.noOfFloor.message}
+        />
+        <MuiInput
+          label="Road / Street Width"
+          {...register("streetWidth")}
+          error={errors.streetWidth ? true : false}
+          helperText={errors.streetWidth && errors.streetWidth.message}
+        />
+
+        <MuiInput
+          label="Actual Frontage"
+          {...register("actualFrontage")}
+          error={errors.actualFrontage ? true : false}
+          helperText={errors.actualFrontage && errors.actualFrontage.message}
         />
         <MuiInput
           label=" Existing Build Up Area "
@@ -151,26 +171,16 @@ export default function ProposalDetails() {
             errors.existBuildUpArea && errors.existBuildUpArea.message
           }
         />
+
         <MuiInput
-          label="Net Plot Area(SQM)"
-          {...register("netPlotArea")}
-          error={errors.netPlotArea ? true : false}
-          helperText={errors.netPlotArea && errors.netPlotArea.message}
-        />
-        <MuiInput
-          label="Existing Ground Covrage Area"
+          label="Existing Ground Covrage (In%)"
           {...register("existGroundCovrage")}
           error={errors.existGroundCovrage ? true : false}
           helperText={
             errors.existGroundCovrage && errors.existGroundCovrage.message
           }
         />
-        <MuiInput
-          label="Road / Street Width"
-          {...register("streetWidth")}
-          error={errors.streetWidth ? true : false}
-          helperText={errors.streetWidth && errors.streetWidth.message}
-        />
+
         <MuiInput
           label="Existing Building Height"
           {...register("existBuidlingHeight")}
@@ -179,12 +189,7 @@ export default function ProposalDetails() {
             errors.existBuidlingHeight && errors.existBuidlingHeight.message
           }
         />
-        <MuiInput
-          label="Actual Frontage"
-          {...register("actualFrontage")}
-          error={errors.actualFrontage ? true : false}
-          helperText={errors.actualFrontage && errors.actualFrontage.message}
-        />
+
         <MuiInput
           label="Existing No. of Floors"
           {...register("existingNoOfFloor")}

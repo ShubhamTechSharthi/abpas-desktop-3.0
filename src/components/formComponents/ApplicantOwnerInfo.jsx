@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import MuiInput from "../MuiInput";
 import { useForm, Controller } from "react-hook-form";
 import Button from "../Button";
@@ -13,12 +14,16 @@ import FormLabel from "@mui/material/FormLabel";
 import caseType from "../../formData/caseType";
 import { z as zod } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import typeOfConsultant from "../../formData/typeOfConsultant";
 
 const schema = zod.object({
   caseType: zod
     .string()
     .refine((value) => value !== "", { message: "Case type is required." }),
-  prevSanctionNo: zod.string().regex(/^\d+$/, { message: "Must be a number." }),
+  prevSanctionNo: zod
+    .string()
+    .regex(/^\d+$/, { message: "Must be a number." })
+    .optional(),
   typeOfConsultant: zod
     .string()
     .refine((value) => value !== "", { message: "Case type is required." }),
@@ -36,14 +41,26 @@ const schema = zod.object({
     .string()
     .min(10, { message: "Postal address is required." }),
   siteAddress: zod.string().min(10, { message: "Site address is required." }),
-  developerName: zod.string().min(2, { message: "Name is required." }),
+  developerName: zod
+    .string()
+    .min(2, { message: "Name is required." })
+    .optional(),
   developerLicenseNo: zod
     .string()
-    .regex(/^[0-9]{10}$/, { message: "License number is required." }),
+    .regex(/^[0-9]{10}$/, { message: "License number is required." })
+    .optional(),
 });
 export default function ApplicantOwnerInfo() {
   const defaultData = useSelector((state) => state.form.formData);
+  debugger;
+  const [selectedCaseType, setSelectedCaseType] = useState("");
+  const [selectedBuildingFor, setSelectedBuildingFor] = useState("Self Use");
 
+  useEffect(() => {
+    if (defaultData && defaultData.buildingIsFor) {
+      setSelectedBuildingFor(defaultData.buildingIsFor);
+    }
+  }, [defaultData]);
   const {
     register,
     handleSubmit,
@@ -56,7 +73,6 @@ export default function ApplicantOwnerInfo() {
   const dispatch = useDispatch();
 
   const sendFormData = (data) => {
-    console.log(data);
     dispatch(addFormData(data));
     dispatch(nextPage());
   };
@@ -79,6 +95,10 @@ export default function ApplicantOwnerInfo() {
                   id="casetype-select"
                   {...field}
                   value={field.value || ""}
+                  onChange={(e) => {
+                    field.onChange(e);
+                    setSelectedCaseType(e.target.value);
+                  }}
                   size="small"
                   InputLabelProps={{
                     style: {
@@ -97,26 +117,29 @@ export default function ApplicantOwnerInfo() {
                 </TextField>
               )}
             />
-
-            <MuiInput
-              {...register("prevSanctionNo")}
-              label="PREVIOUS SANCTION NO."
-              error={errors.prevSanctionNo ? true : false}
-              helperText={
-                errors.prevSanctionNo && errors.prevSanctionNo.message
-              }
-            />
-            <TextField
-              id="date"
-              {...register("prevSanctionDate")}
-              label="PREVIOUS SANCTION DATE"
-              size="small"
-              type="date"
-              defaultValue="2024-07-16"
-              InputLabelProps={{
-                shrink: true,
-              }}
-            />
+            {selectedCaseType !== "ERECT" && (
+              <MuiInput
+                //{...register("prevSanctionNo")}
+                label="PREVIOUS SANCTION NO."
+                error={errors.prevSanctionNo ? true : false}
+                helperText={
+                  errors.prevSanctionNo && errors.prevSanctionNo.message
+                }
+              />
+            )}
+            {selectedCaseType !== "ERECT" && (
+              <TextField
+                id="date"
+                // {...register("prevSanctionDate")}
+                label="PREVIOUS SANCTION DATE"
+                size="small"
+                type="date"
+                defaultValue="2024-07-16"
+                InputLabelProps={{
+                  shrink: true,
+                }}
+              />
+            )}
             {/* <MuiInput
               label="PREVIOUS SECTION DATE"
               {...register("preSectionDate")}
@@ -154,7 +177,7 @@ export default function ApplicantOwnerInfo() {
                     errors.typeOfConsultant && errors.typeOfConsultant.message
                   }
                 >
-                  {caseType.map((option) => (
+                  {typeOfConsultant.map((option) => (
                     <MenuItem key={option.value} value={option.value}>
                       {option.label}
                     </MenuItem>
@@ -270,7 +293,11 @@ export default function ApplicantOwnerInfo() {
                       {...field}
                       className="block"
                       aria-labelledby="demo-radio-buttons-group-label"
-                      value={field.value}
+                      value={selectedBuildingFor || field.value}
+                      onChange={(e) => {
+                        field.onChange(e);
+                        setSelectedBuildingFor(e.target.value);
+                      }}
                     >
                       <FormControlLabel
                         value="Self Use"
@@ -291,33 +318,36 @@ export default function ApplicantOwnerInfo() {
         </div>
       </div>
 
-      <div className="bg-white border mt-3 border-gray-200 rounded-lg shadow">
-        <h3 className=" text-lg font-medium text-left p-2 border-b border-gray-200 rounded-t-lg bg-gray-50">
-          Developer Information
-        </h3>
-        <div>
-          <div className="bg-white rounded-b-lg p-3">
-            <div className=" grid grid-cols-3 gap-3">
-              <MuiInput
-                label="Developer Name"
-                {...register("developerName")}
-                error={errors.developerName ? true : false}
-                helperText={
-                  errors.developerName && errors.developerName.message
-                }
-              />
-              <MuiInput
-                label="License No."
-                {...register("developerLicenseNo")}
-                error={errors.developerLicenseNo ? true : false}
-                helperText={
-                  errors.developerLicenseNo && errors.developerLicenseNo.message
-                }
-              />
+      {selectedBuildingFor !== "Self Use" && (
+        <div className="bg-white border mt-3 border-gray-200 rounded-lg shadow">
+          <h3 className=" text-lg font-medium text-left p-2 border-b border-gray-200 rounded-t-lg bg-gray-50">
+            Developer Information
+          </h3>
+          <div>
+            <div className="bg-white rounded-b-lg p-3">
+              <div className=" grid grid-cols-3 gap-3">
+                <MuiInput
+                  label="Developer Name"
+                  {...register("developerName")}
+                  error={errors.developerName ? true : false}
+                  helperText={
+                    errors.developerName && errors.developerName.message
+                  }
+                />
+                <MuiInput
+                  label="License No."
+                  {...register("developerLicenseNo")}
+                  error={errors.developerLicenseNo ? true : false}
+                  helperText={
+                    errors.developerLicenseNo &&
+                    errors.developerLicenseNo.message
+                  }
+                />
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
 
       <div className="mt-5 flex justify-center items-center">
         <Button type="submit">Save & Next</Button>
