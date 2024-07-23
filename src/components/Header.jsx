@@ -38,22 +38,21 @@ export default function Header() {
             <div className="ml-4 flex items-center md:ml-6">
               <div className="relative ml-3">
                 <div>
-                  <button
+                  {/* <button
                     type="button"
                     className="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm "
                     id="user-menu-button"
                     aria-expanded="false"
                     aria-haspopup="true"
-                  >
-                    {/* <span className="absolute -inset-1.5"></span>
+                  > */}
+                  {/* <span className="absolute -inset-1.5"></span>
                     <span className="sr-only">Open user menu</span> */}
-                    <h3 className="text-white">Dheeraj1_bho</h3>&nbsp;&nbsp;
-                    <button
-                      className="text-white bg-red-600 p-1 rounded"
-                      onClick={() => navigate("/")}
-                    >
-                      <GrLogout />
-                    </button>
+                  <h3 className="text-white">Dheeraj1_bho</h3>&nbsp;&nbsp;
+                  <button
+                    className="text-white bg-red-600 p-1 rounded"
+                    onClick={() => navigate("/")}
+                  >
+                    <GrLogout />
                   </button>
                 </div>
               </div>
