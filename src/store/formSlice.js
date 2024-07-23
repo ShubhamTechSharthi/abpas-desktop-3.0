@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   formData: {
-    isPlotIrregular: "Yes",
+    isPlotIrregular: "No",
     buildingIsFor: "Self Use",
     minRequiredParking: "On No. of Bed",
     floorAreaRation: "1.25",
@@ -27,7 +27,7 @@ const formSlice = createSlice({
     },
     removeFormData: (state) => {
       state.formData = {
-        isPlotIrregular: "Yes",
+        isPlotIrregular: "No",
         buildingIsFor: "Self Use",
         minRequiredParking: "On No. of Bed",
         floorAreaRation: "1.25",
