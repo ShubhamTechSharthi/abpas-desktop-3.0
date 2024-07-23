@@ -59,7 +59,7 @@ ipcMain.on("process-file", (event, filePath) => {
     const scriptPath = join(
       __dirname,
       "python-scripts",
-      "demo_scrutiny_engine.pyc"
+      "demo_scrutiny_engine.py"
     );
 
     console.log("Script path:", scriptPath);
