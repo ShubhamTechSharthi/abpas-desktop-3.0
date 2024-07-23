@@ -138,7 +138,7 @@ export default function LayoutInfo() {
         <div className="grid grid-cols-3 gap-3 bg-white border border-gray-200 rounded-lg shadow p-3">
           <MuiInput
             {...register("applicationId")}
-            label="T&CP PERMISSION NO/APPLICATION ID"
+            label="T&CP Permission No/Application Id"
             error={errors.applicationId ? true : false}
             helperText={errors.applicationId && errors.applicationId.message}
           />
@@ -149,7 +149,7 @@ export default function LayoutInfo() {
             render={({ field }) => (
               <TextField
                 select
-                label="TYPE OF PLOT/LAYOUT"
+                label="Type of Plot /Layout"
                 id="typeofplot-select"
                 {...field}
                 value={field.value || ""}
@@ -178,7 +178,7 @@ export default function LayoutInfo() {
             render={({ field }) => (
               <TextField
                 select
-                label="LAYOUT APPROVAL TYPE"
+                label="Layout Approval Type"
                 id="layoutapproval-select"
                 {...field}
                 value={field.value || ""}
@@ -209,7 +209,7 @@ export default function LayoutInfo() {
             id="division-select-standard"
             onChange={handleDivision}
             value={selectDivision}
-            label="DIVISION"
+            label="Division"
             size="small"
             InputLabelProps={{
               style: {
@@ -235,7 +235,7 @@ export default function LayoutInfo() {
             select
             {...register("district")}
             id="district-select-standard"
-            label="DISTRICT"
+            label="District"
             value={selectDistrict}
             onChange={handleDistrict}
             size="small"
@@ -288,20 +288,20 @@ export default function LayoutInfo() {
           </TextField>
 
           <MuiInput
-            label="ZONE"
+            label="Zone"
             {...register("zone")}
             error={errors.zone ? true : false}
             helperText={errors.zone && errors.zone.message}
           />
 
           <MuiInput
-            label="WARD"
+            label="Ward"
             {...register("ward")}
             error={errors.ward ? true : false}
             helperText={errors.ward && errors.ward.message}
           />
           <MuiInput
-            label="COLONY NAME"
+            label="Colony Name"
             {...register("colonyName")}
             error={errors.colonyName ? true : false}
             helperText={errors.colonyName && errors.colonyName.message}
@@ -312,7 +312,7 @@ export default function LayoutInfo() {
             render={({ field }) => (
               <TextField
                 select
-                label="LAND USE"
+                label="Land Use"
                 id="landuse-select"
                 {...field}
                 value={field.value || ""}
@@ -341,7 +341,7 @@ export default function LayoutInfo() {
             render={({ field }) => (
               <TextField
                 select
-                label="BUILDING USE"
+                label="Building Use"
                 id="building-select"
                 {...field}
                 value={field.value || ""}
@@ -370,7 +370,7 @@ export default function LayoutInfo() {
             render={({ field }) => (
               <TextField
                 select
-                label="LAND SUB USE"
+                label="Land Sub Use"
                 id="landsubuse-select"
                 {...field}
                 value={field.value || ""}
@@ -399,7 +399,7 @@ export default function LayoutInfo() {
             render={({ field }) => (
               <TextField
                 select
-                label="BUILDING ACTIVITY"
+                label="Building Activity"
                 id="buildingactivity-select"
                 {...field}
                 value={field.value || ""}
@@ -430,7 +430,7 @@ export default function LayoutInfo() {
             render={({ field }) => (
               <TextField
                 select
-                label="TYPE OF BUILDING"
+                label="Type of Building"
                 id="typeofbuilding-select"
                 {...field}
                 value={field.value || ""}
@@ -461,7 +461,7 @@ export default function LayoutInfo() {
             render={({ field }) => (
               <TextField
                 select
-                label="TYPE OF CONSTRUCTION"
+                label="Type of Construction"
                 id="typeofconstruction-select"
                 {...field}
                 value={field.value || ""}
@@ -487,7 +487,7 @@ export default function LayoutInfo() {
           />
 
           <MuiInput
-            label="PLOT NO"
+            label="Plot No."
             {...register("plotNo")}
             error={errors.plotNo ? true : false}
             helperText={errors.plotNo && errors.plotNo.message}

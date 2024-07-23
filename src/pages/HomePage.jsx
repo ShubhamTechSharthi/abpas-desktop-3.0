@@ -48,10 +48,7 @@ export default function HomePage() {
     <div className="h-full flex justify-center">
       <div className="flex flex-col P-4 items-start h-auto w-full bg-slate-300 my-auto rounded-md">
         <div className="flex bg-gray-600 justify-between items-center w-full px-2 py-1 rounded-t-md">
-          <h1 className="text-white">Open Project</h1>
-          <button className="text-white" onClick={() => navigate("/")}>
-            <RxCross2 />
-          </button>
+          <h1 className="text-white">Dashboard</h1>
         </div>
 
         <div className="w-full flex justify-between items-center px-5 my-3">
@@ -67,14 +64,14 @@ export default function HomePage() {
                 navigate("/projectdetails");
               }}
             >
-              NEW
+              New
             </Button>
             {finalDataLength > 12 && (
               <Button
                 onClick={handleFileSelect}
                 className="bg-green-600 text-base"
               >
-                SCRUTINIZE
+                Scrutinize
               </Button>
             )}
             {/* <Button onClick={() => showFinalData()} className="bg-red-600">

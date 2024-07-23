@@ -1,6 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+body {
+  text-transform: capitalize !important;
+}
+h3 {
+  text-transform: capitalize !important;
+}
 .bg-cust {
   background: linear-gradient(45deg, rgb(49 77 171), rgb(0 167 184));
 }
@@ -30,7 +36,7 @@
 }
 
 .MuiMenuItem-root {
-  width: 300px;
+  width: 30vw;
   height: auto;
   min-height: 1.4375em;
   text-overflow: ellipsis !important;

@@ -65,7 +65,7 @@ export default function ApplicantOwnerInfo() {
     <form onSubmit={handleSubmit(sendFormData)} className="p-5">
       <div className="bg-white border border-gray-200 rounded-lg shadow">
         <h3 className=" text-lg font-medium text-left p-2 border-b border-gray-200 rounded-t-lg bg-gray-50">
-          CASE TYPE
+          Case Type
         </h3>
         <div>
           <div className="bg-white rounded-b-lg p-3 grid grid-cols-3 gap-3">
@@ -128,7 +128,7 @@ export default function ApplicantOwnerInfo() {
 
       <div className="bg-white border border-gray-200 rounded-lg shadow">
         <h3 className=" text-lg font-medium text-left p-2 border-b border-gray-200 rounded-t-lg bg-gray-50">
-          APPLICANT INFORMATION
+          Application Information
         </h3>
         <div>
           <div className="bg-white rounded-b-lg p-3 grid grid-cols-4 gap-3">
@@ -138,7 +138,7 @@ export default function ApplicantOwnerInfo() {
               render={({ field }) => (
                 <TextField
                   select
-                  label="TYPE OF CONSULTANT"
+                  label="Type of Consultant"
                   id="typeofconsultant-select"
                   {...field}
                   value={field.value || ""}
@@ -164,20 +164,20 @@ export default function ApplicantOwnerInfo() {
             />
 
             <MuiInput
-              label="NAME"
+              label="Name"
               {...register("name")}
               error={errors.name ? true : false}
               helperText={errors.name && errors.name.message}
             />
             <MuiInput
-              label="MOBILE NO."
+              label="Mobile No."
               {...register("mobileNo")}
               error={errors.mobileNo ? true : false}
               helperText={errors.mobileNo && errors.mobileNo.message}
             />
 
             <MuiInput
-              label="EMAIL ID"
+              label="Email Id"
               {...register("email")}
               error={errors.email ? true : false}
               helperText={errors.email && errors.email.message}
@@ -190,19 +190,19 @@ export default function ApplicantOwnerInfo() {
 
       <div className="bg-white border border-gray-200 rounded-lg shadow">
         <h3 className=" text-lg font-medium text-left p-2 border-b border-gray-200 rounded-t-lg bg-gray-50">
-          OWNER INFORMATION
+          Owner Information
         </h3>
         <div>
           <div className="bg-white rounded-b-lg p-3">
             <div className=" grid grid-cols-3 gap-3">
               <MuiInput
-                label="NAME"
+                label="Name"
                 {...register("ownerName")}
                 error={errors.ownerName ? true : false}
                 helperText={errors.ownerName && errors.ownerName.message}
               />
               <MuiInput
-                label="MOBILE NO."
+                label="Mobile No."
                 {...register("ownerMobileNo")}
                 error={errors.ownerMobileNo ? true : false}
                 helperText={
@@ -211,7 +211,7 @@ export default function ApplicantOwnerInfo() {
               />
 
               <MuiInput
-                label="EMAIL ID"
+                label="Email Id"
                 {...register("ownerEmail")}
                 error={errors.ownerEmail ? true : false}
                 helperText={errors.ownerEmail && errors.ownerEmail.message}
@@ -221,7 +221,7 @@ export default function ApplicantOwnerInfo() {
             <div className="grid mt-4 grid-cols-3 gap-3 ">
               <TextField
                 id="standard-multiline-flexible"
-                label="POSTAL ADDRESS"
+                label="Postal Address"
                 multiline
                 {...register("postalAddress")}
                 size="small"
@@ -239,7 +239,7 @@ export default function ApplicantOwnerInfo() {
               />
               <TextField
                 id="standard-multiline-flexible"
-                label="SITE ADDRESS"
+                label="Site Address"
                 {...register("siteAddress")}
                 multiline
                 size="small"
@@ -291,15 +291,15 @@ export default function ApplicantOwnerInfo() {
         </div>
       </div>
 
-      <div className="bg-white border border-gray-200 rounded-lg shadow">
+      <div className="bg-white border mt-3 border-gray-200 rounded-lg shadow">
         <h3 className=" text-lg font-medium text-left p-2 border-b border-gray-200 rounded-t-lg bg-gray-50">
-          DEVELOPER INFORMATION
+          Developer Information
         </h3>
         <div>
           <div className="bg-white rounded-b-lg p-3">
             <div className=" grid grid-cols-3 gap-3">
               <MuiInput
-                label="DEVELOPER NAME"
+                label="Developer Name"
                 {...register("developerName")}
                 error={errors.developerName ? true : false}
                 helperText={
@@ -307,7 +307,7 @@ export default function ApplicantOwnerInfo() {
                 }
               />
               <MuiInput
-                label="LICENSE NO."
+                label="License No."
                 {...register("developerLicenseNo")}
                 error={errors.developerLicenseNo ? true : false}
                 helperText={
