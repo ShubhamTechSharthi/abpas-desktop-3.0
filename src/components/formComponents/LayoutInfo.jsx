@@ -136,7 +136,7 @@ export default function LayoutInfo() {
         onSubmit={handleSubmit(sendFormData)}
         className="m-5 p-2 flex flex-col gap-3"
       >
-        <div className="grid grid-cols-3 gap-3 bg-white border border-gray-200 rounded-lg shadow p-3">
+        <div className="grid grid-cols-3 h-[62vh] gap-3 bg-white border border-gray-200 rounded-lg shadow p-3">
           <MuiInput
             {...register("applicationId")}
             label="T&CP Permission No/Application Id"
