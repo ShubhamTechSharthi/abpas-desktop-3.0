@@ -5,6 +5,7 @@ import RulesApplicable from "../components/formComponents/RulesApplicable";
 import { useNavigate } from "react-router-dom";
 import { HiOutlineArrowLeftCircle } from "react-icons/hi2";
 import { useSelector } from "react-redux";
+import OwnerInfo from "../components/formComponents/OwnerInfo";
 
 export default function ProjectDetailsPage() {
   const page = useSelector((state) => state.form.page);
@@ -20,10 +21,12 @@ export default function ProjectDetailsPage() {
     if (page === 0) {
       return <ApplicantOwnerInfo />;
     } else if (page === 1) {
-      return <LayoutInfo />;
+      return <OwnerInfo />;
     } else if (page === 2) {
-      return <ProposalDetails />;
+      return <LayoutInfo />;
     } else if (page === 3) {
+      return <ProposalDetails />;
+    } else if (page === 4) {
       return <RulesApplicable />;
     }
   };
@@ -38,20 +41,25 @@ export default function ProjectDetailsPage() {
             <h1
               className={`${page === 0 ? "bg-slate-50 text-black" : ""} rounded-t-md px-2`}
             >
-              Applicant & owner Information
+              Applicant Information
             </h1>
             <h1
               className={`${page === 1 ? "bg-slate-50 text-black" : ""} rounded-t-md px-2`}
             >
-              Layout Information
+              owner Information
             </h1>
             <h1
               className={`${page === 2 ? "bg-slate-50 text-black" : ""} rounded-t-md px-2`}
             >
-              Proposal Details
+              Layout Information
             </h1>
             <h1
               className={`${page === 3 ? "bg-slate-50 text-black" : ""} rounded-t-md px-2`}
+            >
+              Proposal Details
+            </h1>
+            <h1
+              className={`${page === 4 ? "bg-slate-50 text-black" : ""} rounded-t-md px-2`}
             >
               Rules Applicable
             </h1>

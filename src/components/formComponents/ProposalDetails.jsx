@@ -84,7 +84,7 @@ export default function ProposalDetails() {
   };
   return (
     <form onSubmit={handleSubmit(sendFormData)} className="m-5 p-2">
-      <div className="grid grid-cols-3 gap-3 bg-white border border-gray-200 rounded-lg shadow p-3">
+      <div className="grid grid-cols-3 gap-3 h-[62vh] bg-white border border-gray-200 rounded-lg shadow p-3">
         <MuiInput
           label="Plot Width(M)"
           {...register("plotWidth")}
