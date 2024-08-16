@@ -250,12 +250,144 @@ def temp_create_data_dictionary_for_report(df):
     data_dictionary = {
         "Number of floors:": int(get_floor_count(df)),
         "Building height:": get_building_height(df),
-        "Proposed_builtup_area:": get_proposed_builtup_area(df),
+        "Proposed builtup area:": get_proposed_builtup_area(df),
         "Plot area:": get_net_plot_area(df),
         "Road width": get_road_width(df),
         "Frontage of plot": round(get_frontage_of_plot(df), 2),
         "Ground Coverage percentage": get_calculated_gc_percentage(df),
         "Floor Area Ratio": get_calculated_FAR(df),
+        "Building General Details Table": [
+        {
+            "Block Name": "Single",
+            "Total Number of Floors": "3 Floors",
+            "Block Height": 9.0,
+            "Total Builtup Area": 147.93014475448842,
+            "Non FAR Area": 31.34414112340054,
+            "Builtup (FAR) Area": 116.58600363108789
+        },
+        {
+            "Block Name": "Total",
+            "Total Number of Floors": "",
+            "Block Height": "",
+            "Total Builtup Area": 147.93014475448842,
+            "Non FAR Area": 31.34414112340054,
+            "Builtup (FAR) Area": 116.58600363108789
+        },
+        {
+            "Block Name": "Total Proposed FAR Area",
+            "Total Number of Floors": "",
+            "Block Height": "",
+            "Total Builtup Area": "",
+            "Non FAR Area": "",
+            "Builtup (FAR) Area": 116.58600363108789
+        }
+    ],
+    "Floor Wise Breakup Table": [
+        {
+        "Block Name": "Single",
+        "Floors": [
+            {
+                "Floor Name": "FLOOR-GROUND",
+                "Total Area": 54.28944364906265,
+                "Deduction": 0.0,
+                "Not Counted in FAR Area": 7.468274072298179,
+                "Residential": 46.82116957676447,
+                "Commercial": 0,
+                "Industrial": 0,
+                "Institutional": 0,
+                "Educational": 0
+            },
+            {
+                "Floor Name": "FLOOR-TERRACE",
+                "Total Area": 1.102003749907908,
+                "Deduction": 0.0,
+                "Not Counted in FAR Area": 0.0,
+                "Residential": 1.102003749907908,
+                "Commercial": 0,
+                "Industrial": 0,
+                "Institutional": 0,
+                "Educational": 0
+            },
+            {
+                "Floor Name": "FLOOR01",
+                "Total Area": 46.269348677759,
+                "Deduction": 0.0,
+                "Not Counted in FAR Area": 11.937933525551173,
+                "Residential": 34.331415152207825,
+                "Commercial": 0,
+                "Industrial": 0,
+                "Institutional": 0,
+                "Educational": 0
+            },
+            {
+                "Floor Name": "FLOOR02",
+                "Total Area": 46.269348677758884,
+                "Deduction": 0.0,
+                "Not Counted in FAR Area": 11.937933525551188,
+                "Residential": 34.3314151522077,
+                "Commercial": 0,
+                "Industrial": 0,
+                "Institutional": 0,
+                "Educational": 0
+            }
+        ]
+    }],
+        "Non FAR Breakup Table" : [
+    {
+        "Block Name": "Single",
+        "Floors": [
+            {
+                "Typical Floor Name": "FLOOR-TERRACE",
+                "Non FAR Objects": [
+                    {
+                        "Non FAR Name": "WATER TANK/GARAGE",
+                        "Non FAR Area": 1.102003749907908
+                    }
+                ],
+                "Total Non FAR Area": 1.102003749907908
+            },
+            {
+                "Typical Floor Name": "FLOOR02",
+                "Non FAR Objects": [
+                    {
+                        "Non FAR Name": "STAIRCASE",
+                        "Non FAR Area": 7.468274072298158
+                    },
+                    {
+                        "Non FAR Name": "BALCONY",
+                        "Non FAR Area": 4.469659453253016
+                    }
+                ],
+                "Total Non FAR Area": 11.937933525551173
+            },
+            {
+                "Typical Floor Name": "FLOOR01",
+                "Non FAR Objects": [
+                    {
+                        "Non FAR Name": "STAIRCASE",
+                        "Non FAR Area": 7.468274072298172
+                    },
+                    {
+                        "Non FAR Name": "BALCONY",
+                        "Non FAR Area": 4.469659453253023
+                    }
+                ],
+                "Total Non FAR Area": 11.937933525551195
+            },
+            {
+                "Typical Floor Name": "FLOOR-GROUND",
+                "Non FAR Objects": [
+                    {
+                        "Non FAR Name": "STAIRCASE",
+                        "Non FAR Area": 7.468274072298186
+                    }
+                ],
+                "Total Non FAR Area": 7.468274072298186
+            }
+        ]
+    }
+]
+
 
     }
     return data_dictionary

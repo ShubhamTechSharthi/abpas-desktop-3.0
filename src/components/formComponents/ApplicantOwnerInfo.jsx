@@ -27,11 +27,11 @@ const schema = zod.object({
   typeOfConsultant: zod
     .string()
     .refine((value) => value !== "", { message: "Case type is required." }),
-  name: zod.string().min(2, { message: "Name is required." }),
-  mobileNo: zod
+  applicantName: zod.string().min(2, { message: "Name is required." }),
+  applicantMobileNo: zod
     .string()
     .regex(/^[0-9]{10}$/, { message: "Invalid mobile number." }),
-  email: zod.string().email({ message: "Invalid email address." }),
+  applicantEmail: zod.string().email({ message: "Invalid email address." }),
   ownerName: zod.string().min(2, { message: "Owner name is required." }),
   ownerMobileNo: zod
     .string()
@@ -52,7 +52,6 @@ const schema = zod.object({
 });
 export default function ApplicantOwnerInfo() {
   const defaultData = useSelector((state) => state.form.formData);
-  debugger;
   const [selectedCaseType, setSelectedCaseType] = useState("");
   const [selectedBuildingFor, setSelectedBuildingFor] = useState("Self Use");
 
@@ -188,22 +187,26 @@ export default function ApplicantOwnerInfo() {
 
             <MuiInput
               label="Name"
-              {...register("name")}
-              error={errors.name ? true : false}
-              helperText={errors.name && errors.name.message}
+              {...register("applicantName")}
+              error={errors.applicantName ? true : false}
+              helperText={errors.applicantName && errors.applicantName.message}
             />
             <MuiInput
               label="Mobile No."
-              {...register("mobileNo")}
-              error={errors.mobileNo ? true : false}
-              helperText={errors.mobileNo && errors.mobileNo.message}
+              {...register("applicantMobileNo")}
+              error={errors.applicantMobileNo ? true : false}
+              helperText={
+                errors.applicantMobileNo && errors.applicantMobileNo.message
+              }
             />
 
             <MuiInput
               label="Email Id"
-              {...register("email")}
-              error={errors.email ? true : false}
-              helperText={errors.email && errors.email.message}
+              {...register("applicantEmail")}
+              error={errors.applicantEmail ? true : false}
+              helperText={
+                errors.applicantEmail && errors.applicantEmail.message
+              }
             />
           </div>
         </div>

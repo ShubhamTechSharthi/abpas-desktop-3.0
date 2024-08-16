@@ -9,8 +9,7 @@ export default function Header() {
         <div className="flex h-12 items-center justify-between">
           <div className="flex items-center">
             <div className="flex-shrink-0 flex border-r-2 pr-5">
-              <img className="h-8 w-8" src={logo} alt="Your Company" />{" "}
-              &nbsp;&nbsp;
+              <img className="h-8 w-8" src={logo} alt="logo" /> &nbsp;&nbsp;
               <h1 className="text-2xl text-white font-extrabold text">
                 <span className="text-cyan-500">Ab</span>
                 <span className="text-[#3498db]">p</span>
@@ -37,7 +36,7 @@ export default function Header() {
           <div className="hidden md:block">
             <div className="ml-4 flex items-center md:ml-6">
               <div className="relative ml-3">
-                <div>
+                <div className="flex gap-2">
                   {/* <button
                     type="button"
                     className="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm "
@@ -47,7 +46,7 @@ export default function Header() {
                   > */}
                   {/* <span className="absolute -inset-1.5"></span>
                     <span className="sr-only">Open user menu</span> */}
-                  <h3 className="text-white">Dheeraj1_bho</h3>&nbsp;&nbsp;
+                  <h3 className="text-white">Dheeraj1_bho</h3>
                   <button
                     className="text-white bg-red-600 p-1 rounded"
                     onClick={() => navigate("/")}
