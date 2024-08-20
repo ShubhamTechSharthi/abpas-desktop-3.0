@@ -28,6 +28,8 @@ import StaircaseDetails from "../components/tableComponents/StaircaseDetails";
 import ContinuousBalcony from "../components/tableComponents/ContinuousBalcony";
 import ECSParkingReuired from "../components/tableComponents/ECSParkingRequired";
 
+import CryptoJS from "crypto-js";
+
 const finalFormData = {
   actualFrontage: "1",
   applicationId: "123",
@@ -90,10 +92,11 @@ const finalFormData = {
 
 export default function HomePage() {
   const [filePath, setFilePath] = useState();
+  const [finalData, setFinalData] = useState();
 
-  const finalData = useSelector((state) => state.form.formData);
-  const finalDataLength = Object.keys(finalData).length;
-  const dispatch = useDispatch();
+  // const finalData = useSelector((state) => state.form.formData);
+  // const finalDataLength = Object.keys(finalData).length;
+  // const dispatch = useDispatch();
 
   // if (filePath) console.log(filePath);
 
@@ -120,6 +123,31 @@ export default function HomePage() {
     console.log(finalData);
   };
 
+  const key = CryptoJS.enc.Utf8.parse("1234567890123456");
+  const iv = CryptoJS.enc.Utf8.parse("1234567890123456");
+
+  function decrypt(ciphertext) {
+    const bytes = CryptoJS.AES.decrypt(ciphertext, key, { iv: iv });
+    return JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+  }
+
+  function handleEncryption(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      const encryptedData = reader.result;
+      try {
+        const decryptedData = decrypt(encryptedData);
+        setFinalData(decryptedData);
+      } catch (e) {
+        console.error("Failed to decrypt data:", e);
+      }
+    };
+    reader.readAsText(file);
+  }
+
   return (
     <div className="h-full flex justify-center">
       <div className="flex flex-col P-4 items-start h-auto w-full bg-slate-300 my-auto rounded-md">
@@ -127,7 +155,7 @@ export default function HomePage() {
           <h1 className="text-white">Dashboard</h1>
         </div>
 
-        <div className="w-full flex justify-between items-center px-5 my-3">
+        {/* <div className="w-full flex justify-between items-center px-5 my-3">
           <div className="flex gap-2">
             <Button
               className="bg-blue-600 text-base"
@@ -146,9 +174,9 @@ export default function HomePage() {
                 Scrutinize
               </Button>
             )}
-            {/* <Button onClick={() => showFinalData()} className="bg-red-600">
+            <Button onClick={() => showFinalData()} className="bg-red-600">
               Final Data
-            </Button> */}
+            </Button>
             {finalDataLength > 3 && (
               <input
                 type="file"
@@ -158,6 +186,29 @@ export default function HomePage() {
               />
             )}
           </div>
+        </div> */}
+
+        <div className="w-full flex justify-between items-center px-5 my-3">
+          <div>
+            <label htmlFor="drawingfile">Select drawing file:</label>
+            <input
+              type="file"
+              id="drawingfile"
+              onChange={(e) => {
+                setFilePath(e.target.files[0].path);
+              }}
+            />
+          </div>
+          <div>
+            <label htmlFor="drawingfile">Select encrypted file:</label>
+            <input type="file" id="encryptedfile" onChange={handleEncryption} />
+          </div>
+          <Button onClick={handleFileSelect} className="bg-green-600 text-base">
+            Scrutinize
+          </Button>
+          {/* <Button onClick={() => showFinalData()} className="bg-red-600">
+            Final Data
+          </Button> */}
         </div>
 
         {processedData && (
@@ -206,7 +257,8 @@ export default function HomePage() {
                             Plot No
                           </td>
                           <td className="font-normal border border-slate-900">
-                            PLOT No. {findKeyValue(finalData, "plotNo")}
+                            {/* PLOT No. {findKeyValue(finalData, "plotNo")} */}
+                            PLOT No. 13
                           </td>
                         </tr>
                         <tr>
@@ -214,7 +266,7 @@ export default function HomePage() {
                             {camelCaseToHumanReadable("siteAddress")}
                           </td>
                           <td className="font-normal border border-slate-900">
-                            {findKeyValue(finalData, "siteAddress")}
+                            {findKeyValue(finalData, "ownerAddress")}
                           </td>
                         </tr>
                       </tbody>
@@ -236,7 +288,8 @@ export default function HomePage() {
                             {camelCaseToHumanReadable("applicationId")}
                           </td>
                           <td className="font-normal border border-slate-900">
-                            {findKeyValue(finalData, "applicationId")}
+                            {/* {findKeyValue(finalData, "applicationId")} */}
+                            123
                           </td>
                         </tr>
 
@@ -245,7 +298,7 @@ export default function HomePage() {
                             {camelCaseToHumanReadable("buildingIsFor")}
                           </td>
                           <td className="font-normal border border-slate-900">
-                            {findKeyValue(finalData, "buildingIsFor")}
+                            {findKeyValue(finalData, "buildingFor")}
                           </td>
                         </tr>
                         <tr>
@@ -261,7 +314,8 @@ export default function HomePage() {
                             {camelCaseToHumanReadable("division")}
                           </td>
                           <td className="font-normal border border-slate-900">
-                            {findKeyValue(finalData, "division")}
+                            {/* {findKeyValue(finalData, "division")} */}
+                            Bhopal
                           </td>
                         </tr>
                         <tr>
@@ -269,7 +323,8 @@ export default function HomePage() {
                             {camelCaseToHumanReadable("district")}
                           </td>
                           <td className="font-normal border border-slate-900">
-                            {findKeyValue(finalData, "district")}
+                            {/* {findKeyValue(finalData, "district")} */}
+                            Bhopal
                           </td>
                         </tr>
 
@@ -302,7 +357,7 @@ export default function HomePage() {
                             {camelCaseToHumanReadable("colonyName")}
                           </td>
                           <td className="font-normal border border-slate-900">
-                            {findKeyValue(finalData, "colonyName")}
+                            {findKeyValue(finalData, "colony")}
                           </td>
                         </tr>
                         <tr>
@@ -310,7 +365,7 @@ export default function HomePage() {
                             {camelCaseToHumanReadable("isPlotIrregular")}
                           </td>
                           <td className="font-normal border border-slate-900">
-                            {findKeyValue(finalData, "isPlotIrregular")}
+                            {findKeyValue(finalData, "plotIrregular")}
                           </td>
                         </tr>
 
@@ -352,7 +407,7 @@ export default function HomePage() {
                             {camelCaseToHumanReadable("layoutApproval")}
                           </td>
                           <td className="font-normal border border-slate-900">
-                            {findKeyValue(finalData, "layoutApproval")}
+                            {findKeyValue(finalData, "layoutApprovalType")}
                           </td>
                         </tr>
 
@@ -418,7 +473,7 @@ export default function HomePage() {
                             {camelCaseToHumanReadable("noOfFloor")}
                           </td>
                           <td className="font-normal border border-slate-900">
-                            {findKeyValue(finalData, "noOfFloor")}
+                            {findKeyValue(finalData, "proposedNoOfFloors")}
                           </td>
                         </tr>
                       </tbody>
@@ -442,7 +497,7 @@ export default function HomePage() {
                             {camelCaseToHumanReadable("typeOfConsultant")}
                           </td>
                           <td className="font-normal border border-slate-900">
-                            {findKeyValue(finalData, "typeOfConsultant")}
+                            {findKeyValue(finalData, "consultantName")}
                           </td>
                         </tr>
                         <tr>
@@ -458,7 +513,7 @@ export default function HomePage() {
                             {camelCaseToHumanReadable("applicantMobileNo")}
                           </td>
                           <td className="font-normal border border-slate-900">
-                            {findKeyValue(finalData, "applicantMobileNo")}
+                            {findKeyValue(finalData, "mobileNo")}
                           </td>
                         </tr>
                         <tr>
@@ -466,7 +521,7 @@ export default function HomePage() {
                             {camelCaseToHumanReadable("applicantEmail")}
                           </td>
                           <td className="font-normal border border-slate-900">
-                            {findKeyValue(finalData, "applicantEmail")}
+                            {findKeyValue(finalData, "emailId")}
                           </td>
                         </tr>
                         <tr>
@@ -506,7 +561,7 @@ export default function HomePage() {
                             {camelCaseToHumanReadable("ownerEmail")}
                           </td>
                           <td className="font-normal border border-slate-900">
-                            {findKeyValue(finalData, "ownerEmail")}
+                            {findKeyValue(finalData, "ownerEmailId")}
                           </td>
                         </tr>
                         <tr>
@@ -514,7 +569,7 @@ export default function HomePage() {
                             {camelCaseToHumanReadable("postalAddress")}
                           </td>
                           <td className="font-normal border border-slate-900">
-                            {findKeyValue(finalData, "postalAddress")}
+                            {findKeyValue(finalData, "ownerAddress")}
                           </td>
                         </tr>
                       </tbody>
@@ -537,7 +592,7 @@ export default function HomePage() {
                             Front
                           </td>
                           <td className="font-normal border border-slate-900">
-                            {/* {findKeyValue(finalData, "minFrontMOS")} */}N/A
+                            {findKeyValue(finalData, "frontType")}
                           </td>
                         </tr>
                         <tr>
@@ -546,7 +601,7 @@ export default function HomePage() {
                             Rear
                           </td>
                           <td className="font-normal border border-slate-900">
-                            {/* {findKeyValue(finalData, "minFrontage")} */}N/A
+                            {findKeyValue(finalData, "rearType")}
                           </td>
                         </tr>
                         <tr>
@@ -555,7 +610,7 @@ export default function HomePage() {
                             1
                           </td>
                           <td className="font-normal border border-slate-900">
-                            {/* {findKeyValue(finalData, "minRearMOS")} */}N/A
+                            {findKeyValue(finalData, "side1Type")}
                           </td>
                         </tr>
                         <tr>
@@ -564,7 +619,7 @@ export default function HomePage() {
                             Side 2
                           </td>
                           <td className="font-normal border border-slate-900">
-                            {/* {findKeyValue(finalData, "minRoadWidth")} */}N/A
+                            {findKeyValue(finalData, "side2Type")}
                           </td>
                         </tr>
                         {/* <tr>
@@ -670,7 +725,7 @@ export default function HomePage() {
                       </td>
                       <td className="font-normal border border-slate-900">
                         <span className="font-medium">Given as input : </span>
-                        {findKeyValue(finalData, "noOfFloor")}
+                        {findKeyValue(finalData, "proposedNoOfFloors")}
                       </td>
                       <td className="font-normal border border-slate-900">
                         <span className="font-medium">
@@ -684,14 +739,14 @@ export default function HomePage() {
                         </span>
                         {Math.abs(
                           findKeyValue(processedData, "Number of floors:") -
-                            findKeyValue(finalData, "noOfFloor")
+                            findKeyValue(finalData, "proposedNoOfFloors")
                         )}
                       </td>
                       <td className="font-normal border border-slate-900">
                         <span className="font-medium">Result : </span>
                         {Math.abs(
                           findKeyValue(processedData, "Number of floors:") -
-                            findKeyValue(finalData, "noOfFloor")
+                            findKeyValue(finalData, "proposedNoOfFloors")
                         ) === 0
                           ? "Compliant"
                           : "Non Compliant"}
@@ -703,7 +758,7 @@ export default function HomePage() {
                       </td>
                       <td className="font-normal border border-slate-900">
                         <span className="font-medium">Given as input : </span>
-                        {findKeyValue(finalData, "bulidingHeight")}
+                        {findKeyValue(finalData, "proposedBuildingHeight")}
                       </td>
                       <td className="font-normal border border-slate-900">
                         <span className="font-medium">
@@ -717,14 +772,14 @@ export default function HomePage() {
                         </span>
                         {Math.abs(
                           findKeyValue(processedData, "Building height:") -
-                            findKeyValue(finalData, "bulidingHeight")
+                            findKeyValue(finalData, "proposedBuildingHeight")
                         )}
                       </td>
                       <td className="font-normal border border-slate-900">
                         <span className="font-medium">Result : </span>
                         {Math.abs(
                           findKeyValue(processedData, "Building height:") -
-                            findKeyValue(finalData, "bulidingHeight")
+                            findKeyValue(finalData, "proposedBuildingHeight")
                         ) === 0
                           ? "Compliant"
                           : "Non Compliant"}
@@ -736,7 +791,7 @@ export default function HomePage() {
                       </td>
                       <td className="font-normal border border-slate-900">
                         <span className="font-medium">Given as input : </span>
-                        {findKeyValue(finalData, "propBuildUpArea")}
+                        {findKeyValue(finalData, "proposedBuiltUpArea")}
                       </td>
                       <td className="font-normal border border-slate-900">
                         <span className="font-medium">
@@ -752,8 +807,8 @@ export default function HomePage() {
                           findKeyValue(
                             processedData,
                             "Proposed builtup area:"
-                          ) - findKeyValue(finalData, "propBuildUpArea")
-                        )}
+                          ) - findKeyValue(finalData, "proposedBuiltUpArea")
+                        ).toFixed(2)}
                       </td>
                       <td className="font-normal border border-slate-900">
                         <span className="font-medium">Result : </span>
@@ -761,7 +816,7 @@ export default function HomePage() {
                           findKeyValue(
                             processedData,
                             "Proposed builtup area:"
-                          ) - findKeyValue(finalData, "propBuildUpArea")
+                          ) - findKeyValue(finalData, "proposedBuiltUpArea")
                         ) === 0
                           ? "Compliant"
                           : "Non Compliant"}
