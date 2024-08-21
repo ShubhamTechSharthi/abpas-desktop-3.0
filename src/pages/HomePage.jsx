@@ -297,7 +297,7 @@ export default function HomePage() {
                           </td>
                           <td className="font-normal border text-gray-700 border-slate-300 p-2">
                             {/* PLOT No. {findKeyValue(finalData, "plotNo")} */}
-                            PLOT No. 13
+                            PLOT No. {findKeyValue(finalData, "plotNumber")}
                           </td>
                         </tr>
                         <tr>
@@ -781,7 +781,16 @@ export default function HomePage() {
                             findKeyValue(finalData, "proposedNoOfFloors")
                         )}
                       </td>
-                      <td className="font-normal border text-gray-700 border-slate-300 p-2">
+                      <td
+                        className={` font-bold border p-2 ${
+                          Math.abs(
+                            findKeyValue(processedData, "Number of floors:") -
+                              findKeyValue(finalData, "proposedNoOfFloors")
+                          ) === 0
+                            ? "text-green-700 border-slate-300"
+                            : "text-red-700 border-slate-300"
+                        }`}
+                      >
                         <span className="font-medium">Result : </span>
                         {Math.abs(
                           findKeyValue(processedData, "Number of floors:") -
@@ -814,7 +823,16 @@ export default function HomePage() {
                             findKeyValue(finalData, "proposedBuildingHeight")
                         )}
                       </td>
-                      <td className="font-normal border text-gray-700 border-slate-300 p-2">
+                      <td
+                        className={` font-bold border p-2 ${
+                          Math.abs(
+                            findKeyValue(processedData, "Number of floors:") -
+                              findKeyValue(finalData, "proposedNoOfFloors")
+                          ) === 0
+                            ? "text-green-700 border-slate-300"
+                            : "text-red-700 border-slate-300"
+                        }`}
+                      >
                         <span className="font-medium">Result : </span>
                         {Math.abs(
                           findKeyValue(processedData, "Building height:") -
@@ -849,7 +867,16 @@ export default function HomePage() {
                           ) - findKeyValue(finalData, "proposedBuiltUpArea")
                         ).toFixed(2)}
                       </td>
-                      <td className="font-normal border text-gray-700 border-slate-300 p-2">
+                      <td
+                        className={` font-bold border p-2 ${
+                          Math.abs(
+                            findKeyValue(processedData, "Number of floors:") -
+                              findKeyValue(finalData, "proposedNoOfFloors")
+                          ) === 0
+                            ? "text-green-700 border-slate-300"
+                            : "text-red-700 border-slate-300"
+                        }`}
+                      >
                         <span className="font-medium">Result : </span>
                         {Math.abs(
                           findKeyValue(
@@ -884,7 +911,16 @@ export default function HomePage() {
                             findKeyValue(finalData, "grossPlotArea")
                         )}
                       </td>
-                      <td className="font-normal border text-gray-700 border-slate-300 p-2">
+                      <td
+                        className={` font-bold border p-2 ${
+                          Math.abs(
+                            findKeyValue(processedData, "Number of floors:") -
+                              findKeyValue(finalData, "proposedNoOfFloors")
+                          ) === 0
+                            ? "text-green-700 border-slate-300"
+                            : "text-red-700 border-slate-300"
+                        }`}
+                      >
                         <span className="font-medium">Result : </span>
                         {Math.abs(
                           findKeyValue(processedData, "Plot area:") -
