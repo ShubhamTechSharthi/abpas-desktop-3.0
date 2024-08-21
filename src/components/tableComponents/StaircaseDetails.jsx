@@ -44,7 +44,7 @@ export default function StaircaseDetails() {
         </thead>
         <tbody>
           <tr>
-            <td rowspan="5" className="font-normal border border-slate-300 p-1">
+            <td rowSpan="5" className="font-normal border border-slate-300 p-1">
               Single
             </td>
             <td className="font-normal border border-slate-300 p-1">FLOOR01</td>
@@ -163,7 +163,7 @@ export default function StaircaseDetails() {
         </thead>
         <tbody>
           <tr>
-            <td rowspan="5" className="font-normal border border-slate-300 p-1">
+            <td rowSpan="5" className="font-normal border border-slate-300 p-1">
               Single
             </td>
             <td className="font-normal border border-slate-300 p-1">FLOOR01</td>

@@ -5,7 +5,7 @@ export default function BathroomRelatedHeightDeatils() {
         <tr>
           <th
             className="border bg-gray-400 text-gray-800 border-slate-300 p-2"
-            colspan="8"
+            colSpan="8"
           >
             Bathroom related Height Details
           </th>

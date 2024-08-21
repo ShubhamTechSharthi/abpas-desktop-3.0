@@ -20,7 +20,7 @@ export default function ECSParkingReuired() {
       </thead>
       <tbody>
         <tr>
-          <td colspan="5"></td>
+          <td colSpan="5"></td>
         </tr>
       </tbody>
     </table>
