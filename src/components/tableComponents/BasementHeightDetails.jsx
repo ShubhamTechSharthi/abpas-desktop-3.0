@@ -5,7 +5,7 @@ export default function BasementHeightDetails() {
         <tr>
           <th
             colSpan={8}
-            className="border bg-gray-300 text-gray-800 border-slate-300 p-2"
+            className="border bg-gray-400 text-gray-800 border-slate-300 p-2"
           >
             Basement Height Details
           </th>
@@ -37,14 +37,18 @@ export default function BasementHeightDetails() {
       </thead>
       <tbody>
         <tr>
-          <td className="border border-slate-300 p-1">BVR 76 (4)(A)</td>
-          <td className="border border-slate-300 p-1">Single</td>
-          <td className="border border-slate-300 p-1">FLOOR-BF1</td>
-          <td className="border border-slate-300 p-1">Basement Clear Height</td>
-          <td className="border border-slate-300 p-1">2.40</td>
-          <td className="border border-slate-300 p-1">N.A.</td>
-          <td className="border border-slate-300 p-1">2.50</td>
-          <td className="border border-slate-300 p-1">Compliant</td>
+          <td className="font-normal border border-slate-300 p-1">
+            BVR 76 (4)(A)
+          </td>
+          <td className="font-normal border border-slate-300 p-1">Single</td>
+          <td className="font-normal border border-slate-300 p-1">FLOOR-BF1</td>
+          <td className="font-normal border border-slate-300 p-1">
+            Basement Clear Height
+          </td>
+          <td className="font-normal border border-slate-300 p-1">2.40</td>
+          <td className="font-normal border border-slate-300 p-1">N.A.</td>
+          <td className="font-normal border border-slate-300 p-1">2.50</td>
+          <td className="font-normal border border-slate-300 p-1">Compliant</td>
         </tr>
       </tbody>
     </table>

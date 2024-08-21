@@ -1,4 +1,5 @@
 import React from "react";
+import { formatNumber } from "../../utils/utils";
 
 const BuildingGeneralDetailsTable = ({ data }) => {
   return (
@@ -7,7 +8,7 @@ const BuildingGeneralDetailsTable = ({ data }) => {
         <tr>
           <th
             colSpan={6}
-            className="border bg-gray-300 text-gray-800 border-slate-300 p-2"
+            className="border bg-gray-400 text-gray-800 border-slate-300 p-2"
           >
             Building General Details
           </th>
@@ -36,23 +37,23 @@ const BuildingGeneralDetailsTable = ({ data }) => {
       <tbody>
         {data.map((building, index) => (
           <tr key={index}>
-            <th className="border border-slate-300 p-1">
+            <th className="font-bold border border-slate-300 p-1">
               {building["Block Name"]}
             </th>
-            <td className="border border-slate-300 p-1">
+            <td className="font-normal border border-slate-300 p-1">
               {building["Total Number of Floors"]}
             </td>
-            <td className="border border-slate-300 p-1">
+            <td className="font-normal border border-slate-300 p-1">
               {building["Block Height"]}
             </td>
-            <td className="border border-slate-300 p-1">
-              {building["Total Builtup Area"]}
+            <td className="font-normal border border-slate-300 p-1">
+              {formatNumber(building["Total Builtup Area"])}
             </td>
-            <td className="border border-slate-300 p-1">
-              {building["Non FAR Area"]}
+            <td className="font-normal border border-slate-300 p-1">
+              {formatNumber(building["Non FAR Area"])}
             </td>
-            <td className="border border-slate-300 p-1">
-              {building["Builtup (FAR) Area"]}
+            <td className="font-normal border border-slate-300 p-1">
+              {building["Builtup (FAR) Area"].toFixed(2)}
             </td>
           </tr>
         ))}

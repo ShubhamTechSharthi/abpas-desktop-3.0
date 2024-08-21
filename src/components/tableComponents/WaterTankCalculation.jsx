@@ -3,7 +3,7 @@ export default function WaterTankCalculation() {
     <table className="w-full text-center mt-3">
       <tr>
         <th
-          className="border bg-gray-300 text-gray-800 border-slate-300 p-2"
+          className="border bg-gray-400 text-gray-800 border-slate-300 p-2"
           colSpan={7}
         >
           Water Tank Calculation
@@ -27,24 +27,24 @@ export default function WaterTankCalculation() {
         <th className="border text-gray-700 border-slate-300 p-2">Result</th>
       </tr>
       <tr>
-        <td className="border border-slate-300 p-1">
+        <td className="font-normal border border-slate-300 p-1">
           NBC VOL-2 Part-9 Section-1 Clause 4.1
         </td>
-        <td className="border border-slate-300 p-1">RESIDENTIAL</td>
-        <td className="border border-slate-300 p-1">117</td>
-        <td className="border border-slate-300 p-1">100.00</td>
-        <td className="border border-slate-300 p-1">11,700.00</td>
-        <td className="border border-slate-300 p-1">-</td>
-        <td className="border border-slate-300 p-1">-</td>
+        <td className="font-normal border border-slate-300 p-1">RESIDENTIAL</td>
+        <td className="font-normal border border-slate-300 p-1">117</td>
+        <td className="font-normal border border-slate-300 p-1">100.00</td>
+        <td className="font-normal border border-slate-300 p-1">11,700.00</td>
+        <td className="font-normal border border-slate-300 p-1">-</td>
+        <td className="font-normal border border-slate-300 p-1">-</td>
       </tr>
       <tr>
-        <td className="border border-slate-300 p-1">Total:</td>
-        <td className="border border-slate-300 p-1">-</td>
-        <td className="border border-slate-300 p-1">-</td>
-        <td className="border border-slate-300 p-1">-</td>
-        <td className="border border-slate-300 p-1">11,700.00</td>
-        <td className="border border-slate-300 p-1">103,308.00</td>
-        <td className="border border-slate-300 p-1">Compliant</td>
+        <td className="font-normal border border-slate-300 p-1">Total:</td>
+        <td className="font-normal border border-slate-300 p-1">-</td>
+        <td className="font-normal border border-slate-300 p-1">-</td>
+        <td className="font-normal border border-slate-300 p-1">-</td>
+        <td className="font-normal border border-slate-300 p-1">11,700.00</td>
+        <td className="font-normal border border-slate-300 p-1">103,308.00</td>
+        <td className="font-normal border border-slate-300 p-1">Compliant</td>
       </tr>
     </table>
   );

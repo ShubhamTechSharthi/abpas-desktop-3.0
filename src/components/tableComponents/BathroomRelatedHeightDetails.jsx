@@ -4,7 +4,7 @@ export default function BathroomRelatedHeightDeatils() {
       <thead>
         <tr>
           <th
-            className="border bg-gray-300 text-gray-800 border-slate-300 p-2"
+            className="border bg-gray-400 text-gray-800 border-slate-300 p-2"
             colspan="8"
           >
             Bathroom related Height Details
@@ -37,52 +37,54 @@ export default function BathroomRelatedHeightDeatils() {
       </thead>
       <tbody>
         <tr>
-          <td className="border border-slate-300 p-1">BVR 71(1)</td>
-          <td className="border border-slate-300 p-1">Single</td>
-          <td className="border border-slate-300 p-1">FLOOR-GROUND</td>
-          <td className="border border-slate-300 p-1">
+          <td className="font-normal border border-slate-300 p-1">BVR 71(1)</td>
+          <td className="font-normal border border-slate-300 p-1">Single</td>
+          <td className="font-normal border border-slate-300 p-1">
+            FLOOR-GROUND
+          </td>
+          <td className="font-normal border border-slate-300 p-1">
             Bathroom and WC Height
           </td>
-          <td className="border border-slate-300 p-1">2.20</td>
-          <td className="border border-slate-300 p-1">N.A.</td>
-          <td className="border border-slate-300 p-1">3.00</td>
-          <td className="border border-slate-300 p-1">Compliant</td>
+          <td className="font-normal border border-slate-300 p-1">2.20</td>
+          <td className="font-normal border border-slate-300 p-1">N.A.</td>
+          <td className="font-normal border border-slate-300 p-1">3.00</td>
+          <td className="font-normal border border-slate-300 p-1">Compliant</td>
         </tr>
         <tr>
-          <td className="border border-slate-300 p-1">BVR 71(1)</td>
-          <td className="border border-slate-300 p-1">Single</td>
-          <td className="border border-slate-300 p-1">FLOOR01</td>
-          <td className="border border-slate-300 p-1">
+          <td className="font-normal border border-slate-300 p-1">BVR 71(1)</td>
+          <td className="font-normal border border-slate-300 p-1">Single</td>
+          <td className="font-normal border border-slate-300 p-1">FLOOR01</td>
+          <td className="font-normal border border-slate-300 p-1">
             Bathroom and WC Height
           </td>
-          <td className="border border-slate-300 p-1">2.20</td>
-          <td className="border border-slate-300 p-1">N.A.</td>
-          <td className="border border-slate-300 p-1">3.00</td>
-          <td className="border border-slate-300 p-1">Compliant</td>
+          <td className="font-normal border border-slate-300 p-1">2.20</td>
+          <td className="font-normal border border-slate-300 p-1">N.A.</td>
+          <td className="font-normal border border-slate-300 p-1">3.00</td>
+          <td className="font-normal border border-slate-300 p-1">Compliant</td>
         </tr>
         <tr>
-          <td className="border border-slate-300 p-1">BVR 71(1)</td>
-          <td className="border border-slate-300 p-1">Single</td>
-          <td className="border border-slate-300 p-1">FLOOR02</td>
-          <td className="border border-slate-300 p-1">
+          <td className="font-normal border border-slate-300 p-1">BVR 71(1)</td>
+          <td className="font-normal border border-slate-300 p-1">Single</td>
+          <td className="font-normal border border-slate-300 p-1">FLOOR02</td>
+          <td className="font-normal border border-slate-300 p-1">
             Bathroom and WC Height
           </td>
-          <td className="border border-slate-300 p-1">2.20</td>
-          <td className="border border-slate-300 p-1">N.A.</td>
-          <td className="border border-slate-300 p-1">3.00</td>
-          <td className="border border-slate-300 p-1">Compliant</td>
+          <td className="font-normal border border-slate-300 p-1">2.20</td>
+          <td className="font-normal border border-slate-300 p-1">N.A.</td>
+          <td className="font-normal border border-slate-300 p-1">3.00</td>
+          <td className="font-normal border border-slate-300 p-1">Compliant</td>
         </tr>
         <tr>
-          <td className="border border-slate-300 p-1">BVR 71(1)</td>
-          <td className="border border-slate-300 p-1">Single</td>
-          <td className="border border-slate-300 p-1">FLOOR03</td>
-          <td className="border border-slate-300 p-1">
+          <td className="font-normal border border-slate-300 p-1">BVR 71(1)</td>
+          <td className="font-normal border border-slate-300 p-1">Single</td>
+          <td className="font-normal border border-slate-300 p-1">FLOOR03</td>
+          <td className="font-normal border border-slate-300 p-1">
             Bathroom and WC Height
           </td>
-          <td className="border border-slate-300 p-1">2.20</td>
-          <td className="border border-slate-300 p-1">N.A.</td>
-          <td className="border border-slate-300 p-1">3.00</td>
-          <td className="border border-slate-300 p-1">Compliant</td>
+          <td className="font-normal border border-slate-300 p-1">2.20</td>
+          <td className="font-normal border border-slate-300 p-1">N.A.</td>
+          <td className="font-normal border border-slate-300 p-1">3.00</td>
+          <td className="font-normal border border-slate-300 p-1">Compliant</td>
         </tr>
       </tbody>
     </table>

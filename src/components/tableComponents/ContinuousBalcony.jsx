@@ -5,7 +5,7 @@ export default function ContinuousBalcony() {
         <tr>
           <th
             colSpan={5}
-            className="border bg-gray-300 text-gray-800 border-slate-300 p-2"
+            className="border bg-gray-400 text-gray-800 border-slate-300 p-2"
           >
             Continuous Balcony
           </th>
@@ -28,88 +28,88 @@ export default function ContinuousBalcony() {
       </thead>
       <tbody>
         <tr>
-          <td className="border border-slate-300 p-1">Single</td>
-          <td className="border border-slate-300 p-1">FLOOR01</td>
-          <td className="border border-slate-300 p-1">32.72</td>
-          <td className="border border-slate-300 p-1">6.00</td>
-          <td className="border border-slate-300 p-1">Compliant</td>
+          <td className="font-normal border border-slate-300 p-1">Single</td>
+          <td className="font-normal border border-slate-300 p-1">FLOOR01</td>
+          <td className="font-normal border border-slate-300 p-1">32.72</td>
+          <td className="font-normal border border-slate-300 p-1">6.00</td>
+          <td className="font-normal border border-slate-300 p-1">Compliant</td>
         </tr>
         <tr>
-          <td className="border border-slate-300 p-1">Single</td>
-          <td className="border border-slate-300 p-1">FLOOR01</td>
-          <td className="border border-slate-300 p-1">32.72</td>
-          <td className="border border-slate-300 p-1">6.00</td>
-          <td className="border border-slate-300 p-1">Compliant</td>
+          <td className="font-normal border border-slate-300 p-1">Single</td>
+          <td className="font-normal border border-slate-300 p-1">FLOOR01</td>
+          <td className="font-normal border border-slate-300 p-1">32.72</td>
+          <td className="font-normal border border-slate-300 p-1">6.00</td>
+          <td className="font-normal border border-slate-300 p-1">Compliant</td>
         </tr>
         <tr>
-          <td className="border border-slate-300 p-1">Single</td>
-          <td className="border border-slate-300 p-1">FLOOR01</td>
-          <td className="border border-slate-300 p-1">32.72</td>
-          <td className="border border-slate-300 p-1">6.00</td>
-          <td className="border border-slate-300 p-1">Compliant</td>
+          <td className="font-normal border border-slate-300 p-1">Single</td>
+          <td className="font-normal border border-slate-300 p-1">FLOOR01</td>
+          <td className="font-normal border border-slate-300 p-1">32.72</td>
+          <td className="font-normal border border-slate-300 p-1">6.00</td>
+          <td className="font-normal border border-slate-300 p-1">Compliant</td>
         </tr>
         <tr>
-          <td className="border border-slate-300 p-1">Single</td>
-          <td className="border border-slate-300 p-1">FLOOR01</td>
-          <td className="border border-slate-300 p-1">32.72</td>
-          <td className="border border-slate-300 p-1">6.00</td>
-          <td className="border border-slate-300 p-1">Compliant</td>
+          <td className="font-normal border border-slate-300 p-1">Single</td>
+          <td className="font-normal border border-slate-300 p-1">FLOOR01</td>
+          <td className="font-normal border border-slate-300 p-1">32.72</td>
+          <td className="font-normal border border-slate-300 p-1">6.00</td>
+          <td className="font-normal border border-slate-300 p-1">Compliant</td>
         </tr>
         <tr>
-          <td className="border border-slate-300 p-1">Single</td>
-          <td className="border border-slate-300 p-1">FLOOR02</td>
-          <td className="border border-slate-300 p-1">32.72</td>
-          <td className="border border-slate-300 p-1">6.00</td>
-          <td className="border border-slate-300 p-1">Compliant</td>
+          <td className="font-normal border border-slate-300 p-1">Single</td>
+          <td className="font-normal border border-slate-300 p-1">FLOOR02</td>
+          <td className="font-normal border border-slate-300 p-1">32.72</td>
+          <td className="font-normal border border-slate-300 p-1">6.00</td>
+          <td className="font-normal border border-slate-300 p-1">Compliant</td>
         </tr>
         <tr>
-          <td className="border border-slate-300 p-1">Single</td>
-          <td className="border border-slate-300 p-1">FLOOR02</td>
-          <td className="border border-slate-300 p-1">32.72</td>
-          <td className="border border-slate-300 p-1">6.00</td>
-          <td className="border border-slate-300 p-1">Compliant</td>
+          <td className="font-normal border border-slate-300 p-1">Single</td>
+          <td className="font-normal border border-slate-300 p-1">FLOOR02</td>
+          <td className="font-normal border border-slate-300 p-1">32.72</td>
+          <td className="font-normal border border-slate-300 p-1">6.00</td>
+          <td className="font-normal border border-slate-300 p-1">Compliant</td>
         </tr>
         <tr>
-          <td className="border border-slate-300 p-1">Single</td>
-          <td className="border border-slate-300 p-1">FLOOR02</td>
-          <td className="border border-slate-300 p-1">32.72</td>
-          <td className="border border-slate-300 p-1">6.00</td>
-          <td className="border border-slate-300 p-1">Compliant</td>
+          <td className="font-normal border border-slate-300 p-1">Single</td>
+          <td className="font-normal border border-slate-300 p-1">FLOOR02</td>
+          <td className="font-normal border border-slate-300 p-1">32.72</td>
+          <td className="font-normal border border-slate-300 p-1">6.00</td>
+          <td className="font-normal border border-slate-300 p-1">Compliant</td>
         </tr>
         <tr>
-          <td className="border border-slate-300 p-1">Single</td>
-          <td className="border border-slate-300 p-1">FLOOR02</td>
-          <td className="border border-slate-300 p-1">32.72</td>
-          <td className="border border-slate-300 p-1">6.00</td>
-          <td className="border border-slate-300 p-1">Compliant</td>
+          <td className="font-normal border border-slate-300 p-1">Single</td>
+          <td className="font-normal border border-slate-300 p-1">FLOOR02</td>
+          <td className="font-normal border border-slate-300 p-1">32.72</td>
+          <td className="font-normal border border-slate-300 p-1">6.00</td>
+          <td className="font-normal border border-slate-300 p-1">Compliant</td>
         </tr>
         <tr>
-          <td className="border border-slate-300 p-1">Single</td>
-          <td className="border border-slate-300 p-1">FLOOR03</td>
-          <td className="border border-slate-300 p-1">32.72</td>
-          <td className="border border-slate-300 p-1">6.00</td>
-          <td className="border border-slate-300 p-1">Compliant</td>
+          <td className="font-normal border border-slate-300 p-1">Single</td>
+          <td className="font-normal border border-slate-300 p-1">FLOOR03</td>
+          <td className="font-normal border border-slate-300 p-1">32.72</td>
+          <td className="font-normal border border-slate-300 p-1">6.00</td>
+          <td className="font-normal border border-slate-300 p-1">Compliant</td>
         </tr>
         <tr>
-          <td className="border border-slate-300 p-1">Single</td>
-          <td className="border border-slate-300 p-1">FLOOR03</td>
-          <td className="border border-slate-300 p-1">32.72</td>
-          <td className="border border-slate-300 p-1">6.08</td>
-          <td className="border border-slate-300 p-1">Compliant</td>
+          <td className="font-normal border border-slate-300 p-1">Single</td>
+          <td className="font-normal border border-slate-300 p-1">FLOOR03</td>
+          <td className="font-normal border border-slate-300 p-1">32.72</td>
+          <td className="font-normal border border-slate-300 p-1">6.08</td>
+          <td className="font-normal border border-slate-300 p-1">Compliant</td>
         </tr>
         <tr>
-          <td className="border border-slate-300 p-1">Single</td>
-          <td className="border border-slate-300 p-1">FLOOR03</td>
-          <td className="border border-slate-300 p-1">32.72</td>
-          <td className="border border-slate-300 p-1">6.00</td>
-          <td className="border border-slate-300 p-1">Compliant</td>
+          <td className="font-normal border border-slate-300 p-1">Single</td>
+          <td className="font-normal border border-slate-300 p-1">FLOOR03</td>
+          <td className="font-normal border border-slate-300 p-1">32.72</td>
+          <td className="font-normal border border-slate-300 p-1">6.00</td>
+          <td className="font-normal border border-slate-300 p-1">Compliant</td>
         </tr>
         <tr>
-          <td className="border border-slate-300 p-1">Single</td>
-          <td className="border border-slate-300 p-1">FLOOR03</td>
-          <td className="border border-slate-300 p-1">32.72</td>
-          <td className="border border-slate-300 p-1">6.00</td>
-          <td className="border border-slate-300 p-1">Compliant</td>
+          <td className="font-normal border border-slate-300 p-1">Single</td>
+          <td className="font-normal border border-slate-300 p-1">FLOOR03</td>
+          <td className="font-normal border border-slate-300 p-1">32.72</td>
+          <td className="font-normal border border-slate-300 p-1">6.00</td>
+          <td className="font-normal border border-slate-300 p-1">Compliant</td>
         </tr>
       </tbody>
     </table>

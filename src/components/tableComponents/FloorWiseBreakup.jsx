@@ -12,7 +12,7 @@ const FloorwiseBreakupTable = ({ data }) => {
         <tr>
           <th
             colSpan={10}
-            className="border bg-gray-300 text-gray-800 border-slate-300 p-2"
+            className="border bg-gray-400 text-gray-800 border-slate-300 p-2"
           >
             Floorwise Breakup
           </th>
@@ -66,7 +66,7 @@ const FloorwiseBreakupTable = ({ data }) => {
           <>
             <tr>
               <td
-                className="border border-slate-300 p-1"
+                className="font-normal border border-slate-300 p-1"
                 rowSpan={block["Floors"].length + 2}
               >
                 {block["Block Name"]}
@@ -74,45 +74,45 @@ const FloorwiseBreakupTable = ({ data }) => {
             </tr>
             {block["Floors"].map((floor, floorIndex) => (
               <tr key={floorIndex}>
-                <td className="border border-slate-300 p-1">
+                <td className="font-normal border border-slate-300 p-1">
                   {floor["Floor Name"]}
                 </td>
-                <td className="border border-slate-300 p-1">
+                <td className="font-normal border border-slate-300 p-1">
                   {floor["Total Area"] !== 0
                     ? floor["Total Area"].toFixed(2)
                     : "-"}
                 </td>
-                <td className="border border-slate-300 p-1">
+                <td className="font-normal border border-slate-300 p-1">
                   {floor["Deduction"] !== 0
                     ? floor["Deduction"].toFixed(2)
                     : "-"}
                 </td>
-                <td className="border border-slate-300 p-1">
+                <td className="font-normal border border-slate-300 p-1">
                   {floor["Not Counted in FAR Area"] !== 0
                     ? floor["Not Counted in FAR Area"].toFixed(2)
                     : "-"}
                 </td>
-                <td className="border border-slate-300 p-1">
+                <td className="font-normal border border-slate-300 p-1">
                   {floor["Residential"] !== 0
                     ? floor["Residential"].toFixed(2)
                     : "-"}
                 </td>
-                <td className="border border-slate-300 p-1">
+                <td className="font-normal border border-slate-300 p-1">
                   {floor["Commercial"] !== 0
                     ? floor["Commercial"].toFixed(2)
                     : "-"}
                 </td>
-                <td className="border border-slate-300 p-1">
+                <td className="font-normal border border-slate-300 p-1">
                   {floor["Industrial"] !== 0
                     ? floor["Industrial"].toFixed(2)
                     : "-"}
                 </td>
-                <td className="border border-slate-300 p-1">
+                <td className="font-normal border border-slate-300 p-1">
                   {floor["Institutional"] !== 0
                     ? floor["Institutional"].toFixed(2)
                     : "-"}
                 </td>
-                <td className="border border-slate-300 p-1">
+                <td className="font-normal border border-slate-300 p-1">
                   {floor["Educational"] !== 0
                     ? floor["Educational"].toFixed(2)
                     : "-"}
@@ -120,13 +120,16 @@ const FloorwiseBreakupTable = ({ data }) => {
               </tr>
             ))}
             <tr>
-              <td className="border border-slate-300 p-1">Total</td>
+              <td className="font-normal border border-slate-300 p-1">Total</td>
               {Object.keys(block["Floors"][0])
                 .map((item) => grandTotal(item, block["Floors"]))
                 .map((item, idx) => {
                   if (item === "Floor Name") return null;
                   return (
-                    <td key={idx} className="border border-slate-300 p-1">
+                    <td
+                      key={idx}
+                      className="font-normal border border-slate-300 p-1"
+                    >
                       {item !== 0 ? item.toFixed(2) : "-"}
                     </td>
                   );

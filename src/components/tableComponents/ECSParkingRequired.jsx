@@ -5,7 +5,7 @@ export default function ECSParkingReuired() {
         <tr>
           <th
             colSpan={5}
-            className="border bg-gray-300 text-gray-800 border-slate-300 p-2"
+            className="border bg-gray-400 text-gray-800 border-slate-300 p-2"
           >
             ECS Parking Required
           </th>

@@ -6,7 +6,7 @@ const NonFARBreakupTable = ({ data }) => {
       <thead>
         <tr>
           <th
-            className="border bg-gray-300 text-gray-700 border-slate-300 p-2"
+            className="border bg-gray-400 text-gray-700 border-slate-300 p-2"
             colSpan={4}
           >
             Not Counted in FAR Breakup
@@ -39,7 +39,7 @@ const NonFARBreakupTable = ({ data }) => {
                     0
                   )
                 }
-                className="border border-slate-300 p-1"
+                className="font-normal border border-slate-300 p-1"
               >
                 {block["Block Name"]}
               </td>
@@ -49,27 +49,30 @@ const NonFARBreakupTable = ({ data }) => {
                 <tr>
                   <td
                     rowSpan={floor["Non FAR Objects"].length + 1}
-                    className="border border-slate-300 p-1"
+                    className="font-normal border border-slate-300 p-1"
                   >
                     {floor["Typical Floor Name"]}
                   </td>
                 </tr>
                 {floor["Non FAR Objects"].map((FARObject, FARIndex) => (
                   <tr key={FARIndex}>
-                    <td className="border border-slate-300 p-1">
+                    <td className="font-normal border border-slate-300 p-1">
                       {FARObject["Non FAR Name"]}
                     </td>
-                    <td className="border border-slate-300 p-1">
-                      {FARObject["Non FAR Area"]}
+                    <td className="font-normal border border-slate-300 p-1">
+                      {FARObject["Non FAR Area"].toFixed(2)}
                     </td>
                   </tr>
                 ))}
                 <tr>
-                  <th colSpan={2} className="border border-slate-300 p-1">
+                  <th
+                    colSpan={2}
+                    className="font-bold border border-slate-300 p-1"
+                  >
                     Total
                   </th>
-                  <th className="border border-slate-300 p-1">
-                    {floor["Total Non FAR Area"]}
+                  <th className="font-bold border border-slate-300 p-1">
+                    {floor["Total Non FAR Area"].toFixed(2)}
                   </th>
                 </tr>
               </>
