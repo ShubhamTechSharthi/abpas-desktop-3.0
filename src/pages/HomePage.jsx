@@ -2,10 +2,9 @@ import { useNavigate } from "react-router-dom";
 import Button from "../components/Button";
 import { useEffect, useState } from "react";
 import { GrCloudUpload } from "react-icons/gr";
-import FinalReport from "../components/FinalReportsComponents/FinalReport";
-
 import CryptoJS from "crypto-js";
-
+import FinalReport from "../components/FinalReportsComponents/FinalReport";
+import Swal from "sweetalert2";
 const finalFormData = {
   actualFrontage: "1",
   applicationId: "123",
@@ -81,9 +80,20 @@ export default function HomePage() {
   // if (filePath) console.log(filePath);
 
   const handleFileSelect = () => {
-    window.Electron.ipcRenderer.send("process-file", filePath);
+    // console.log("scrutinydata", scrutinyData);
+    if (
+      drawingFileName === "Upload drawing file" ||
+      encryptedFileName === "Upload encrypted file"
+    ) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Please upload drawing file and encrypted file before proceeding!",
+      });
+    } else {
+      window.Electron.ipcRenderer.send("process-file", filePath);
+    }
   };
-
   const navigate = useNavigate();
 
   const [processedData, setProcessedData] = useState(null);
@@ -227,7 +237,7 @@ export default function HomePage() {
             </Button>
           </div>
         </div>
-        {processedData && finalData && (
+        {processedData && (
           <FinalReport finalData={finalData} processedData={processedData} />
         )}
       </div>
