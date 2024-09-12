@@ -18,18 +18,18 @@ export default function Header() {
             </div>
             <div className="hidden md:block">
               <div className="ml-5 flex items-baseline space-x-4">
-                {/* <a
-                  href="#"
+                <a
+                  href="/home"
                   className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
                 >
-                  File
+                  New
                 </a>
                 <a
-                  href="#"
+                  href="/reports"
                   className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
                 >
-                  Projects
-                </a> */}
+                  Reports
+                </a>
               </div>
             </div>
           </div>

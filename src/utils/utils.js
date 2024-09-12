@@ -1,5 +1,5 @@
 export const findKeyValue = (data, formKey) => {
-  return data[formKey] || "-";
+  return data?.[formKey] || "-";
 };
 
 export const findAllKeyValues = (obj, keyToFind, values = []) => {
