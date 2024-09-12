@@ -14,6 +14,7 @@ import {
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import ProjectDetailsPage from "./pages/ProjectDetailsPage";
+import ScrutineReportsTable from "./pages/ScrutineReportTable";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -21,6 +22,7 @@ const router = createBrowserRouter(
       <Route index element={<LoginPage />} />
       <Route path="/home" element={<HomePage />} />
       <Route path="/projectdetails" element={<ProjectDetailsPage />} />
+      <Route path="/reports" element={<ScrutineReportsTable />} />
     </Route>
   )
 );
