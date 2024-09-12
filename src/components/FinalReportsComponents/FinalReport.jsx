@@ -26,6 +26,8 @@ import PodiumHeightDetails from "../tableComponents/PodiumHeightDetails";
 import TravelDistance from "../tableComponents/TravelDistance";
 import LiftDetails from "../tableComponents/LiftDetails";
 import BuildingHeights from "../tableComponents/BuildingHeights";
+import ECSParkingProvided from "../tableComponents/EcsParkingProvided";
+import EscalatorDetails from "../tableComponents/EscalatorDetails";
 
 const FinalReport = ({ finalData, processedData }) => {
   return (
@@ -1357,6 +1359,8 @@ const FinalReport = ({ finalData, processedData }) => {
         <LiftDetails />
 
         <BuildingHeights />
+        <ECSParkingProvided />
+        <EscalatorDetails />
       </div>
     </div>
   );
