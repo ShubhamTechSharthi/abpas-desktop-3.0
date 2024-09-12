@@ -43,7 +43,7 @@ const schema = zod.object({
   existGroundCovrage: zod
     .string()
     .regex(/^\d*\.?\d+$/, { message: "Must be a valid number." }),
-  streetWidth: zod
+  roadStreetWidth: zod
     .string()
     .regex(/^\d*\.?\d+$/, { message: "Must be a valid number." }),
   existBuidlingHeight: zod
@@ -152,9 +152,9 @@ export default function ProposalDetails() {
         />
         <MuiInput
           label="Road / Street Width"
-          {...register("streetWidth")}
-          error={errors.streetWidth ? true : false}
-          helperText={errors.streetWidth && errors.streetWidth.message}
+          {...register("roadStreetWidth")}
+          error={errors.roadStreetWidth ? true : false}
+          helperText={errors.roadStreetWidth && errors.roadStreetWidth.message}
         />
 
         <MuiInput
