@@ -1,41 +1,28 @@
-import { useState } from "react";
-import { RxCross2 } from "react-icons/rx";
-export default function Modal({ open, onClose, className, children, heading }) {
-  const [animate, setAnimate] = useState(false);
+import React from "react";
 
-  const handleClick = () => {
-    setAnimate(true);
-    setTimeout(() => {
-      setAnimate(false);
-    }, 1000);
-  };
+const Modal = ({ show, onClose, report }) => {
+  if (!show) return null;
 
   return (
-    // backdrop
-    <div
-      onClick={handleClick}
-      className={`
-        fixed inset-0 flex items-start transition-colors z-10
-        ${open ? "visible bg-black/50" : "invisible"}
-      `}
-    >
-      {/* modal */}
-      <div
-        onClick={(e) => e.stopPropagation()}
-        className={`
-          bg-white  border-t-4 border-cyan-500 rounded-md shadow  transition-all ${className}
-          ${animate && "animate-shake"}
-          ${open ? "opacity-100" : "opacity-0"}
-        `}
-      >
-        <div className="flex justify-between items-center text-white w-full bg-slate-600 p-3">
-          <h1 className="text-xs font-semibold">{heading}</h1>
-          <button onClick={onClose} className="bg-red-500 mr-2 p-[2px]">
-            <RxCross2 className="text-white" />
-          </button>
-        </div>
-        <div className="modal">{children}</div>
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+      <div className="bg-white p-5 rounded-lg max-w-md w-full">
+        <h2 className="text-2xl mb-4">Product Details</h2>
+        <p>
+          <strong>File Name:</strong> {report?.FileName}
+        </p>
+
+        <p>
+          <strong>Date:</strong> {report?.Date}
+        </p>
+        <button
+          className="mt-4 bg-blue-500 text-white py-2 px-4 rounded"
+          onClick={onClose}
+        >
+          Close
+        </button>
       </div>
     </div>
   );
-}
+};
+
+export default Modal;

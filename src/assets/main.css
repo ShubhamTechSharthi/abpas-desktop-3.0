@@ -54,3 +54,13 @@ h3 {
   overflow: auto;
   height: 70vh;
 }
+input[type="file"] {
+  display: none;
+}
+label.custom-file-upload {
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: ruby-text;
+}

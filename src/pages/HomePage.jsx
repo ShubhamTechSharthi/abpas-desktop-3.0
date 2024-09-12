@@ -1,19 +1,84 @@
 import { useNavigate } from "react-router-dom";
-import { RxCross2 } from "react-icons/rx";
-import MuiInput from "../components/MuiInput";
 import Button from "../components/Button";
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { removeFormData } from "../store/formSlice";
+import { GrCloudUpload } from "react-icons/gr";
+import FinalReport from "../components/FinalReportsComponents/FinalReport";
+
+import CryptoJS from "crypto-js";
+
+const finalFormData = {
+  actualFrontage: "1",
+  applicationId: "123",
+  buildingActivity: "Guest Houses",
+  buildingIsFor: "Self Use",
+  buildingUse: "Educational",
+  bulidingHeight: "1",
+  caseType: "ERECT",
+  colonyName: "sdc",
+  deductionInPlot: "1",
+  developerLicenseNo: "1234567890",
+  developerName: "gcgcg",
+  district: "Bhopal",
+  division: "Bhopal",
+  email: "asc@gmail.com",
+  existBuidlingHeight: "1",
+  existBuildUpArea: "1",
+  existGroundCovrage: "1",
+  existingNoOfFloor: "1",
+  floorAreaRation: "1.25",
+  grossPlotArea: "1",
+  groundCoverageAera: "1",
+  isPlotIrregular: "No",
+  landSubUse: "Mandi",
+  landUse: "Industrial Zone",
+  layoutApproval: "Colony Regularized by ULB",
+  maxBuildingHeight: "N/A",
+  maxGroundCovrage: "50",
+  minFrontMOS: "N/A",
+  minFrontage: "N/A",
+  minRearMOS: "N/A",
+  minRequiredParking: "On No. of Bed",
+  minRoadWidth: "N/A",
+  minSide1MOS: "N/A",
+  minSide2MOS: "N/A",
+  mobileNo: "1234567890",
+  name: "sdc",
+  netPlotArea: "1",
+  noOfFloor: "3",
+  ownerEmail: "asc@gmail.com",
+  ownerMobileNo: "1234567890",
+  ownerName: "asasc",
+  plotDepth: "1",
+  plotNo: "12",
+  plotWidth: "1",
+  postalAddress: "ascascascascsac",
+  propBuildUpArea: "1",
+  roadWidending: "1",
+  siteAddress: "ascascascascascasc",
+  streetWidth: "1",
+  typeOfBuilding: "Residential Buildings hieght up to 12.5 Meters",
+  typeOfConstruction:
+    "A building intended to be used for any social charitable, culture, Educational purposes, Dharmasala and similar types of building and any other purpose not specifically provided for",
+  typeOfConsultant: "Architect",
+  typeOfPlot: "Single Plot",
+  ulb: "Berasia",
+  ward: "12",
+  zone: "21",
+};
 
 export default function HomePage() {
+  const [drawingFileName, setDrawingFileName] = useState("Upload drawing file");
+  const [encryptedFileName, setEncryptedFileName] = useState(
+    "Upload encrypted file"
+  );
   const [filePath, setFilePath] = useState();
+  const [finalData, setFinalData] = useState();
 
-  const finalData = useSelector((state) => state.form.formData);
-  const finalDataLength = Object.keys(finalData).length;
-  const dispatch = useDispatch();
+  // const finalData = useSelector((state) => state.form.formData);
+  // const finalDataLength = Object.keys(finalData).length;
+  // const dispatch = useDispatch();
 
-  if (filePath) console.log(filePath);
+  // if (filePath) console.log(filePath);
 
   const handleFileSelect = () => {
     window.Electron.ipcRenderer.send("process-file", filePath);
@@ -38,10 +103,37 @@ export default function HomePage() {
     console.log(finalData);
   };
 
-  const camelCaseToHumanReadable = (str) => {
-    return str
-      .replace(/([a-z])([A-Z])/g, "$1 $2") // Insert a space between lowercase and uppercase letters
-      .replace(/^./, (match) => match.toUpperCase()); // Capitalize the first letter
+  const key = CryptoJS.enc.Utf8.parse("1234567890123456");
+  const iv = CryptoJS.enc.Utf8.parse("1234567890123456");
+
+  function decrypt(ciphertext) {
+    const bytes = CryptoJS.AES.decrypt(ciphertext, key, { iv: iv });
+    return JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+  }
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setDrawingFileName(file.name);
+      setFilePath(file.path);
+    }
+  };
+
+  const handleEncryption = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      setEncryptedFileName(file.name);
+      const reader = new FileReader();
+      reader.onload = () => {
+        const encryptedData = reader.result;
+        try {
+          const decryptedData = decrypt(encryptedData);
+          setFinalData(decryptedData);
+        } catch (e) {
+          console.error("Failed to decrypt data:", e);
+        }
+      };
+      reader.readAsText(file);
+    }
   };
 
   return (
@@ -51,11 +143,7 @@ export default function HomePage() {
           <h1 className="text-white">Dashboard</h1>
         </div>
 
-        <div className="w-full flex justify-between items-center px-5 my-3">
-          {/* <div className="flex gap-3">
-            <MuiInput id="project-code" label="Project Code" className="w-36" />
-            <MuiInput id="search-text" label="Search Text" className="w-36" />
-          </div> */}
+        {/* <div className="w-full flex justify-between items-center px-5 my-3">
           <div className="flex gap-2">
             <Button
               className="bg-blue-600 text-base"
@@ -66,7 +154,7 @@ export default function HomePage() {
             >
               New
             </Button>
-            {finalDataLength > 12 && (
+            {finalDataLength > 3 && (
               <Button
                 onClick={handleFileSelect}
                 className="bg-green-600 text-base"
@@ -74,10 +162,10 @@ export default function HomePage() {
                 Scrutinize
               </Button>
             )}
-            {/* <Button onClick={() => showFinalData()} className="bg-red-600">
+            <Button onClick={() => showFinalData()} className="bg-red-600">
               Final Data
-            </Button> */}
-            {finalDataLength > 12 && (
+            </Button>
+            {finalDataLength > 3 && (
               <input
                 type="file"
                 onChange={(e) => {
@@ -85,64 +173,62 @@ export default function HomePage() {
                 }}
               />
             )}
-            {/* {processedData && <GeneratePdf scrutinyData={processedData} />} */}
-            {/* <GeneratePdf scrutinyData={processedData} /> */}
+          </div>
+        </div> */}
+        <div className="w-full flex ">
+          <div className=" w-[90%] justify-start flex items-center px-5 my-3">
+            <div className="w-[15%] mr-4">
+              <label htmlFor="drawingfile">Select drawing file: &nbsp;</label>
+              <br />
+              <label
+                for="drawingfile"
+                title={drawingFileName}
+                className=" text-ellipsis overflow-hidden flex bg-blue-700 cursor-pointer text-white p-2 border border-blue-500 rounded-md
+               custom-file-upload"
+              >
+                <GrCloudUpload />
+                &nbsp; {drawingFileName}
+              </label>
+              <input
+                type="file"
+                id="drawingfile"
+                className=""
+                onChange={handleFileChange}
+              />
+            </div>
+            <div className="w-[15%]">
+              <label htmlFor="drawingfile">Select encrypted file: &nbsp;</label>
+              <label
+                for="encryptedfile"
+                title={encryptedFileName}
+                className="flex  bg-blue-700 text-white p-2 border border-blue-500 rounded-md
+               custom-file-upload"
+              >
+                <GrCloudUpload />
+                &nbsp; {encryptedFileName}
+              </label>
+              <input
+                type="file"
+                id="encryptedfile"
+                onChange={handleEncryption}
+              />
+            </div>
+
+            {/* <Button onClick={() => showFinalData()} className="bg-red-600">
+            Final Data
+          </Button> */}
+          </div>
+          <div className=" w-[10%] justify-start flex items-center px-5 my-3">
+            <Button
+              onClick={handleFileSelect}
+              className="bg-green-600 text-base"
+            >
+              Scrutinize
+            </Button>
           </div>
         </div>
-        {/* <div>
-          {processedData && <pre>{JSON.stringify(processedData, null, 2)}</pre>}
-        </div> */}
-
-        {processedData && (
-          <div>
-            <div className="bg-white border-gray-200 shadow tab-sty-report p-5">
-              <div className="grid grid-cols-1 m-auto mb-3">
-                <h1 className="text-3xl text-cyan-700 text-center">
-                  Scrutiny Report
-                </h1>
-              </div>
-              <h3 className=" text-lg font-medium text-left p-2 bg-gray-400">
-                Proposal Information
-              </h3>
-
-              {/* <h2 className="text-xl mb-5 text-blue-800">Form Data</h2> */}
-              <div className="w-full grid grid-cols-4 gap-4 border border-slate-900 p-2">
-                {Object.entries(finalData).map(([key, value], index) => (
-                  <table className="text-left">
-                    <tbody className="bg-slate-200">
-                      <td className="p-3"> {camelCaseToHumanReadable(key)}</td>
-                      <td className="text-right p-3 text-cyan-700">{value}</td>
-                    </tbody>
-                  </table>
-                ))}
-              </div>
-
-              <div className="bg-white border-gray-200 shadow mt-3">
-                <h3 className=" text-lg font-medium text-left p-2 bg-gray-400">
-                  Scrutiny Data
-                </h3>
-                <div className="w-full grid grid-cols-4 gap-4 border border-slate-900 p-2">
-                  {Object.entries(processedData).map(([key, value], index) => (
-                    <table className="text-left">
-                      <tbody className="bg-slate-200">
-                        <td className="p-3">{key}</td>
-                        <td className="text-right p-3 text-cyan-700">
-                          {value}
-                        </td>
-                      </tbody>
-                    </table>
-
-                    // <div key={index} className="p-2">
-                    //   <div className="text-base text-cyan-600">
-
-                    //   </div>
-                    //   <div className="text-sm">{value}</div>
-                    // </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
+        {processedData && finalData && (
+          <FinalReport finalData={finalData} processedData={processedData} />
         )}
       </div>
     </div>

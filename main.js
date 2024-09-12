@@ -1,9 +1,9 @@
-import { app, BrowserWindow, ipcMain } from 'electron';
-import path from 'path';
-import { fileURLToPath } from 'url';
-import isDev from 'electron-is-dev';
-import { spawn } from 'child_process';
-import { join } from 'path';
+import { app, BrowserWindow, ipcMain } from "electron";
+import path from "path";
+import { fileURLToPath } from "url";
+import isDev from "electron-is-dev";
+import { spawn } from "child_process";
+import { join } from "path";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -13,7 +13,7 @@ function createWindow() {
     width: 800,
     height: 600,
     webPreferences: {
-      preload: path.join(__dirname, 'preload.js'),
+      preload: path.join(__dirname, "preload.js"),
       contextIsolation: true,
       enableRemoteModule: false,
     },
@@ -21,8 +21,8 @@ function createWindow() {
 
   win.loadURL(
     isDev
-      ? 'http://localhost:5173'
-      : `file://${path.join(__dirname, 'dist/index.html')}`
+      ? "http://localhost:5173"
+      : `file://${path.join(__dirname, "dist/index.html")}`
   );
 
   if (isDev) {
@@ -30,23 +30,23 @@ function createWindow() {
   }
 }
 
-app.on('ready', createWindow);
+app.on("ready", createWindow);
 
-app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
+app.on("window-all-closed", () => {
+  if (process.platform !== "darwin") {
     app.quit();
   }
 });
 
-app.on('activate', () => {
+app.on("activate", () => {
   if (BrowserWindow.getAllWindows().length === 0) {
     createWindow();
   }
 });
 
 // Handle IPC from renderer
-ipcMain.on('ping', () => {
-  console.log('pong');
+ipcMain.on("ping", () => {
+  console.log("pong");
 });
 
 // ipcMain.on('process-file', () => {
@@ -54,33 +54,33 @@ ipcMain.on('ping', () => {
 // });
 
 ipcMain.on("process-file", (event, filePath) => {
-    console.log("File Path received:", filePath);
+  console.log("File Path received:", filePath);
 
-    const scriptPath = join(
-      __dirname,
-      "python-scripts",
-      "demo_scrutiny_engine.py"
-    );
+  const scriptPath = join(
+    __dirname,
+    "python-scripts",
+    "demo_scrutiny_engine.pyc"
+  );
 
-    console.log("Script path:", scriptPath);
+  console.log("Script path:", scriptPath);
 
-    const pythonProcess = spawn("python", [scriptPath, filePath]);
+  const pythonProcess = spawn("python", [scriptPath, filePath]);
 
-    pythonProcess.stdout.on("data", (data) => {
-      try {
-        const result = JSON.parse(data.toString("utf8"));
-        console.log("xyz2", result);
-        event.reply("file-processed", result);
-      } catch (err) {
-        console.error("Failed to parse data from Python script", err);
-      }
-    });
-
-    pythonProcess.stderr.on("data", (data) => {
-      console.error(`stderr: ${data}`);
-    });
-
-    pythonProcess.on("close", (code) => {
-      console.log(`Python process exited with code ${code}`);
-    });
+  pythonProcess.stdout.on("data", (data) => {
+    try {
+      const result = JSON.parse(data.toString("utf8"));
+      console.log("xyz2", result);
+      event.reply("file-processed", result);
+    } catch (err) {
+      console.error("Failed to parse data from Python script", err);
+    }
   });
+
+  pythonProcess.stderr.on("data", (data) => {
+    console.error(`stderr: ${data}`);
+  });
+
+  pythonProcess.on("close", (code) => {
+    console.log(`Python process exited with code ${code}`);
+  });
+});
