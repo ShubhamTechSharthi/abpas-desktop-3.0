@@ -28,6 +28,16 @@ import LiftDetails from "../tableComponents/LiftDetails";
 import BuildingHeights from "../tableComponents/BuildingHeights";
 import ECSParkingProvided from "../tableComponents/EcsParkingProvided";
 import EscalatorDetails from "../tableComponents/EscalatorDetails";
+import BuildingCategoryDetails from "../tableComponents/BuildingCategoryDetails";
+import SiteExtentDetails from "../tableComponents/SiteExtentDetails";
+import FrontageOfPlot from "../tableComponents/Frontageofplot";
+import FAR from "../tableComponents/FAR";
+import RoadWidth from "../tableComponents/RoadWidth";
+import MarginalOpenSpaceDetails from "../tableComponents/MarginalOpenSpaceDetails";
+import NonFARTable from "../tableComponents/NonFARTable";
+import StiltHeightDetailsTable from "../tableComponents/StiltHeightDetailsTable";
+import LedgeLoftHeightTable from "../tableComponents/LedgeLoftHeightTable";
+
 
 const FinalReport = ({ finalData, processedData }) => {
   return (
@@ -1361,6 +1371,15 @@ const FinalReport = ({ finalData, processedData }) => {
         <BuildingHeights />
         <ECSParkingProvided />
         <EscalatorDetails />
+        <BuildingCategoryDetails/>
+        <SiteExtentDetails/>
+        <FrontageOfPlot/>
+        <FAR/>
+        <RoadWidth/>
+        <MarginalOpenSpaceDetails/>
+        <NonFARTable/>
+        <StiltHeightDetailsTable/>
+        <LedgeLoftHeightTable/>
       </div>
     </div>
   );
