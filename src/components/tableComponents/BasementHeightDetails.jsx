@@ -1,4 +1,19 @@
 export default function BasementHeightDetails() {
+  // Example data array
+  const tableData = [
+    {
+      rule: "BVR 76 (4)(A)",
+      blockName: "Single",
+      floorName: "FLOOR-BF1",
+      parameter: "Basement Clear Height",
+      minRequired: "2.40",
+      maxPermissible: "N.A.",
+      provided: "2.50",
+      result: "Compliant",
+    },
+    // Add more data objects here as needed
+  ];
+
   return (
     <table className="w-full text-center mt-3">
       <thead>
@@ -36,16 +51,18 @@ export default function BasementHeightDetails() {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td className="border border-slate-300 p-1">BVR 76 (4)(A)</td>
-          <td className="border border-slate-300 p-1">Single</td>
-          <td className="border border-slate-300 p-1">FLOOR-BF1</td>
-          <td className="border border-slate-300 p-1">Basement Clear Height</td>
-          <td className="border border-slate-300 p-1">2.40</td>
-          <td className="border border-slate-300 p-1">N.A.</td>
-          <td className="border border-slate-300 p-1">2.50</td>
-          <td className="border border-slate-300 p-1">Compliant</td>
-        </tr>
+        {tableData.map((row, index) => (
+          <tr key={index}>
+            <td className="border border-slate-300 p-1">{row.rule}</td>
+            <td className="border border-slate-300 p-1">{row.blockName}</td>
+            <td className="border border-slate-300 p-1">{row.floorName}</td>
+            <td className="border border-slate-300 p-1">{row.parameter}</td>
+            <td className="border border-slate-300 p-1">{row.minRequired}</td>
+            <td className="border border-slate-300 p-1">{row.maxPermissible}</td>
+            <td className="border border-slate-300 p-1">{row.provided}</td>
+            <td className="border border-slate-300 p-1">{row.result}</td>
+          </tr>
+        ))}
       </tbody>
     </table>
   );
