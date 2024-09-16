@@ -2,30 +2,78 @@ import React from "react";
 
 export default function TravelDistance() {
   // Simplified data structure
-  const travelDistanceData = {
-    blockName: "Single",
-    floors: [
-      { floorName: "FLOOR01", maximum: 30, actual: 27.79, result: "Compliant" },
-      { floorName: "FLOOR02", maximum: 30, actual: 27.79, result: "Compliant" },
-      { floorName: "FLOOR03", maximum: 30, actual: 27.79, result: "Compliant" },
-      { floorName: "FLOOR04", maximum: 30, actual: 27.79, result: "Compliant" },
-      { floorName: "FLOOR05", maximum: 30, actual: 27.79, result: "Compliant" },
-      { floorName: "FLOOR06", maximum: 30, actual: 27.79, result: "Compliant" },
-      { floorName: "FLOOR07", maximum: 30, actual: 27.79, result: "Compliant" },
-      {
-        floorName: "FLOOR-GROUND",
-        maximum: 30,
-        actual: 27.5,
-        result: "Compliant",
-      },
-      {
-        floorName: "FLOOR-MFGROUNDTO01",
-        maximum: 30,
-        actual: 20.39,
-        result: "Compliant",
-      },
-    ],
-  };
+  const data = [
+    {
+      blockName: "Single",
+      floors: [
+        {
+          floorName: "Floor1",
+          measr: [
+            {
+              max: 30,
+              actual: 9.42,
+              result: "Compliant",
+            },
+            {
+              max: 30,
+              actual: 9.42,
+              result: "Compliant",
+            },
+            {
+              max: 30,
+              actual: 9.42,
+              result: "Compliant",
+            },
+            {
+              max: 30,
+              actual: 9.42,
+              result: "Compliant",
+            },
+            {
+              max: 30,
+              actual: 9.42,
+              result: "Compliant",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      blockName: "Double",
+      floors: [
+        {
+          floorName: "Floor1",
+          measr: [
+            {
+              max: 30,
+              actual: 9.42,
+              result: "Compliant",
+            },
+            {
+              max: 30,
+              actual: 9.42,
+              result: "Compliant",
+            },
+            {
+              max: 30,
+              actual: 9.42,
+              result: "Compliant",
+            },
+            {
+              max: 30,
+              actual: 9.42,
+              result: "Compliant",
+            },
+            {
+              max: 30,
+              actual: 9.42,
+              result: "Compliant",
+            },
+          ],
+        },
+      ],
+    },
+  ];
 
   return (
     <table className="w-full text-center mt-3">
@@ -52,30 +100,48 @@ export default function TravelDistance() {
         </tr>
       </thead>
       <tbody>
-        {travelDistanceData.floors.map((floor, index) => (
-          <tr key={index}>
-            {/* Only display the block name on the first row */}
-            {index === 0 && (
+        {data.map((block, index) => (
+          <>
+            <tr>
               <td
-                className="font-normal border border-slate-300 p-1"
-                rowSpan={travelDistanceData.floors.length}
+                rowSpan={
+                  1 +
+                  block["floors"].reduce(
+                    (acc, item) => acc + item["measr"].length + 1,
+                    0
+                  )
+                }
+                className="border border-slate-300 p-1"
               >
-                {travelDistanceData.blockName}
+                {block["blockName"]}
               </td>
-            )}
-            <td className="font-normal border border-slate-300 p-1">
-              {floor.floorName}
-            </td>
-            <td className="font-normal border border-slate-300 p-1">
-              {floor.maximum}
-            </td>
-            <td className="font-normal border border-slate-300 p-1">
-              {floor.actual}
-            </td>
-            <td className="font-normal border border-slate-300 p-1">
-              {floor.result}
-            </td>
-          </tr>
+            </tr>
+            {block["floors"].map((floor, floorIndex) => (
+              <>
+                <tr>
+                  <td
+                    rowSpan={floor["measr"].length + 1}
+                    className="border border-slate-300 p-1"
+                  >
+                    {floor["floorName"]}
+                  </td>
+                </tr>
+                {floor["measr"].map((FARObject, FARIndex) => (
+                  <tr key={FARIndex}>
+                    <td className="border border-slate-300 p-1">
+                      {FARObject["max"]}
+                    </td>
+                    <td className="border border-slate-300 p-1">
+                      {FARObject["actual"]}
+                    </td>
+                    <td className="border border-slate-300 p-1">
+                      {FARObject["result"]}
+                    </td>
+                  </tr>
+                ))}
+              </>
+            ))}
+          </>
         ))}
       </tbody>
     </table>

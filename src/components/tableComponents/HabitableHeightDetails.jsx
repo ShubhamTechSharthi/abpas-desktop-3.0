@@ -1,4 +1,47 @@
 export default function HabitableHeightDeatils() {
+  const habitableHeightData = [
+    {
+      rules: "BVR 69(1)",
+      blockName: "Single",
+      floorName: "FLOOR-GROUND",
+      parameter: "Habitable Room Height",
+      minRequired: "2.60",
+      maxPermissible: "N.A.",
+      provided: "3.00",
+      result: "Compliant",
+    },
+    {
+      rules: "BVR 69(1)",
+      blockName: "Single",
+      floorName: "FLOOR01",
+      parameter: "Habitable Room Height",
+      minRequired: "2.60",
+      maxPermissible: "N.A.",
+      provided: "3.00",
+      result: "Compliant",
+    },
+    {
+      rules: "BVR 69(1)",
+      blockName: "Single",
+      floorName: "FLOOR02",
+      parameter: "Habitable Room Height",
+      minRequired: "2.60",
+      maxPermissible: "N.A.",
+      provided: "3.00",
+      result: "Compliant",
+    },
+    {
+      rules: "BVR 69(1)",
+      blockName: "Single",
+      floorName: "FLOOR03",
+      parameter: "Habitable Room Height",
+      minRequired: "2.60",
+      maxPermissible: "N.A.",
+      provided: "3.00",
+      result: "Compliant",
+    },
+  ];
+
   return (
     <table className="w-full text-center mt-3">
       <thead>
@@ -36,46 +79,20 @@ export default function HabitableHeightDeatils() {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td className="border border-slate-300 p-1">BVR 69(1)</td>
-          <td className="border border-slate-300 p-1">Single</td>
-          <td className="border border-slate-300 p-1">FLOOR-GROUND</td>
-          <td className="border border-slate-300 p-1">Habitable Room Height</td>
-          <td className="border border-slate-300 p-1">2.60</td>
-          <td className="border border-slate-300 p-1">N.A.</td>
-          <td className="border border-slate-300 p-1">3.00</td>
-          <td className="border border-slate-300 p-1">Compliant</td>
-        </tr>
-        <tr>
-          <td className="border border-slate-300 p-1">BVR 69(1)</td>
-          <td className="border border-slate-300 p-1">Single</td>
-          <td className="border border-slate-300 p-1">FLOOR01</td>
-          <td className="border border-slate-300 p-1">Habitable Room Height</td>
-          <td className="border border-slate-300 p-1">2.60</td>
-          <td className="border border-slate-300 p-1">N.A.</td>
-          <td className="border border-slate-300 p-1">3.00</td>
-          <td className="border border-slate-300 p-1">Compliant</td>
-        </tr>
-        <tr>
-          <td className="border border-slate-300 p-1">BVR 69(1)</td>
-          <td className="border border-slate-300 p-1">Single</td>
-          <td className="border border-slate-300 p-1">FLOOR02</td>
-          <td className="border border-slate-300 p-1">Habitable Room Height</td>
-          <td className="border border-slate-300 p-1">2.60</td>
-          <td className="border border-slate-300 p-1">N.A.</td>
-          <td className="border border-slate-300 p-1">3.00</td>
-          <td className="border border-slate-300 p-1">Compliant</td>
-        </tr>
-        <tr>
-          <td className="border border-slate-300 p-1">BVR 69(1)</td>
-          <td className="border border-slate-300 p-1">Single</td>
-          <td className="border border-slate-300 p-1">FLOOR03</td>
-          <td className="border border-slate-300 p-1">Habitable Room Height</td>
-          <td className="border border-slate-300 p-1">2.60</td>
-          <td className="border border-slate-300 p-1">N.A.</td>
-          <td className="border border-slate-300 p-1">3.00</td>
-          <td className="border border-slate-300 p-1">Compliant</td>
-        </tr>
+        {habitableHeightData.map((data, index) => (
+          <tr key={index}>
+            <td className="border border-slate-300 p-1">{data.rules}</td>
+            <td className="border border-slate-300 p-1">{data.blockName}</td>
+            <td className="border border-slate-300 p-1">{data.floorName}</td>
+            <td className="border border-slate-300 p-1">{data.parameter}</td>
+            <td className="border border-slate-300 p-1">{data.minRequired}</td>
+            <td className="border border-slate-300 p-1">
+              {data.maxPermissible}
+            </td>
+            <td className="border border-slate-300 p-1">{data.provided}</td>
+            <td className="border border-slate-300 p-1">{data.result}</td>
+          </tr>
+        ))}
       </tbody>
     </table>
   );

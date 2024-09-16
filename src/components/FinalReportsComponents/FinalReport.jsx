@@ -37,7 +37,7 @@ import MarginalOpenSpaceDetails from "../tableComponents/MarginalOpenSpaceDetail
 import NonFARTable from "../tableComponents/NonFARTable";
 import StiltHeightDetailsTable from "../tableComponents/StiltHeightDetailsTable";
 import LedgeLoftHeightTable from "../tableComponents/LedgeLoftHeightTable";
-
+import HandrailDetails from "../tableComponents/HandrailDetails";
 
 const FinalReport = ({ finalData, processedData }) => {
   return (
@@ -1367,19 +1367,19 @@ const FinalReport = ({ finalData, processedData }) => {
 
         <TravelDistance />
         <LiftDetails />
-
+        <HandrailDetails />
         <BuildingHeights />
         <ECSParkingProvided />
         <EscalatorDetails />
-        <BuildingCategoryDetails/>
-        <SiteExtentDetails/>
-        <FrontageOfPlot/>
-        <FAR/>
-        <RoadWidth/>
-        <MarginalOpenSpaceDetails/>
-        <NonFARTable/>
-        <StiltHeightDetailsTable/>
-        <LedgeLoftHeightTable/>
+        <BuildingCategoryDetails />
+        <SiteExtentDetails />
+        <FrontageOfPlot />
+        <FAR />
+        <RoadWidth />
+        <MarginalOpenSpaceDetails />
+        <NonFARTable />
+        <StiltHeightDetailsTable />
+        <LedgeLoftHeightTable />
       </div>
     </div>
   );

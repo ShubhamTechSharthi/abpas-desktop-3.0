@@ -6,7 +6,7 @@ export default function OtherHelightDetails() {
           colSpan={9}
           className="border bg-gray-300 text-gray-800 border-slate-300 p-2"
         >
-          Area, Dimensions and Ventilation Details
+          Other Heights Details
         </th>
       </tr>
       <tr>

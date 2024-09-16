@@ -1,10 +1,64 @@
-export default function ECSParkingProvided() {
+import React from "react";
+
+const parkingData = [
+  {
+    rules: "BVR 84 APPENDIX I-2 (2)",
+    blockName: "Single",
+    parking: "Equivalent Car Space (Parking Floor) @30 For FLOOR01",
+    providedArea: "6,392.00",
+    ecs: "213.07",
+  },
+  {
+    rules: "BVR 84 APPENDIX I-2 (2)",
+    blockName: "Single",
+    parking: "Equivalent Car Space (Basement Parking) @35 for FLOOR-BF2-EX",
+    providedArea: "50,810.00",
+    ecs: "1,451.71",
+  },
+  {
+    rules: "BVR 84 APPENDIX I-2 (2)",
+    blockName: "Single",
+    parking: "Equivalent Car Space (Parking Floor) @30 For FLOOR-PARKING",
+    providedArea: "6,020.00",
+    ecs: "200.67",
+  },
+  {
+    rules: "BVR 84 APPENDIX I-2 (2)",
+    blockName: "Single",
+    parking: "Equivalent Car Space (Basement Parking) @35 for FLOOR-BF1",
+    providedArea: "12,894.00",
+    ecs: "368.40",
+  },
+  {
+    rules: "BVR 84 APPENDIX I-2 (2)",
+    blockName: "Single",
+    parking: "Equivalent Car Space (Open Space) @25 For FLOOR-GROUND",
+    providedArea: "5,120.25",
+    ecs: "204.81",
+  },
+  {
+    rules: "BVR 84 APPENDIX I-2 (2)",
+    blockName: "Total",
+    parking: "",
+    providedArea: "81,236.25",
+    ecs: "2,438.66",
+  },
+  {
+    rules: "BVR 84 APPENDIX I-2 (2)",
+    blockName: "Summary",
+    parking: "Required ECS = 2,414.57",
+    providedArea: "Provided ECS= 2,438.66",
+    ecs: "Result=Compliant",
+  },
+];
+
+const ECSParkingProvided = () => {
   return (
     <table className="w-full text-center mt-3">
       <thead>
         <tr>
           <th
-            colSpan="7"
+            colSpan="5"
             className="border bg-gray-300 text-gray-800 border-slate-300 p-2"
           >
             ECS Parking Provided
@@ -25,87 +79,18 @@ export default function ECSParkingProvided() {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td className="border border-slate-300 p-1">
-            BVR 84 APPENDIX I-2 (2)
-          </td>
-          <td className="border border-slate-300 p-1">Single</td>
-          <td className="border border-slate-300 p-1">
-            Equivalent Car Space (Parking Floor) @30 For FLOOR01
-          </td>
-          <td className="border border-slate-300 p-1">6,392.00</td>
-          <td className="border border-slate-300 p-1">213.07</td>
-        </tr>
-        <tr>
-          <td className="border border-slate-300 p-1">
-            BVR 84 APPENDIX I-2 (2)
-          </td>
-          <td className="border border-slate-300 p-1">Single</td>
-          <td className="border border-slate-300 p-1">
-            Equivalent Car Space (Basement Parking) @35 for FLOOR-BF2-EX
-          </td>
-          <td className="border border-slate-300 p-1">50,810.00</td>
-          <td className="border border-slate-300 p-1">1,451.71</td>
-        </tr>
-        <tr>
-          <td className="border border-slate-300 p-1">
-            BVR 84 APPENDIX I-2 (2)
-          </td>
-          <td className="border border-slate-300 p-1">Single</td>
-          <td className="border border-slate-300 p-1">
-            Equivalent Car Space (Parking Floor) @30 For FLOOR-PARKING
-          </td>
-          <td className="border border-slate-300 p-1">6,020.00</td>
-          <td className="border border-slate-300 p-1">200.67</td>
-        </tr>
-        <tr>
-          <td className="border border-slate-300 p-1">
-            BVR 84 APPENDIX I-2 (2)
-          </td>
-          <td className="border border-slate-300 p-1">Single</td>
-          <td className="border border-slate-300 p-1">
-            Equivalent Car Space (Basement Parking) @35 for FLOOR-BF1
-          </td>
-          <td className="border border-slate-300 p-1">12,894.00</td>
-          <td className="border border-slate-300 p-1">368.40</td>
-        </tr>
-        <tr>
-          <td className="border border-slate-300 p-1">
-            BVR 84 APPENDIX I-2 (2)
-          </td>
-          <td className="border border-slate-300 p-1">Single</td>
-          <td className="border border-slate-300 p-1">
-            Equivalent Car Space (Open Space) @25 For FLOOR-GROUND
-          </td>
-          <td className="border border-slate-300 p-1">5,120.25</td>
-          <td className="border border-slate-300 p-1">204.81</td>
-        </tr>
-        <tr>
-          <td className="border border-slate-300 p-1">
-            BVR 84 APPENDIX I-2 (2)
-          </td>
-          <td className="border border-slate-300 p-1">Total</td>
-          <td className="border border-slate-300 p-1"></td>
-
-          <td className="border border-slate-300 p-1">81,236.25</td>
-          <td className="border border-slate-300 p-1">2,438.66</td>
-        </tr>
-
-        <tr>
-          <td className="border border-slate-300 p-1">
-            BVR 84 APPENDIX I-2 (2)
-          </td>
-          <td className="border border-slate-300 p-1">Summary</td>
-          <td className="border border-slate-300 p-1">
-            Required ECS = 2,414.57
-          </td>
-
-          <td className="border border-slate-300 p-1">
-            Provided ECS= 2,438.66
-          </td>
-          <td className="border border-slate-300 p-1">Result=Compliant</td>
-        </tr>
+        {parkingData.map((data, index) => (
+          <tr key={index}>
+            <td className="border border-slate-300 p-1">{data.rules}</td>
+            <td className="border border-slate-300 p-1">{data.blockName}</td>
+            <td className="border border-slate-300 p-1">{data.parking}</td>
+            <td className="border border-slate-300 p-1">{data.providedArea}</td>
+            <td className="border border-slate-300 p-1">{data.ecs}</td>
+          </tr>
+        ))}
       </tbody>
     </table>
   );
-}
+};
+
+export default ECSParkingProvided;

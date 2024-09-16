@@ -1,4 +1,171 @@
 export default function LiftDetails() {
+  const liftData = [
+    {
+      blockName: "Single",
+      blockHeight: 30,
+      blockFloors:
+        "BF-1 + Podium-1 + Partly Stilt & Ground floor + 7 Floors + MZ-1",
+      lifts: [
+        {
+          uniqueId: "Single_01",
+          name: "01",
+          location: "BF1 to FLOOR07",
+          dimension: "2.25x2.25",
+          capacity: "12 Person",
+        },
+        {
+          uniqueId: "Single_02",
+          name: "02",
+          location: "BF1 to FLOOR07",
+          dimension: "2.25x2.25",
+          capacity: "12 Person",
+        },
+        {
+          uniqueId: "Single_03",
+          name: "03",
+          location: "BF1 to FLOOR07",
+          dimension: "2.25x2.25",
+          capacity: "12 Person",
+        },
+        {
+          uniqueId: "Single_04",
+          name: "04",
+          location: "BF1 to FLOOR07",
+          dimension: "2.25x2.25",
+          capacity: "12 Person",
+        },
+        {
+          uniqueId: "Single_01",
+          name: "01",
+          location: "BF1 to FLOOR07",
+          dimension: "2.25x2.25",
+          capacity: "12 Person",
+        },
+        {
+          uniqueId: "Single_02",
+          name: "02",
+          location: "BF1 to FLOOR07",
+          dimension: "2.25x2.25",
+          capacity: "12 Person",
+        },
+        {
+          uniqueId: "Single_03",
+          name: "03",
+          location: "BF1 to FLOOR07",
+          dimension: "2.25x2.25",
+          capacity: "12 Person",
+        },
+        {
+          uniqueId: "Single_04",
+          name: "04",
+          location: "BF1 to FLOOR07",
+          dimension: "2.25x2.25",
+          capacity: "12 Person",
+        },
+        {
+          uniqueId: "Single_01",
+          name: "01",
+          location: "BF1 to FLOOR07",
+          dimension: "2.25x2.25",
+          capacity: "12 Person",
+        },
+        {
+          uniqueId: "Single_02",
+          name: "02",
+          location: "BF1 to FLOOR07",
+          dimension: "2.25x2.25",
+          capacity: "12 Person",
+        },
+        {
+          uniqueId: "Single_03",
+          name: "03",
+          location: "BF1 to FLOOR07",
+          dimension: "2.25x2.25",
+          capacity: "12 Person",
+        },
+        {
+          uniqueId: "Single_04",
+          name: "04",
+          location: "BF1 to FLOOR07",
+          dimension: "2.25x2.25",
+          capacity: "12 Person",
+        },
+      ],
+    },
+    {
+      blockName: "Double",
+      blockHeight: 30,
+      blockFloors:
+        "BF-1 + Podium-1 + Partly Stilt & Ground floor + 7 Floors + MZ-1",
+      lifts: [
+        {
+          uniqueId: "Single_01",
+          name: "01",
+          location: "BF1 to FLOOR07",
+          dimension: "2.25x2.25",
+          capacity: "12 Person",
+        },
+        {
+          uniqueId: "Single_02",
+          name: "02",
+          location: "BF1 to FLOOR07",
+          dimension: "2.25x2.25",
+          capacity: "12 Person",
+        },
+        {
+          uniqueId: "Single_03",
+          name: "03",
+          location: "BF1 to FLOOR07",
+          dimension: "2.25x2.25",
+          capacity: "12 Person",
+        },
+        {
+          uniqueId: "Single_04",
+          name: "04",
+          location: "BF1 to FLOOR07",
+          dimension: "2.25x2.25",
+          capacity: "12 Person",
+        },
+      ],
+    },
+    {
+      blockName: "triplex",
+      blockHeight: 30,
+      blockFloors:
+        "BF-1 + Podium-1 + Partly Stilt & Ground floor + 7 Floors + MZ-1",
+      lifts: [
+        {
+          uniqueId: "Single_01",
+          name: "01",
+          location: "BF1 to FLOOR07",
+          dimension: "2.25x2.25",
+          capacity: "12 Person",
+        },
+        {
+          uniqueId: "Single_02",
+          name: "02",
+          location: "BF1 to FLOOR07",
+          dimension: "2.25x2.25",
+          capacity: "12 Person",
+        },
+        {
+          uniqueId: "Single_03",
+          name: "03",
+          location: "BF1 to FLOOR07",
+          dimension: "2.25x2.25",
+          capacity: "12 Person",
+        },
+        {
+          uniqueId: "Single_04",
+          name: "04",
+          location: "BF1 to FLOOR07",
+          dimension: "2.25x2.25",
+          capacity: "12 Person",
+        },
+      ],
+    },
+  ];
+
   return (
     <table className="w-full text-center mt-3">
       <thead>
@@ -37,51 +204,47 @@ export default function LiftDetails() {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td rowSpan={4} className="font-normal border border-slate-300 p-1">
-            Single
-          </td>
-          <td rowSpan={4} className="font-normal border border-slate-300 p-1">
-            30
-          </td>
-          <td rowSpan={4} className="font-normal border border-slate-300 p-1">
-            BF-1 + Podium-1 + Partly Stilt & Ground floor + 7 Floors + MZ-1
-          </td>
-          <td className="font-normal border border-slate-300 p-1">Single_01</td>
-          <td className="font-normal border border-slate-300 p-1">01</td>
-          <td className="font-normal border border-slate-300 p-1">
-            BF1 to FLOOR07
-          </td>
-          <td className="font-normal border border-slate-300 p-1">2.25x2.25</td>
-          <td className="font-normal border border-slate-300 p-1">12 Person</td>
-        </tr>
-        <tr>
-          <td className="font-normal border border-slate-300 p-1">Single_02</td>
-          <td className="font-normal border border-slate-300 p-1">02</td>
-          <td className="font-normal border border-slate-300 p-1">
-            BF1 to FLOOR07
-          </td>
-          <td className="font-normal border border-slate-300 p-1">2.25x2.25</td>
-          <td className="font-normal border border-slate-300 p-1">12 Person</td>
-        </tr>
-        <tr>
-          <td className="font-normal border border-slate-300 p-1">Single_03</td>
-          <td className="font-normal border border-slate-300 p-1">03</td>
-          <td className="font-normal border border-slate-300 p-1">
-            BF1 to FLOOR07
-          </td>
-          <td className="font-normal border border-slate-300 p-1">2.25x2.25</td>
-          <td className="font-normal border border-slate-300 p-1">12 Person</td>
-        </tr>
-        <tr>
-          <td className="font-normal border border-slate-300 p-1">Single_04</td>
-          <td className="font-normal border border-slate-300 p-1">04</td>
-          <td className="font-normal border border-slate-300 p-1">
-            BF1 to FLOOR07
-          </td>
-          <td className="font-normal border border-slate-300 p-1">2.25x2.25</td>
-          <td className="font-normal border border-slate-300 p-1">12 Person</td>
-        </tr>
+        {liftData.map((block) => (
+          <>
+            <tr>
+              <td
+                rowSpan={block["lifts"].length + 1}
+                className="border border-slate-300 p-1"
+              >
+                {block["blockName"]}
+              </td>
+              <td
+                rowSpan={block["lifts"].length + 1}
+                className="border border-slate-300 p-1"
+              >
+                {block["blockHeight"]}
+              </td>
+              <td
+                rowSpan={block["lifts"].length + 1}
+                className="border border-slate-300 p-1"
+              >
+                {block["blockFloors"]}
+              </td>
+            </tr>
+            {block["lifts"].map((lift, index) => (
+              <tr key={index}>
+                <td className="border border-slate-300 p-1">
+                  {lift["uniqueId"]}
+                </td>
+                <td className="border border-slate-300 p-1">{lift["name"]}</td>
+                <td className="border border-slate-300 p-1">
+                  {lift["location"]}
+                </td>
+                <td className="border border-slate-300 p-1">
+                  {lift["dimension"]}
+                </td>
+                <td className="border border-slate-300 p-1">
+                  {lift["capacity"]}
+                </td>
+              </tr>
+            ))}
+          </>
+        ))}
       </tbody>
     </table>
   );
