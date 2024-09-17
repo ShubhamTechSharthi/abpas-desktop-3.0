@@ -38,6 +38,7 @@ import NonFARTable from "../tableComponents/NonFARTable";
 import StiltHeightDetailsTable from "../tableComponents/StiltHeightDetailsTable";
 import LedgeLoftHeightTable from "../tableComponents/LedgeLoftHeightTable";
 import HandrailDetails from "../tableComponents/HandrailDetails";
+import LiftEscalatorandMovingWalkCount from "../tableComponents/LiftEscalatorandMovingWalkCount";
 
 const FinalReport = ({ finalData, processedData }) => {
   return (
@@ -1380,6 +1381,8 @@ const FinalReport = ({ finalData, processedData }) => {
         <NonFARTable />
         <StiltHeightDetailsTable />
         <LedgeLoftHeightTable />
+        <LiftEscalatorandMovingWalkCount/>
+        
       </div>
     </div>
   );
