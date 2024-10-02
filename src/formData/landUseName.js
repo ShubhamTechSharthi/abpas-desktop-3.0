@@ -1,54 +1,63 @@
- const landUseName = [
-    {
-        "id": "1",
-        "value": "Residential",
-        "label": "Residential"
-    },
-    {
-        "id": "2",
-        "value": "Commercial zone",
-        "label": "Commercial zone"
-    },
-    {
-        "id": "3",
-        "value": "Industrial Zone",
-        "label": "Industrial Zone"
-    },
-    {
-        "id": "4",
-        "value": "Recreation",
-        "label": "Recreation"
-    },
-    {
-        "id": "5",
-        "value": "Public & Semi-Public",
-        "label": "Public & Semi-Public"
-    },
-    {
-        "id": "6",
-        "value": "Special Purpose",
-        "label": "Special Purpose"
-    },
-    {
-        "id": "7",
-        "value": "Transportation",
-        "label": "Transportation"
-    },
-    {
-        "id": "8",
-        "value": "Public Utilities and Facilities",
-        "label": "Public Utilities and Facilities"
-    },
-    {
-        "id": "9",
-        "value": "Water Bodies",
-        "label": "Water Bodies"
-    },
-    {
-        "id": "10",
-        "value": "Agriculture",
-        "label": "Agriculture"
-    }
+const landUseName = [
+  {
+    TypeId: 1,
+    TypeName: "Residential",
+    DisplayName: "Residential",
+  },
+  {
+    TypeId: 2,
+    TypeName: "Commercial zone",
+    DisplayName: "Commercial zone",
+  },
+  {
+    TypeId: 3,
+    TypeName: "Industrial Zone",
+    DisplayName: "Industrial Zone",
+  },
+  {
+    TypeId: 4,
+    TypeName: "Recreation",
+    DisplayName: "Recreation",
+  },
+  {
+    TypeId: 5,
+    TypeName: "Public & Semi-Public",
+    DisplayName: "Public & Semi-Public",
+  },
+  {
+    TypeId: 6,
+    TypeName: "Special Purpose",
+    DisplayName: "Special Purpose",
+  },
+  {
+    TypeId: 7,
+    TypeName: "Transportation",
+    DisplayName: "Transportation",
+  },
+  {
+    TypeId: 8,
+    TypeName: "Public Utilities and Facilities",
+    DisplayName: "Public Utilities and Facilities",
+  },
+  {
+    TypeId: 9,
+    TypeName: "Water Bodies",
+    DisplayName: "Water Bodies",
+  },
+  {
+    TypeId: 10,
+    TypeName: "Agriculture",
+    DisplayName: "Agriculture",
+  },
+  {
+    TypeId: 11,
+    TypeName: "BandaUse",
+    DisplayName: "BandaUse",
+  },
+  {
+    TypeId: 12,
+    TypeName: "BoundryWall",
+    DisplayName: "BoundryWall",
+  },
 ];
-
-  export default landUseName;
+export default landUseName;

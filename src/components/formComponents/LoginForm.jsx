@@ -62,9 +62,9 @@ export default function LoginForm() {
         <img src={logo} className="w-20" />
       </a>
       <h1 className="text-5xl text-white font-extrabold text">
-        <span className="text-cyan-500">Ab</span>
-        <span className="text-[#3498db]">p</span>
-        <span className="text-blue-500">as</span> 3.O
+        <span className="text-cyan-500">AB</span>
+        <span className="text-[#3498db]">P</span>
+        <span className="text-blue-500">AS</span> 3.O
       </h1>
       <h2 className="text-3xl text-white">Sign in to your account</h2>
 

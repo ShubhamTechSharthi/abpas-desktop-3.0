@@ -1,47 +1,4 @@
-export default function HabitableHeightDeatils() {
-  const habitableHeightData = [
-    {
-      rules: "BVR 69(1)",
-      blockName: "Single",
-      floorName: "FLOOR-GROUND",
-      parameter: "Habitable Room Height",
-      minRequired: "2.60",
-      maxPermissible: "N.A.",
-      provided: "3.00",
-      result: "Compliant",
-    },
-    {
-      rules: "BVR 69(1)",
-      blockName: "Single",
-      floorName: "FLOOR01",
-      parameter: "Habitable Room Height",
-      minRequired: "2.60",
-      maxPermissible: "N.A.",
-      provided: "3.00",
-      result: "Compliant",
-    },
-    {
-      rules: "BVR 69(1)",
-      blockName: "Single",
-      floorName: "FLOOR02",
-      parameter: "Habitable Room Height",
-      minRequired: "2.60",
-      maxPermissible: "N.A.",
-      provided: "3.00",
-      result: "Compliant",
-    },
-    {
-      rules: "BVR 69(1)",
-      blockName: "Single",
-      floorName: "FLOOR03",
-      parameter: "Habitable Room Height",
-      minRequired: "2.60",
-      maxPermissible: "N.A.",
-      provided: "3.00",
-      result: "Compliant",
-    },
-  ];
-
+const HabitableHeightDeatils = ({ data }) => {
   return (
     <table className="w-full text-center mt-3">
       <thead>
@@ -79,15 +36,17 @@ export default function HabitableHeightDeatils() {
         </tr>
       </thead>
       <tbody>
-        {habitableHeightData.map((data, index) => (
+        {data.map((data, index) => (
           <tr key={index}>
-            <td className="border border-slate-300 p-1">{data.rules}</td>
+            <td className="border border-slate-300 p-1">{data.rulesTable}</td>
             <td className="border border-slate-300 p-1">{data.blockName}</td>
             <td className="border border-slate-300 p-1">{data.floorName}</td>
             <td className="border border-slate-300 p-1">{data.parameter}</td>
-            <td className="border border-slate-300 p-1">{data.minRequired}</td>
             <td className="border border-slate-300 p-1">
-              {data.maxPermissible}
+              {data.minimumRequired}
+            </td>
+            <td className="border border-slate-300 p-1">
+              {data.maximumPermissible}
             </td>
             <td className="border border-slate-300 p-1">{data.provided}</td>
             <td className="border border-slate-300 p-1">{data.result}</td>
@@ -96,4 +55,5 @@ export default function HabitableHeightDeatils() {
       </tbody>
     </table>
   );
-}
+};
+export default HabitableHeightDeatils;

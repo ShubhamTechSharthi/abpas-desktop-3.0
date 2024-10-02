@@ -1,71 +1,11 @@
 import { useNavigate } from "react-router-dom";
-import { RxCross2 } from "react-icons/rx";
-import MuiInput from "../components/MuiInput";
 import Button from "../components/Button";
 import { useEffect, useState } from "react";
 import { GrCloudUpload } from "react-icons/gr";
 import CryptoJS from "crypto-js";
 import FinalReport from "../components/FinalReportsComponents/FinalReport";
 import Swal from "sweetalert2";
-const finalFormData = {
-  actualFrontage: "1",
-  applicationId: "123",
-  buildingActivity: "Guest Houses",
-  buildingIsFor: "Self Use",
-  buildingUse: "Educational",
-  bulidingHeight: "1",
-  caseType: "ERECT",
-  colonyName: "sdc",
-  deductionInPlot: "1",
-  developerLicenseNo: "1234567890",
-  developerName: "gcgcg",
-  district: "Bhopal",
-  division: "Bhopal",
-  email: "asc@gmail.com",
-  existBuidlingHeight: "1",
-  existBuildUpArea: "1",
-  existGroundCovrage: "1",
-  existingNoOfFloor: "1",
-  floorAreaRation: "1.25",
-  grossPlotArea: "1",
-  groundCoverageAera: "1",
-  isPlotIrregular: "No",
-  landSubUse: "Mandi",
-  landUse: "Industrial Zone",
-  layoutApproval: "Colony Regularized by ULB",
-  maxBuildingHeight: "N/A",
-  maxGroundCovrage: "50",
-  minFrontMOS: "N/A",
-  minFrontage: "N/A",
-  minRearMOS: "N/A",
-  minRequiredParking: "On No. of Bed",
-  minRoadWidth: "N/A",
-  minSide1MOS: "N/A",
-  minSide2MOS: "N/A",
-  mobileNo: "1234567890",
-  name: "sdc",
-  netPlotArea: "1",
-  noOfFloor: "3",
-  ownerEmail: "asc@gmail.com",
-  ownerMobileNo: "1234567890",
-  ownerName: "asasc",
-  plotDepth: "1",
-  plotNo: "12",
-  plotWidth: "1",
-  postalAddress: "ascascascascsac",
-  propBuildUpArea: "1",
-  roadWidending: "1",
-  siteAddress: "ascascascascascasc",
-  streetWidth: "1",
-  typeOfBuilding: "Residential Buildings hieght up to 12.5 Meters",
-  typeOfConstruction:
-    "A building intended to be used for any social charitable, culture, Educational purposes, Dharmasala and similar types of building and any other purpose not specifically provided for",
-  typeOfConsultant: "Architect",
-  typeOfPlot: "Single Plot",
-  ulb: "Berasia",
-  ward: "12",
-  zone: "21",
-};
+import { formatDate } from "../utils/utils";
 
 export default function HomePage() {
   const [drawingFileName, setDrawingFileName] = useState("Upload drawing file");
@@ -74,7 +14,7 @@ export default function HomePage() {
   );
   const [filePath, setFilePath] = useState();
   const [finalData, setFinalData] = useState();
-
+  const projectDate = formatDate();
   // const finalData = useSelector((state) => state.form.formData);
   // const finalDataLength = Object.keys(finalData).length;
   // const dispatch = useDispatch();
@@ -148,6 +88,62 @@ export default function HomePage() {
     }
   };
 
+  //db insert
+  const saveData = () => {
+    Swal.fire({
+      title: "Report Name",
+      inputPlaceholder: "Enter Your Report File Name",
+      input: "text",
+      showCancelButton: true,
+    }).then(function (result) {
+      if (result.value) {
+        console.log("Result: " + result.value);
+        sendDataToDatabase(result.value, projectDate);
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Failed to Save Report. Please enter report name",
+        });
+      }
+    });
+  };
+
+  const sendDataToDatabase = (projectName, projectDate) => {
+    window.Electron.ipcRenderer.send("database-insert", {
+      projectName,
+      projectDate,
+      processedData,
+      finalData,
+    });
+
+    window.Electron.ipcRenderer.once("data-insert-response", (success) => {
+      if (success) {
+        Swal.fire({
+          //title: "Good job!",
+          text: "Report saved successfully!",
+          icon: "success",
+        }).then(() => {
+          // Resetting state to initial values to refresh the component
+          setDrawingFileName("Upload drawing file");
+          setEncryptedFileName("Upload encrypted file");
+          setFilePath(null);
+          setProcessedData(null);
+          setFinalData(null);
+
+          // Optionally, you can navigate to a different route or reload data here
+          // navigate("/some-route");
+        });
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Failed to save report.",
+        });
+      }
+    });
+  };
+
   return (
     <div className="h-full flex justify-center">
       <div className="flex flex-col P-4 items-start h-auto w-full bg-slate-300 my-auto rounded-md">
@@ -188,55 +184,74 @@ export default function HomePage() {
           </div>
         </div> */}
         <div className="w-full flex ">
-          <div className=" w-[90%] justify-start flex items-center px-5 my-3">
-            <div className="w-[15%] mr-4">
-              <label htmlFor="drawingfile">Select drawing file: &nbsp;</label>
-              <br />
-              <label
-                for="drawingfile"
-                title={drawingFileName}
-                className=" text-ellipsis overflow-hidden flex bg-blue-700 cursor-pointer text-white p-2 border border-blue-500 rounded-md
+          <div className=" w-[90%] justify-start  items-center px-5 my-3">
+            {!processedData && (
+              <div className="w-[100%] flex">
+                <div className="w-[15%] mr-4">
+                  <label htmlFor="drawingfile">
+                    Select drawing file: &nbsp;
+                  </label>
+                  <br />
+                  <label
+                    htmlFor="drawingfile"
+                    title={drawingFileName}
+                    className=" text-ellipsis overflow-hidden flex bg-blue-700 cursor-pointer text-white p-2 border border-blue-500 rounded-md
                custom-file-upload"
-              >
-                <GrCloudUpload />
-                &nbsp; {drawingFileName}
-              </label>
-              <input
-                type="file"
-                id="drawingfile"
-                className=""
-                onChange={handleFileChange}
-              />
-            </div>
-            <div className="w-[15%]">
-              <label htmlFor="drawingfile">Select encrypted file: &nbsp;</label>
-              <label
-                for="encryptedfile"
-                title={encryptedFileName}
-                className="flex  bg-blue-700 text-white p-2 border border-blue-500 rounded-md
+                  >
+                    <GrCloudUpload />
+                    &nbsp; {drawingFileName}
+                  </label>
+                  <input
+                    type="file"
+                    id="drawingfile"
+                    className=""
+                    onChange={handleFileChange}
+                  />
+                </div>
+                <div className="w-[15%]">
+                  <label htmlFor="drawingfile">
+                    Select encrypted file: &nbsp;
+                  </label>
+                  <label
+                    htmlFor="encryptedfile"
+                    title={encryptedFileName}
+                    className="flex  bg-blue-700 text-white p-2 border border-blue-500 rounded-md
                custom-file-upload"
-              >
-                <GrCloudUpload />
-                &nbsp; {encryptedFileName}
-              </label>
-              <input
-                type="file"
-                id="encryptedfile"
-                onChange={handleEncryption}
-              />
-            </div>
+                  >
+                    <GrCloudUpload />
+                    &nbsp; {encryptedFileName}
+                  </label>
+                  <input
+                    type="file"
+                    id="encryptedfile"
+                    onChange={handleEncryption}
+                  />
+                </div>
+              </div>
+            )}
 
             {/* <Button onClick={() => showFinalData()} className="bg-red-600">
             Final Data
           </Button> */}
           </div>
-          <div className=" w-[10%] justify-start flex items-center px-5 my-3">
-            <Button
-              onClick={handleFileSelect}
-              className="bg-green-600 text-base"
-            >
-              Scrutinize
-            </Button>
+
+          <div className=" w-[10%] justify-end flex items-center px-5 my-3">
+            {!processedData && (
+              <Button
+                onClick={handleFileSelect}
+                className="bg-green-600 text-base"
+              >
+                Scrutinize
+              </Button>
+            )}
+            {processedData && (
+              <Button
+                onClick={saveData}
+                className="right-0 bg-blue-600 text-base"
+              >
+                Save
+              </Button>
+            )}
           </div>
         </div>
         {processedData && (

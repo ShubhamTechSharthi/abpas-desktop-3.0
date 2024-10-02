@@ -1,4 +1,4 @@
-export default function StaircaseDetails() {
+const StaircaseDetails = ({ data }) => {
   const staircaseData = [
     {
       blockName: "Single",
@@ -124,9 +124,9 @@ export default function StaircaseDetails() {
           </tr>
         </thead>
         <tbody>
-          {staircaseData.map((block) => (
+          {staircaseData.map((block, index) => (
             <>
-              <tr>
+              <tr key={index}>
                 <td
                   rowSpan={
                     1 +
@@ -181,95 +181,7 @@ export default function StaircaseDetails() {
           ))}
         </tbody>
       </table>
-      {/* 
-      <table>
-        <thead>
-          <tr>
-            <th colspan="9" class="header">
-              Staircase Details [BVR 80]
-            </th>
-          </tr>
-          <tr>
-              <th className="border text-gray-700 border-slate-300 p-2">Block Name</th>
-              <th className="border text-gray-700 border-slate-300 p-2">Floor Name</th>
-              <th className="border text-gray-700 border-slate-300 p-2">Staircase Name</th>
-              <th className="border text-gray-700 border-slate-300 p-2">Minimum Staircase Width Required</th>
-              <th className="border text-gray-700 border-slate-300 p-2">Staircase Width Provided</th>
-              <th className="border text-gray-700 border-slate-300 p-2">Staircase Width Result</th>
-              <th className="border text-gray-700 border-slate-300 p-2">Minimum Staircase Landing Width Required</th>
-              <th className="border text-gray-700 border-slate-300 p-2">Staircase Landing Width Provided</th>
-              <th className="border text-gray-700 border-slate-300 p-2">Staircase Landing Width Result</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td rowspan="7">Single</td>
-            <td rowspan="5">FLOOR01-EX</td>
-            <td>STAIRCASE 01</td>
-            <td>1.50</td>
-            <td>2.00</td>
-            <td>Compliant</td>
-            <td>0.85</td>
-            <td>4.10</td>
-            <td>Compliant</td>
-          </tr>
-          <tr>
-            <td>STAIRCASE 02</td>
-            <td>1.50</td>
-            <td>2.06</td>
-            <td>Compliant</td>
-            <td>0.85</td>
-            <td>2.06</td>
-            <td>Compliant</td>
-          </tr>
-          <tr>
-            <td>STAIRCASE 03</td>
-            <td>1.50</td>
-            <td>2.00</td>
-            <td>Compliant</td>
-            <td>0.85</td>
-            <td>4.10</td>
-            <td>Compliant</td>
-          </tr>
-          <tr>
-            <td>STAIRCASE 06</td>
-            <td>1.50</td>
-            <td>1.60</td>
-            <td>Compliant</td>
-            <td>0.85</td>
-            <td>3.60</td>
-            <td>Compliant</td>
-          </tr>
-          <tr>
-            <td>STAIRCASE 07</td>
-            <td>1.50</td>
-            <td>2.00</td>
-            <td>Compliant</td>
-            <td>0.85</td>
-            <td>2.00</td>
-            <td>Compliant</td>
-          </tr>
-          <tr>
-            <td rowspan="2">FLOOR02-EX</td>
-            <td>STAIRCASE 01</td>
-            <td>1.50</td>
-            <td>2.00</td>
-            <td>Compliant</td>
-            <td>0.85</td>
-            <td>4.10</td>
-            <td>Compliant</td>
-          </tr>
-          <tr>
-            <td>STAIRCASE 02</td>
-            <td>1.50</td>
-            <td>2.06</td>
-            <td>Compliant</td>
-            <td>0.85</td>
-            <td>2.06</td>
-            <td>Compliant</td>
-          </tr>
-        </tbody>
-      </table> */}
     </>
   );
-}
+};
+export default StaircaseDetails;

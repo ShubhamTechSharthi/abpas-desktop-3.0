@@ -1,23 +1,33 @@
-  const typeOfBuilding = [
-    {
-        "id": "1",
-        "value": "Residential Buildings hieght up to 12.5 Meters",
-        "label": "Residential Buildings hieght up to 12.5 Meters"
-    },
-    {
-        "id": "2",
-        "value": "Other Buildings hieght up to 12.5 Meters",
-        "label": "Other Buildings hieght up to 12.5 Meters"
-    },
-    {
-        "id": "3",
-        "value": "All Buildings Height above 12.5 and upto 30 Meters",
-        "label": "All Buildings Height above 12.5 and upto 30 Meters"
-    },
-    {
-        "id": "4",
-        "value": "All Buildings Height above 30 Meters",
-        "label": "All Buildings Height above 30 Meters"
-    }
-]
-  export default typeOfBuilding;
+const typeOfBuilding = [
+  {
+    TypeId: 147,
+    TypeName: "ResidentialHeightupto12.5",
+    DisplayName: "Residential Building height up-to 12.5 meters",
+  },
+  {
+    TypeId: 148,
+    TypeName: "OtherResidentialHeightupto12.5",
+    DisplayName: "Other Building height upto 12.5 meters",
+  },
+  {
+    TypeId: 149,
+    TypeName: "AllBuildingHeightabove12.5upto30",
+    DisplayName: "All Building Height above 12.5 and upto 30 meters",
+  },
+  {
+    TypeId: 150,
+    TypeName: "AllBuildingHeightabove30",
+    DisplayName: "All Building Height above 30 meters",
+  },
+  {
+    TypeId: 166,
+    TypeName: "Others",
+    DisplayName: "Others",
+  },
+  {
+    TypeId: 182,
+    TypeName: "BoundryWall",
+    DisplayName: "Boundry Wall",
+  },
+];
+export default typeOfBuilding;

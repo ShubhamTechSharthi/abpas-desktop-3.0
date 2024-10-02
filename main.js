@@ -4,6 +4,7 @@ import { fileURLToPath } from "url";
 import isDev from "electron-is-dev";
 import { spawn } from "child_process";
 import { join } from "path";
+import sqlite3 from "sqlite3";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -44,14 +45,100 @@ app.on("activate", () => {
   }
 });
 
-// Handle IPC from renderer
-ipcMain.on("ping", () => {
-  console.log("pong");
+//sql
+
+//select
+
+ipcMain.on("database-call", (event) => {
+  const db = new sqlite3.Database("./database.db", (err) => {
+    if (err) console.error("Database opening error: ", err);
+  });
+
+  console.log("Database Connected");
+
+  const sql = "SELECT * FROM Data";
+
+  db.all(sql, [], (err, rows) => {
+    if (err) {
+      console.error("Fetching data error: ", err);
+      return;
+    }
+    console.log("abc" + rows);
+    event.reply("sql-data-received", rows);
+  });
+
+  db.close((err) => {
+    if (err) console.error("Database closing error", err);
+
+    console.log("Database disconnected");
+  });
 });
 
-// ipcMain.on('process-file', () => {
-//   console.log('received');
-// });
+//insert
+
+ipcMain.on("database-insert", (event, data) => {
+  const projectName = JSON.stringify(data.projectName);
+  const projectDate = JSON.stringify(data.projectDate);
+  const processedData = JSON.stringify(data.processedData);
+  const formData = JSON.stringify(data.finalData);
+
+  const db = new sqlite3.Database("./database.db", (err) => {
+    if (err) console.error("Database opening error: ", err);
+  });
+
+  console.log("Database Connected");
+
+  const sql =
+    "INSERT INTO Data (ProjectName, ProjectDate, ProcessedData, FormData) VALUES (?, ?, ?, ?)";
+
+  db.run(sql, [projectName, projectDate, processedData, formData], (err) => {
+    if (err) {
+      console.error("Inserting data error: ", err);
+      event.reply(`data-insert-response`, false);
+      return;
+    }
+    console.log(`A row has been inserted`);
+    event.reply(`data-insert-response`, true);
+  });
+
+  db.close((err) => {
+    if (err) console.error("Database closing error", err);
+
+    console.log("Database disconnected");
+  });
+});
+
+//delete
+
+ipcMain.on("database-delete", (event, id) => {
+  const rowId = parseInt(id);
+
+  const db = new sqlite3.Database("./database.db", (err) => {
+    if (err) console.error("Database opening error: ", err);
+  });
+
+  console.log("Database Connected");
+
+  const sql = "DELETE FROM Data WHERE Id=?";
+
+  db.run(sql, rowId, (err) => {
+    if (err) {
+      console.error("Deleting data error: ", err);
+      event.reply(`data-delete-response`, false);
+      return;
+    }
+    console.log(`A row has been deleted`);
+    event.reply(`data-delete-response`, true);
+  });
+
+  db.close((err) => {
+    if (err) console.error("Database closing error", err);
+
+    console.log("Database disconnected");
+  });
+});
+
+//python
 
 ipcMain.on("process-file", (event, filePath) => {
   console.log("File Path received:", filePath);
@@ -59,7 +146,7 @@ ipcMain.on("process-file", (event, filePath) => {
   const scriptPath = join(
     __dirname,
     "python-scripts",
-    "demo_scrutiny_engine.pyc"
+    "demo_scrutiny_engine.py"
   );
 
   console.log("Script path:", scriptPath);

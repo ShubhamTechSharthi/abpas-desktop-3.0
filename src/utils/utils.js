@@ -1,5 +1,12 @@
 export const findKeyValue = (data, formKey) => {
-  return data?.[formKey] || "-";
+  const value = data?.[formKey];
+  return value !== null && value !== undefined ? value : "-";
+};
+
+export const findValue = (data, key, matchKey = "TypeId") => {
+  const foundItem = data.find((item) => item[matchKey] === key);
+  // console.log("founditem", foundItem?.DisplayName);
+  return foundItem?.DisplayName;
 };
 
 export const findAllKeyValues = (obj, keyToFind, values = []) => {

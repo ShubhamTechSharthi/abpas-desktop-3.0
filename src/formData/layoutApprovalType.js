@@ -1,23 +1,23 @@
-  const layoutApprovalType = [
-    {
-        "id": "1",
-        "value": "Approved Layout",
-        "label": "Approved Layout"
-    },
-    {
-        "id": "2",
-        "value": "Colony Regularized by ULB",
-        "label": "Colony Regularized by ULB"
-    },
-    {
-        "id": "3",
-        "value": "Existing Area Maintained by ULB (Central Area)",
-        "label": "Existing Area Maintained by ULB (Central Area)"
-    },
-    {
-        "id": "4",
-        "value": "Regularized Unauthorised Colony",
-        "label": "Regularized Unauthorised Colony"
-    }
+const layoutApprovalType = [
+  {
+    TypeId: 161,
+    TypeName: "ExistingArea",
+    DisplayName: "Existing Area Maintained by ULB",
+  },
+  {
+    TypeId: 162,
+    TypeName: "ApprovedLayout",
+    DisplayName: "Approved Layout",
+  },
+  {
+    TypeId: 163,
+    TypeName: "RegularizedColony",
+    DisplayName: "Colony Regularized by ULB",
+  },
+  {
+    TypeId: 196,
+    TypeName: "UnauthorizedColonies",
+    DisplayName: "Regularized Unauthorised Colony",
+  },
 ];
-  export default layoutApprovalType;
+export default layoutApprovalType;

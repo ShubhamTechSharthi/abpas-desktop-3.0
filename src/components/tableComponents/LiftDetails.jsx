@@ -1,3 +1,5 @@
+import React from "react";
+
 export default function LiftDetails() {
   const liftData = [
     {
@@ -6,62 +8,6 @@ export default function LiftDetails() {
       blockFloors:
         "BF-1 + Podium-1 + Partly Stilt & Ground floor + 7 Floors + MZ-1",
       lifts: [
-        {
-          uniqueId: "Single_01",
-          name: "01",
-          location: "BF1 to FLOOR07",
-          dimension: "2.25x2.25",
-          capacity: "12 Person",
-        },
-        {
-          uniqueId: "Single_02",
-          name: "02",
-          location: "BF1 to FLOOR07",
-          dimension: "2.25x2.25",
-          capacity: "12 Person",
-        },
-        {
-          uniqueId: "Single_03",
-          name: "03",
-          location: "BF1 to FLOOR07",
-          dimension: "2.25x2.25",
-          capacity: "12 Person",
-        },
-        {
-          uniqueId: "Single_04",
-          name: "04",
-          location: "BF1 to FLOOR07",
-          dimension: "2.25x2.25",
-          capacity: "12 Person",
-        },
-        {
-          uniqueId: "Single_01",
-          name: "01",
-          location: "BF1 to FLOOR07",
-          dimension: "2.25x2.25",
-          capacity: "12 Person",
-        },
-        {
-          uniqueId: "Single_02",
-          name: "02",
-          location: "BF1 to FLOOR07",
-          dimension: "2.25x2.25",
-          capacity: "12 Person",
-        },
-        {
-          uniqueId: "Single_03",
-          name: "03",
-          location: "BF1 to FLOOR07",
-          dimension: "2.25x2.25",
-          capacity: "12 Person",
-        },
-        {
-          uniqueId: "Single_04",
-          name: "04",
-          location: "BF1 to FLOOR07",
-          dimension: "2.25x2.25",
-          capacity: "12 Person",
-        },
         {
           uniqueId: "Single_01",
           name: "01",
@@ -129,7 +75,7 @@ export default function LiftDetails() {
       ],
     },
     {
-      blockName: "triplex",
+      blockName: "Triplex",
       blockHeight: 30,
       blockFloors:
         "BF-1 + Podium-1 + Partly Stilt & Ground floor + 7 Floors + MZ-1",
@@ -178,16 +124,15 @@ export default function LiftDetails() {
           </th>
         </tr>
         <tr>
-          <th rowspan="2" className="border text-gray-700 border-slate-300 p-2">
+          <th rowSpan="2" className="border text-gray-700 border-slate-300 p-2">
             Block Name
           </th>
-          <th rowspan="2" className="border text-gray-700 border-slate-300 p-2">
+          <th rowSpan="2" className="border text-gray-700 border-slate-300 p-2">
             Block Height
           </th>
-          <th className="border text-gray-700 border-slate-300 p-2">
+          <th rowSpan="2" className="border text-gray-700 border-slate-300 p-2">
             Block Noof Floors
           </th>
-
           <th className="border text-gray-700 border-slate-300 p-2">
             Unique Id
           </th>
@@ -204,8 +149,8 @@ export default function LiftDetails() {
         </tr>
       </thead>
       <tbody>
-        {liftData.map((block) => (
-          <>
+        {liftData.map((block, blockIndex) => (
+          <React.Fragment key={blockIndex}>
             <tr>
               <td
                 rowSpan={block["lifts"].length + 1}
@@ -226,8 +171,8 @@ export default function LiftDetails() {
                 {block["blockFloors"]}
               </td>
             </tr>
-            {block["lifts"].map((lift, index) => (
-              <tr key={index}>
+            {block["lifts"].map((lift, liftIndex) => (
+              <tr key={lift.uniqueId + liftIndex}>
                 <td className="border border-slate-300 p-1">
                   {lift["uniqueId"]}
                 </td>
@@ -243,7 +188,7 @@ export default function LiftDetails() {
                 </td>
               </tr>
             ))}
-          </>
+          </React.Fragment>
         ))}
       </tbody>
     </table>

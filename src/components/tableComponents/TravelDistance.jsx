@@ -100,8 +100,8 @@ export default function TravelDistance() {
         </tr>
       </thead>
       <tbody>
-        {data.map((block, index) => (
-          <>
+        {data.map((block, blockIndex) => (
+          <React.Fragment key={blockIndex}>
             <tr>
               <td
                 rowSpan={
@@ -117,7 +117,7 @@ export default function TravelDistance() {
               </td>
             </tr>
             {block["floors"].map((floor, floorIndex) => (
-              <>
+              <React.Fragment key={floorIndex}>
                 <tr>
                   <td
                     rowSpan={floor["measr"].length + 1}
@@ -139,9 +139,9 @@ export default function TravelDistance() {
                     </td>
                   </tr>
                 ))}
-              </>
+              </React.Fragment>
             ))}
-          </>
+          </React.Fragment>
         ))}
       </tbody>
     </table>

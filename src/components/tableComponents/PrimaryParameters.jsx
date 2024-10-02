@@ -1,10 +1,10 @@
 import React from "react";
 import { findKeyValue } from "../../utils/utils";
-const SecondaryParameters = ({ data }) => {
+const PrimaryParametersTable = ({ data }) => {
   return (
     <div className="bg-white border-gray-200 shadow my-5">
       <h3 className="font-bold text-center bg-gray-400 border text-gray-700 border-slate-300 p-2">
-        Secondary Parameters
+        Primary Parameters
       </h3>
       <table className="text-left w-full">
         <thead>
@@ -58,4 +58,4 @@ const SecondaryParameters = ({ data }) => {
   );
 };
 
-export default SecondaryParameters;
+export default PrimaryParametersTable;

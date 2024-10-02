@@ -1,17 +1,4 @@
-export default function KitchenHeightDetails() {
-  const kitchenHeightData = [
-    {
-      rule: "BVR 70(1)",
-      blockName: "Single",
-      floorName: "FLOOR-GROUND",
-      parameter: "Kitchen Height",
-      minRequired: "2.60",
-      maxPermissible: "N.A.",
-      provided: "3.00",
-      result: "Compliant",
-    },
-  ];
-
+const KitchenHeightDetails = ({ data }) => {
   return (
     <table className="w-full text-center mt-3">
       <thead>
@@ -24,30 +11,49 @@ export default function KitchenHeightDetails() {
           </th>
         </tr>
         <tr>
-          <th className="border text-gray-700 border-slate-300 p-2">Rules/Table</th>
-          <th className="border text-gray-700 border-slate-300 p-2">Block Name</th>
-          <th className="border text-gray-700 border-slate-300 p-2">Floor Name</th>
-          <th className="border text-gray-700 border-slate-300 p-2">Parameter</th>
-          <th className="border text-gray-700 border-slate-300 p-2">Minimum Required</th>
-          <th className="border text-gray-700 border-slate-300 p-2">Maximum Permissible</th>
-          <th className="border text-gray-700 border-slate-300 p-2">Provided</th>
+          <th className="border text-gray-700 border-slate-300 p-2">
+            Rules/Table
+          </th>
+          <th className="border text-gray-700 border-slate-300 p-2">
+            Block Name
+          </th>
+          <th className="border text-gray-700 border-slate-300 p-2">
+            Floor Name
+          </th>
+          <th className="border text-gray-700 border-slate-300 p-2">
+            Parameter
+          </th>
+          <th className="border text-gray-700 border-slate-300 p-2">
+            Minimum Required
+          </th>
+          <th className="border text-gray-700 border-slate-300 p-2">
+            Maximum Permissible
+          </th>
+          <th className="border text-gray-700 border-slate-300 p-2">
+            Provided
+          </th>
           <th className="border text-gray-700 border-slate-300 p-2">Result</th>
         </tr>
       </thead>
       <tbody>
-        {kitchenHeightData.map((row, index) => (
+        {data.map((data, index) => (
           <tr key={index}>
-            <td className="border border-slate-300 p-1">{row.rule}</td>
-            <td className="border border-slate-300 p-1">{row.blockName}</td>
-            <td className="border border-slate-300 p-1">{row.floorName}</td>
-            <td className="border border-slate-300 p-1">{row.parameter}</td>
-            <td className="border border-slate-300 p-1">{row.minRequired}</td>
-            <td className="border border-slate-300 p-1">{row.maxPermissible}</td>
-            <td className="border border-slate-300 p-1">{row.provided}</td>
-            <td className="border border-slate-300 p-1">{row.result}</td>
+            <td className="border border-slate-300 p-1">{data.rulesTable}</td>
+            <td className="border border-slate-300 p-1">{data.blockName}</td>
+            <td className="border border-slate-300 p-1">{data.floorName}</td>
+            <td className="border border-slate-300 p-1">{data.parameter}</td>
+            <td className="border border-slate-300 p-1">
+              {data.minimumRequired}
+            </td>
+            <td className="border border-slate-300 p-1">
+              {data.maximumPermissible}
+            </td>
+            <td className="border border-slate-300 p-1">{data.provided}</td>
+            <td className="border border-slate-300 p-1">{data.result}</td>
           </tr>
         ))}
       </tbody>
     </table>
   );
-}
+};
+export default KitchenHeightDetails;

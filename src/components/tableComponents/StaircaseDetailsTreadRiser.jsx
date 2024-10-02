@@ -1,15 +1,13 @@
-import React from "react";
-
-const BuildingGeneralDetailsTable = ({ data }) => {
+const StaircaseDetailsTreadRiser = ({ data }) => {
   return (
     <table className="w-full text-center mt-3">
       <thead>
         <tr>
           <th
-            colSpan={6}
+            colSpan={9}
             className="border bg-gray-300 text-gray-800 border-slate-300 p-2"
           >
-            Building General Details
+            Staircase Details Tread Riser
           </th>
         </tr>
         <tr>
@@ -17,48 +15,57 @@ const BuildingGeneralDetailsTable = ({ data }) => {
             Block Name
           </th>
           <th className="border text-gray-700 border-slate-300 p-2">
-            Total Number of Floors
+            Floor Name
           </th>
           <th className="border text-gray-700 border-slate-300 p-2">
-            Block Height (in meters)
+            Maximum Riser Allowable
           </th>
           <th className="border text-gray-700 border-slate-300 p-2">
-            Total Builtup Area (in Sq. Meters)
+            Minimum Tread Required
           </th>
           <th className="border text-gray-700 border-slate-300 p-2">
-            Non FAR Area (in Sq. Meters)
+            Riser Provided
           </th>
           <th className="border text-gray-700 border-slate-300 p-2">
-            Buildup (FAR) Area (in Sq. Meters)
+            Riser Result
+          </th>
+          <th className="border text-gray-700 border-slate-300 p-2">
+            Staircase Name
+          </th>
+          <th className="border text-gray-700 border-slate-300 p-2">
+            Tread Provided
+          </th>
+          <th className="border text-gray-700 border-slate-300 p-2">
+            Tread Result
           </th>
         </tr>
       </thead>
       <tbody>
-        {data.map((building, index) => (
+        {data.map((item, index) => (
           <tr key={index}>
-            <th className="border border-slate-300 p-1">
-              {building.blockName}
-            </th>
+            <td className="border border-slate-300 p-1">{item.blockName}</td>
+            <td className="border border-slate-300 p-1">{item.floorName}</td>
             <td className="border border-slate-300 p-1">
-              {building?.totalNumberofFloors}
+              {item.maximumRiserAllowable}
             </td>
             <td className="border border-slate-300 p-1">
-              {building?.blockHeight}
+              {item.minimumTreadRequired}
             </td>
             <td className="border border-slate-300 p-1">
-              {building.totalBuiltupArea}
+              {item.riserProvided}
+            </td>
+            <td className="border border-slate-300 p-1">{item.riserResult}</td>
+            <td className="border border-slate-300 p-1">
+              {item.staircaseName}
             </td>
             <td className="border border-slate-300 p-1">
-              {building.nonFARArea}
+              {item.treadProvided}
             </td>
-            <td className="border border-slate-300 p-1">
-              {building["builtup(FAR)Area"]}
-            </td>
+            <td className="border border-slate-300 p-1">{item.treadResult}</td>
           </tr>
         ))}
       </tbody>
     </table>
   );
 };
-
-export default BuildingGeneralDetailsTable;
+export default StaircaseDetailsTreadRiser;

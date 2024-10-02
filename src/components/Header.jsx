@@ -11,9 +11,9 @@ export default function Header() {
             <div className="flex-shrink-0 flex border-r-2 pr-5">
               <img className="h-8 w-8" src={logo} alt="logo" /> &nbsp;&nbsp;
               <h1 className="text-2xl text-white font-extrabold text">
-                <span className="text-cyan-500">Ab</span>
-                <span className="text-[#3498db]">p</span>
-                <span className="text-blue-500">as</span> 3.O
+                <span className="text-cyan-500">AB</span>
+                <span className="text-[#3498db]">P</span>
+                <span className="text-blue-500">AS</span> 3.O
               </h1>
             </div>
             <div className="hidden md:block">
