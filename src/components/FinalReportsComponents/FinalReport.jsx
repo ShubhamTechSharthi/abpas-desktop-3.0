@@ -90,11 +90,9 @@ const FinalReport = ({ finalData, processedData }) => {
           groundCoverageBreakup={processedData?.["groundCovergeBreakup"]}
         />
         ;{/*Floorwise Breakup */}
-        {/* <FloorwiseBreakupTable
-          data={processedData?.["floorWiseBreakup"]}
-        /> */}
+        <FloorwiseBreakupTable data={processedData?.floorWiseBreakup} />
         {/*NonFar Breakup */}
-        {/* <NonFARBreakupTable data={processedData?.["Non FAR Breakup Table"]} /> */}
+        <NonFARBreakupTable data={processedData?.nonCountedFarBreakup} />
         {/* Secondary Parameters */}
         <SecondaryParameters
           data={processedData?.secondaryParameters?.["comparisonTable"]}
@@ -139,8 +137,6 @@ const FinalReport = ({ finalData, processedData }) => {
         {/* <DimensionsAndVentilationDetails
           data={processedData?.["areaAndVentilation details"]}
         /> */}
-        {/* Staircase Details [BVR 80] */}
-        {/* <StaircaseDetails /> */}
         {/* Riser Count Per Flight [BVR 80(5)] */}
         <RiserCountPerFlight
           data={processedData?.["stircase_details"]?.["riserCountPerFlight"]}

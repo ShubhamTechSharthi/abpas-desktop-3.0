@@ -5,6 +5,7 @@ const grandTotal = (keyname, floorsArray) => {
     return acc + currVal[keyname];
   }, 0);
 };
+
 const FloorwiseBreakupTable = ({ data }) => {
   return (
     <table className="w-full text-center mt-3">
@@ -67,54 +68,52 @@ const FloorwiseBreakupTable = ({ data }) => {
             <tr>
               <td
                 className="border border-slate-300 p-1"
-                rowSpan={block["Floors"].length + 2}
+                rowSpan={block?.floors.length + 2}
               >
-                {block["Block Name"]}
+                {block?.blockName}
               </td>
             </tr>
-            {block["Floors"].map((floor, floorIndex) => (
+            {block?.floors.map((floor, floorIndex) => (
               <tr key={floorIndex}>
                 <td className="border border-slate-300 p-1">
-                  {floor["Floor Name"]}
+                  {floor?.floorName}
                 </td>
                 <td className="border border-slate-300 p-1">
-                  {floor["Total Area"]}
+                  {floor?.totalArea}
                 </td>
                 <td className="border border-slate-300 p-1">
-                  {floor["Deduction"]}
+                  {floor?.deduction}
                 </td>
                 <td className="border border-slate-300 p-1">
-                  {floor["Not Counted in FAR Area"]}
+                  {floor?.notCountedInFARArea}
                 </td>
                 <td className="border border-slate-300 p-1">
-                  {floor["Residential"]}
+                  {floor?.residential}
                 </td>
                 <td className="border border-slate-300 p-1">
-                  {floor["Commercial"]}
+                  {floor?.commercial}
                 </td>
                 <td className="border border-slate-300 p-1">
-                  {floor["Industrial"]}
+                  {floor?.industrial}
                 </td>
                 <td className="border border-slate-300 p-1">
-                  {floor["Institutional"]}
+                  {floor?.institutional}
                 </td>
                 <td className="border border-slate-300 p-1">
-                  {floor["Educational"]}
+                  {floor?.educational}
                 </td>
               </tr>
             ))}
             <tr>
               <td className="border border-slate-300 p-1">Total</td>
-              {Object.keys(block["Floors"][0])
-                .map((item) => grandTotal(item, block["Floors"]))
-                .map((item, idx) => {
-                  if (item === "Floor Name") return null;
-                  return (
-                    <td key={idx} className="border border-slate-300 p-1">
-                      {item}
-                    </td>
-                  );
-                })}
+              {Object.keys(block?.floors[0])
+                .filter((item) => item !== "floorName") // Skip floorName
+                .map((item) => grandTotal(item, block?.floors))
+                .map((item, idx) => (
+                  <td key={idx} className="border border-slate-300 p-1">
+                    {item}
+                  </td>
+                ))}
             </tr>
           </>
         ))}

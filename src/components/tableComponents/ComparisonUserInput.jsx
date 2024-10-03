@@ -1,4 +1,9 @@
 import React from "react";
+import {
+  findKeyValue,
+  camelCaseToHumanReadable,
+  formatDate,
+} from "../../utils/utils";
 const ComparisonUserInput = ({ data }) => {
   return (
     <div className="bg-white border-gray-200 shadow my-5">
@@ -37,16 +42,16 @@ const ComparisonUserInput = ({ data }) => {
           {data.map((item, index) => (
             <tr key={index}>
               <td className="border border-slate-300 p-1">
-                {item.userInputParameter}
+                {findKeyValue(item, "userInputParameter")}
               </td>
               <td className="border border-slate-300 p-1">
-                {item.givenAsInput}
+                {findKeyValue(item, "givenAsInput")}
               </td>
               <td className="border border-slate-300 p-1">
-                {item.extractedFromDrawing}
+                {findKeyValue(item, "extractedFromDrawing")}
               </td>
               <td className="border border-slate-300 p-1">
-                {item?.differenceInNumber}
+                {findKeyValue(item, "differenceInNumber")}
               </td>
               <td
                 className={`border border-slate-300 p-1 ${
@@ -55,7 +60,7 @@ const ComparisonUserInput = ({ data }) => {
                     : "text-red-800"
                 }`}
               >
-                {item.result}
+                {findKeyValue(item, "result")}
               </td>
             </tr>
           ))}

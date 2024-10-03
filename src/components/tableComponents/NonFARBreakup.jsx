@@ -34,33 +34,33 @@ const NonFARBreakupTable = ({ data }) => {
               <td
                 rowSpan={
                   1 +
-                  block["Floors"].reduce(
-                    (acc, item) => acc + item["Non FAR Objects"].length + 2,
+                  block?.floors.reduce(
+                    (acc, item) => acc + item?.nonFARObjects.length + 2,
                     0
                   )
                 }
                 className="border border-slate-300 p-1"
               >
-                {block["Block Name"]}
+                {block?.blockName}
               </td>
             </tr>
-            {block["Floors"].map((floor, floorIndex) => (
+            {block?.floors.map((floor, floorIndex) => (
               <>
                 <tr>
                   <td
-                    rowSpan={floor["Non FAR Objects"].length + 1}
+                    rowSpan={floor?.nonFARObjects.length + 1}
                     className="border border-slate-300 p-1"
                   >
-                    {floor["Typical Floor Name"]}
+                    {floor?.typicalFloorName}
                   </td>
                 </tr>
-                {floor["Non FAR Objects"].map((FARObject, FARIndex) => (
+                {floor?.nonFARObjects.map((FARObject, FARIndex) => (
                   <tr key={FARIndex}>
                     <td className="border border-slate-300 p-1">
-                      {FARObject["Non FAR Name"]}
+                      {FARObject?.nonFARName}
                     </td>
                     <td className="border border-slate-300 p-1">
-                      {FARObject["Non FAR Area"]}
+                      {FARObject?.nonFARArea}
                     </td>
                   </tr>
                 ))}
@@ -69,7 +69,7 @@ const NonFARBreakupTable = ({ data }) => {
                     Total
                   </th>
                   <th className="border border-slate-300 p-1">
-                    {floor["Total Non FAR Area"]}
+                    {floor?.totalNonFARArea}
                   </th>
                 </tr>
               </>
